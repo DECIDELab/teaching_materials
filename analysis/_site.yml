@@ -1,7 +1,7 @@
-name: "teaching_materials"
+name: teaching_materials
 output_dir: ../docs
 navbar:
-  title: "teaching_materials"
+  title: Teaching Materials
   left:
   - text: Home
     href: index.html
@@ -9,6 +9,10 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  right:
+  - icon: fa-github
+    text: Source code
+    href: https://github.com/decidelab/teaching_materials
 output:
   workflowr::wflow_html:
     toc: yes
