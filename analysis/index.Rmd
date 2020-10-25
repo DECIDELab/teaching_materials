@@ -10,6 +10,6 @@ editor_options:
 
 Welcome to my collection of teaching materials.
 
-* [DTHBTN - Dịch tễ học bệnh truyền nhiễm](https://decidelab.github.io/teaching_materials/docs/DTHBTN_BenhTruyenNhiem.html)
-* [DTHBTN - Dịch tễ học bệnh lây qua đường tiêu hoá](https://decidelab.github.io/teaching_materials/docs/DTHBTN_BenhDuongTieuHoa.html)
-* [DTHBTN - Dịch tễ học bệnh lây qua đường tiêu hoá](https://decidelab.github.io/teaching_materials/docs/DTHBTN_BenhDuongTieuHoa.html)
+* [DTHBTN - Dịch tễ học bệnh truyền nhiễm](https://decidelab.github.io/teaching_materials/DTHBTN_BenhTruyenNhiem.html)
+* [DTHBTN - Dịch tễ học bệnh lây qua đường tiêu hoá](https://decidelab.github.io/teaching_materials/DTHBTN_BenhDuongTieuHoa.html)
+* [DTHBTN - Dịch tễ học bệnh lây qua vectơ](https://decidelab.github.io/teaching_materials/DTHBTN_BenhLayQuaVecto.html)
