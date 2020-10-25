@@ -1,0 +1,334 @@
+---
+title: "Dịch tễ học bệnh lây qua đường tiêu hoá"
+date: " 2020-03-18 (Update: `r Sys.Date()`)"
+output:
+    html_document:
+      theme: cerulean
+      toc: yes
+      toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mục tiêu bài học
+
+* Mô tả được quá trình lây nhiễm của các bệnh lây theo đường tiêu hóa
+
+* Trình bày được các biện pháp phòng chống đối với các bệnh lây theo đường tiêu hóa
+
+* Mô tả được các đặc điểm dịch tễ học của bệnh thương hàn
+
+* Trình bày được các biện pháp dự phòng và kiểm soát bệnh thương hàn
+
+## Nhắc lại về tam giác dịch tễ học và dây chuyền lây
+
+Nội dung trong phần này dựa chủ yếu vào nội dung trong sách Principles of Epidemiology in Public Health Practice: An Introduction to Applied Epidemiology and Biostatistics do CDC Hoa Kỳ biên soạn [@CDC2012].
+
+### Tam giác dịch tễ học
+
+Trong dịch tễ học bệnh truyền nhiễm, mô hình sinh bệnh truyền thống cơ bản nhất là "tam giác dịch tễ học" (epidemiologic triad, epidemiologic triangle) [@CDC2012]. 
+
+```{r figure1, fig.cap="Tam giác dịch tễ học [Nguồn: @CDC2012]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/EpiTriad.jpg")
+```
+
+Trong mô hình này, bệnh xuất hiện do sự tương tác giữa __tác nhân__ (agent) và __túc chủ cảm nhiễm__ (susceptible host), trong __môi trường__ (environment) hỗ trợ cho việc lây truyền __tác nhân__ từ nguồn bệnh (sources) đến __túc chủ cảm nhiễm__. Trong đó:
+
+* __Tác nhân__: là vi sinh vật gây bệnh (virus, vi khuẩn, ký sinh trùng ...). Thông thường, để gây bệnh cần phải có tác nhân (điều kiện cần); tuy nhiên, sự hiện diện của tác nhân lại không phải là điều kiện đủ để gây bệnh. Có nhiều yếu tố ảnh hưởng đến việc liệu phơi nhiễm với một tác nhân gây bệnh có gây ra bệnh hay không, bao gồm độc lực (pathogenicity) và liều gây bệnh (dose) của tác nhân gây bệnh.
+
+* __Túc chủ cảm nhiễm__: thường chỉ người có khả năng nhiễm bệnh. Sự phơi nhiễm, cảm nhiễm và phản ứng trước tác nhân gây bệnh phụ thuộc vào nhiều yếu tố, bao gồm các hành vi (ví dụ vệ sinh, quan hệ tình dục, ...), các yêú tố nội tại (tuổi, giới, kiểu gen, tình trạng dinh dưỡng, tình trạng miễn dịch, cấu trúc giải phẫu học, tâm sinh lý, các bệnh và các thuốc kèm theo, ...)
+
+* __Môi trường__: bao gồm các yếu tố bên ngoài ảnh hưởng trên tác nhân gây bệnh và sự phơi nhiễm của túc chủ cảm nhiễm. Các yếu tố này bao gồm các yếu tố vật lý (địa lý, khí hậu, ...), yếu tố sinh học (các loại côn trùng giúp lây truyền tác nhân gây bệnh), các yếu tố kinh tế xã hội (mật độ dân cư, tình trạng vệ sinh, hệ thống dịch vụ y tế)
+
+### Dây chuyền lây
+
+Theo mô hình trên, bệnh sẽ được lây truyền thông qua __dây chuyền lây__ (chain of infection) [@CDC2012]. 
+
+```{r figure2, fig.cap="Dây chuyền lây [Nguồn: @CDC2012]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/ChainOfInfection.jpg")
+```
+
+Trong đó tác nhân gây bệnh sẽ rời __nguồn bệnh__ (reservoir) qua __ngõ ra__ (portal of exit), thông qua một __cách thức lây__ (mode of transmission), và xâm nhập túc chủ cảm nhiễm bằng __ngõ vào__ (portal of entry). Trong dây chuyền lây này:
+
+#### Nguồn bệnh 
+
+Có thể là người, động vật, hoặc môi trường (cây cối, đất, nước). 
+
+* Nguồn bệnh là người (human reservoir): người là nguồn bệnh của nhiều bệnh nhiễm trùng thường gặp, và đôi khi là vật chủ duy nhất (ví dụ như đối với virus đậu mùa). Người mang bệnh có thể có triệu chứng hoặc không. Khả năng lây nhiễm của người có triệu chứng thường không cao, do dễ nhận ra và dễ được áp dụng các biện pháp ngăn ngừa lây lan. __Người mang trùng__ (carrier) là người tuy mang tác nhân gây bệnh và có khả năng gây bệnh, nhưng lại không có biểu hiện nhiễm trùng. __Người lành mang trùng__ (healthy carrier) là người hoàn toàn không có biểu hiện triệu chứng. __Người mang trùng giai đoạn ủ bệnh__ (incubation carrier) là người có thể lây bệnh, nhưng đang trong giai đoạn ủ bệnh (các triệu chứng chưa xuất hiện). __Người khỏi bệnh mang trùng__ (convalescent carrier) là người đã khỏi bệnh nhưng vẫn có khả năng lây bệnh. __Người mang trùng mạn tính__ (chronic carrier) là người mang tác nhân gây bệnh hàng tháng đến hàng năm sau khi bị nhiễm bệnh.
+
+* Nguồn bệnh là động vật (animal reservoir): nhiều bệnh có nguồn bệnh từ động vật, nhiều trong số này lây truyền từ động vật sang động vật, và người chỉ là __túc chủ cơ hội__ (incidental host). Thuật ngữ __zoonosis__ được dùng để chỉ những bệnh nhiễm trùng có thể lây truyền trong điều kiện bình thường từ động vật có xương sống (vertebrate animals) sang người, ví dụ như: bệnh than (anthrax) từ cừu, bệnh dịch hạch (plague) từ chuột, bệnh dại (rabies) từ dơi, chó hay động vật có vú. Nhiều bệnh được cho là có nguồn gốc từ động vật nhưng nguồn bệnh chính xác vẫn chưa được xác định (ví dụ như HIV/AIDS, Ebola, SARS).
+
+* Nguồn bệnh là môi trường: ví dụ như đất là nguồn bệnh của các tác nhân dạng nấm, gây ra căn bệnh histoplasmosis; nước là nguồn bệnh của _Legionella pneumophila_ gây nên bệnh Legionnaires.
+
+#### Ngõ ra 
+
+Là con đường để tác nhân gây bệnh rời nguồn bệnh, và thường tương ứng với vị trí mà tác nhân gây bệnh khu trú. Ví dụ như virus cúm hay vi khuẩn lao _Mycobacterium tuberculosis_ có ngõ ra là đường hô hấp, schistosomes qua nước tiểu, còn vi khuẩn tả _Vibrio cholerae_ thì qua phân.
+
+#### Cách thức lây 
+
+Một tác nhân nhiễm trùng có thể lây truyền từ nguồn bệnh đến túc chủ cảm nhiễm bằng nhiều cách khác nhau. Có nhiều cách khác nhau để phân loại cách thức lây, một trong số đó là cách phân loại sau:
+
+* Trực tiếp (direct)
+    + Tiếp xúc trực tiếp (direct contact): có thể là tiếp xúc người với người (ví dụ quan hệ tình dục trong bệnh lậu), hoặc tiếp xúc giữa người với nguồn bệnh (ví dụ tiếp xúc với đất trong bệnh giun móc).
+    + Lan truyền qua giọt bắn (droplet spread): khi tiếp xúc với số lượng lớn khí dung (aerosol) ở tầm gần (khoảng 1m) tạo ra khi ho, sổ mũi hoặc nói, trước khi các khí dung này rơi xuống các bề mặt (ví dụ như vi khuẩn _Bordetella pertussis_ gây ho gà [pertussis], vi khuẩn _Neisseria meningitidis_ gây viêm não mô cầu, các virus gây bệnh cúm, quai bị, rubella). Tốc độ rơi và khả năng xâm nhập của các giọt bắn phụ thuộc vào kích thước của chúng, giọt bắn kích thước >5$\mu$m đến được mũi và đường hô hấp trên, kích thước 5-10$\mu$m đến được đường hô hấp dưới, còn $\leq$ 5$\mu$m có thể đến được phế nang [@ahrens2014].  
+
+* Gián tiếp (indirect)
+    + Qua không khí (airbone): tác nhân gây bệnh lây truyền qua bụi hay giọt bắn kích thước nhỏ ($\leq$ 5$\mu$m) lơ lửng trong không khí, ví dụ như vi khuẩn lao, virus gây bệnh sởi.
+    + Qua vật chuyên chở (vehicleborne): bao gồm thức ăn, nước, chế phẩm sinh học (máu), đồ vật (fomites, như khăn tay, chăn gối, dao mổ). Vật chuyên chở có thể mang tác nhân gây bệnh một cách thụ động hoặc tạo ra môi trường cho các tác nhân này sinh sôi và tạo ra độc tố (ví dụ như thức ăn đóng hộp tạo ra môi trường cho vi khuẩn _Clostridium botulinum_ phát triển và tạo ra độc tố botulinum).
+    + Qua vectơ (vectorborne): ví dụ như muỗi (mosquitoes), ruồi (flies), bọ chét (fleas) và ve (ticks), thông qua cơ chế cơ học đơn thuần (ví dụ như ruồi mang _Shigella_ gây bệnh lị, bọ chét mang _Yersinia pestis_ gây bệnh dịch hạch) hoặc qua cơ chế sinh học tạo môi trường cho tác nhân gây bệnh sinh sôi và phát triển (ví dụ như muỗi tạo điều kiện cho ký sinh trùng sốt rét trưởng thành trước khi lây qua người). 
+
+#### Ngõ vào 
+
+Là con đường mà tác nhân gây bệnh xâm nhập vào túc chủ cảm nhiễm. Thông thường các tác nhân nhiễm trùng xâm nhập túc chủ bằng cùng con đường với ngõ ra khỏi nguồn bệnh. Ví dụ virus cúm xâm nhập vào túc chủ bằng đường hô hấp.  
+
+### Ứng dụng trong y tế công cộng
+
+Hiểu biết tường tận về dây chuyền lây giúp chúng ta xác định và lựa chọn phương thức phù hợp để kiểm soát việc lây truyền bệnh. Để cắt đứt dây chuyền lây, chúng ta có thể:
+
+* Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
+* Bảo vệ ngõ vào
+* Tăng cường khả năng phản kháng của túc chủ
+
+#### Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
+
+Các biện pháp can thiệp có thể nhắm đến việc kiểm soát và loại trừ tác nhân gây bệnh tại nguồn bệnh hoặc tại cách thức lây.
+
+Tại nguồn bệnh, các biện pháp can thiệp có thể là: 
+
+* điều trị người bệnh (nếu nguồn bệnh là người), 
+* điều trị hoặc tiêu huỷ động vật nhiễm bệnh (nếu nguồn bệnh là động vật), hoặc 
+* khử trùng môi trường (nếu nguồn bệnh từ môi trường: cây cối, đất, nước). 
+
+Tại dây chuyền lây, các  pháp can thiệp có thể là: 
+
+* cách ly người bệnh (isolation), hạn chế tiếp xúc (social distance) (nếu bệnh lây truyền trực tiếp)
+* loại bỏ hoặc khử trùng vật chuyên chở (nếu bệnh lây gián tiếp qua vật chuyên chở)
+* điều chỉnh thông khí, áp lực không khí, lọc không khí (nếu bệnh lây gián tiếp qua không khí)
+* kiểm soát vectơ (nếu bệnh lây gián tiếp qua vectơ)
+
+#### Bảo vệ ngõ vào
+
+Một số biện pháp bảo vệ ngõ vào bao gồm: 
+
+* sử dụng mùng (bed net) khi ngủ để tránh bị muỗi đốt (đối với bệnh lây truyền qua muỗi đốt, ví dụ sốt rét)
+* mặc quần dài (long pants), áo dài tay (sleeves), chất thoa đuổi côn trùng (insect repellent) (đối với bệnh lây truyền qua muỗi đốt hay côn trùng cắn)
+
+#### Tăng cường khả năng chống đỡ của túc chủ
+
+Một số biện pháp giúp tăng cường khả năng chống đỡ của túc chủ bao gồm:
+
+* chủng ngừa (vaccination): giúp hình thành các kháng thể đặc hiệu chống lại nhiễm trùng
+* điều trị dự phòng (prophylaxis), ví dụ dùng thuốc kháng sốt rét chloroquine để ngăn ký sinh trùng sốt rét phát triển trong máu người bệnh
+
+#### Ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm
+
+Biện pháp can thiệp như chủng ngừa còn có thể giúp ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm thông qua __miễn dịch cộng đồng__ (herd immunity). Về lý thuyết, nếu một tỷ lệ đủ lớn người trong dân số có khả năng đề kháng với tác nhân gây bệnh, phần thiểu số túc chủ cảm nhiễm còn lại sẽ được bảo vệ, vì tác nhân gây bệnh sẽ khó gặp và gây bệnh trên số ít túc chủ cảm nhiễm đó.  
+
+## Dây chuyền lây của các bệnh lây qua đường tiêu hoá
+
+Bệnh lây qua đường tiêu hoá bao gồm một số những bệnh thường gặp, do nhiều loại tác nhân gây ra như: 
+
+* Vi rút: tiêu chảy do rotavirus, bại liệt, viêm gan siêu vi A và E
+* Vi khuẩn: tả, lị do Shigella, thương hàn
+* Ký sinh trùng đơn bào: lị do amip, _Giardia lamblia_
+* Giun sán: giun kim, sán lá
+
+### Nguồn bệnh
+
+Nguồn bệnh của các bệnh này là người hoặc động vật. Đối với người, đó có thể là người đang trong giai đoạn ủ bệnh, người đang có biểu hiện lâm sàng, người đang trong giai đoạn phụ hồi, hoặc người lành mang bệnh. 
+
+### Cách thức lây
+
+Các tác nhân có thể lây theo các cách thức lây sau:
+
+#### Đường phân-miệng
+
+Đây là cách thức lây quan trọng thứ hai sau lây truyền qua đường hô hấp [@ahrens2014]. 
+
+Mầm bệnh được thải qua phân rồi sau đó lây nhiễm cho túc chủ mới qua ngõ vào là đường miệng, gián tiếp thông qua thức ăn, nguồn nước, tay hay ruồi bị nhiễm bẩn, hoặc trực tiếp qua quan hệ tình dục liên quan đến đường phân miệng. 
+
+Ngõ vào có thể là vùng hầu họng hoặc đường ruột (đối với hầu hết virus). Để lây nhiễm, mầm bệnh phải vượt qua được hàng rào bảo vệ tại đường tiêu hoá trên (hydrochloric acid ở dạ dày, acid mật ở tá tràng, muối và các enzyme ở ruột). 
+
+Một số tác nhân gây bệnh thường gặp lây qua cách thức lây này: vi khuẩn thương hàn, vi khuẩn _Shigella_, vi khuẩn tả, virus gây bại liệt, norovirus, rotavirus, virus gây viêm gan A & E.
+    
+#### Nguồn bệnh từ động vật hoặc thức ăn bị nhiễm bệnh
+
+Điển hình là vi khuẩn _Salmonella_ vốn có thể lây nhiễm cho nhiều loại vật nuôi, chim và một số động vật hoang dã khác. Thức ăn tạo ra từ động vật bị nhiễm _Salmonella_ (trứng, sữa, thịt) sẽ là nguồn lây chính nếu không được chuẩn bị kỹ. 
+
+Một số tác nhân khác cũng có thể lây nhiễm qua thức ăn bị nhiễm bệnh như: vi khuẩn _Campylobacter_, vi khuẩn _Yersinia_, vi khuẩn _Listeria_.
+
+### Biểu hiện lâm sàng của túc chủ cảm thụ
+
+Biểu hiện lâm sàng thường gặp của túc chủ cảm thụ là tiêu chảy với nhiều dạng và mức độ khác nhau:
+
+* Tiêu chảy ồ ạt với phân dạng nước trong suốt (trong bệnh tả)
+* Tiêu chảy kiểu mót rặn với phân nhày máu (trong bệnh lị)
+
+Ngoài ra, một số bệnh còn có biểu hiện ngoài đường tiêu hoá (ví dụ như trong viêm gan), hoặc có biểu hiện toàn thân (ví dụ như trong bại liệt, viêm màng não do enterovirus, thương hàn).
+
+## Các biện pháp phòng chống bệnh lây qua đường tiêu hoá
+
+### Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
+
+Tuỳ theo nguồn lây (nguồn bệnh và dây chuyền lây), các biện pháp can thiệp bao gồm:
+
+#### Tại nguồn bệnh
+
+* Giám sát, phát hiện, cách ly, điều trị bệnh cho người bệnh.
+* Giám sát, phát hiện người mang trùng (xét nghiệm phân người phơi nhiễm và người đã khỏi bệnh).
+* Xử lý phân và chất thải hợp lý, đặc biệt là phân và chất thải của người bệnh.
+
+Để hiệu quả, các biện pháp này cần được tiến hành kết hợp với các chương trình giáo dục sức khoẻ nhằm giúp người dân:
+
+* Phát hiện và điều trị cho người bệnh đúng cách (bằng vôi bột, hoá chất).
+* Biết xử lý phân rác đúng cách.
+
+#### Tại dây chuyền lây
+
+* Kiểm tra vệ sinh tại nguồn nước uống, nơi chế biến và bảo quản thực phẩm.
+* Đảm bảo cung cấp nước sạch bằng cách khử trùng nước sinh hoạt ô nhiễm bằng hoá chất: ví dụ như nước máy phải đảm bảo lượng clo tồn dư 0,5 mg/l, nước giếng cần phải được khử trùng với cloramin B.
+
+Để hiệu quả, các biện pháp này cần được tiến hành kết hợp với các chương trình giáo dục sức khoẻ nhằm giúp người dân:
+
+* Chú ý giữ gìn vệ sinh thực phẩm, vệ sinh cá nhân.
+* Thực hiện các biện pháp phòng ngừa: ăn chín, uống sôi, rửa tay sạch trước khi ăn và sau khi vệ sinh.
+
+### Tăng cường khả năng chống đỡ của túc chủ
+
+Bằng việc chủng ngừa, ví dụ như bệnh bại liệt, viêm gan A, thương hàn.
+
+## Dịch tễ học bệnh thương hàn
+
+### Giới thiệu
+
+#### Tác nhân gây bệnh
+
+Bệnh thương hàn (typhoid) và phó thương hàn (paratyphoid) là các bệnh nhiễm trùng lây qua đường tiêu hoá, gây ra bởi các chủng vi khuẩn _Salmonella enterica_:
+
+* Typhi (_Salmonella typhi_)
+* Paratyphi A, B, C (_Salmonella paratyphi A, B, C_)
+
+#### Chẩn đoán và điều trị
+
+Việc chẩn đoán và điều trị sốt thương hàn được tóm tắt như sau [@wain2015]:
+
+* Chẩn đoán sốt thương hàn dựa chủ yếu vào việc phát hiện vi khuẩn trong máu bằng PCR hoặc cấy máu. Chẩn đoán dựa trên việc phát hiện kháng thể (ví dụ như Widal test) không tin cậy. Một công cụ chẩn đoán mới là bộ xét nghiệm chẩn đoán thương hàn-phó thương hàn (typhoid–paratyphoid diagnostic assay) giúp xác định IgA lưu hành có khả năng cho độ nhạy và độ đặc hiệu cao.
+
+* Nếu không được điều trị kịp thời, thương hàn và phó thương hàn có thể ra tử vong. Điều trị thương hàn dựa vào việc sử dụng kháng sinh. Các kháng sinh chủ đạo là fluoroquinolones, azithromycin và cephalosporin thế hệ 3. Ngoài ra, chloramphenicol cũng có thể được sử dụng ở những nơi có chủng vi khuẩn nhạy cảm. 
+
+### Một số đặc điểm dịch tễ học
+
+Hầu hết các quốc gia có bệnh lưu hành không có hệ thống giám sát quốc gia hoàn chỉnh cho bệnh thương hàn. Hầu hết dữ liệu được dựa trên các nghiên cứu tiến hành tại bệnh viện, khiến cho hiểu biết về dịch tễ học của bệnh thương hàn không hoàn chỉnh, đặc biệt là tại những khu vực mà việc sử dụng các dịch vụ y tế thấp [@radhakrishnan2018]. 
+
+#### Gánh nặng bệnh tật
+
+##### Trên thế giới
+
+Theo dữ liệu từ nghiên cứu GBD 2017 [@gbd2019], trên thế giới có 14.3 triệu (khoảng không chắc chắn 95% là 12.5-16.3 triệu) ca bệnh thương hàn và phó thương hàn vào năm 2017, phổ biến chủ yếu ở Nam Á, Đông Nam Á, Đông Á, châu Đại Dương và châu Phi cận Sahara. Trong đó, vi khuẩn _Salmonella enterica_ nhóm huyết thanh Typhi chiếm 76.3% (71.8-80.5) số ca  bệnh. 
+
+```{r figure3, fig.cap="Tần suất mới mắc (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 [Nguồn: @gbd2019]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/Typhoid_incidence_2017.jpg")
+```
+
+Trước khi sử dụng kháng sinh trong điều trị thương hàn, tỷ lệ tử vong do bệnh vào khoảng 33% ở các nước đang phát triển, 10% ở các nước đang phát triển; tuy nhiên tỷ lệ này đã giảm đi nhiều với việc sử dụng kháng sinh trong điều trị thương hàn [@radhakrishnan2018]. Năm 2017, ước tính tỷ lệ tử vong trên toàn cầu là 0.95% (0.54-1.53), với tỷ lệ tử vong cao hơn ở trẻ em và người lớn tuổi, và tại các nước thu nhập thấp [@gbd2019]. Ước tính thương hàn và phó thương hàn gây ra khoảng 135.000 (77.000-219.000) trường hợp tử vong, chịu trách nhiệm cho 9.8 triệu (5.6-15.8 triệu) DALYs trong năm 2017.
+
+```{r figure4, fig.cap="Tần suất tử vong (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 [Nguồn: @gbd2019]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/Typhoid_mortality_2017.jpg")
+```
+
+Những con số về gánh nặng bệnh tật này đều đã giảm đi so với năm 1990, với số ca là 25.9 triệu (22.0-29.9 triệu), 230.000 (131.000-373.000) trường hợp tử vong và 17.2 triệu (9.9-27.8 triệu) DALYs. Một nghiên cứu tổng quan có hệ thống về khuynh hướng mắc bệnh trên toàn cầu trong khoảng thời gian từ 1990 đến 2016 cho thấy tỷ lệ mới mắc của thương hàn giảm đi ở hầu hết các nước phát triển, nhưng vẫn còn tồn tại ở các nước đang phát triển [@als2018]. Tại một số quốc gia như Việt Nam và Thái Lan, thương hàn đã gần như không còn là vấn đề về y tế công cộng nữa [@als2018].
+
+##### Tại Việt Nam
+
+Trong giai đoạn 1999-2003, số ca thương hàn cho toàn dân số được ước tính là 14.7/100,000 người mỗi năm, trong đó cao nhất là Điện Biên và Sóc Trăng (>100/100,000 người mỗi năm) [@nga2018]. 
+
+```{r figure5, fig.cap="Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi [Nguồn: @nga2018]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/Typhoid_incidence_Vietnam.gif")
+```
+
+Tại TP Hồ Chí Minh, kết quả nghiên cứu dựa trên dữ liệu về cấy máu thường quy tại BV Bệnh Nhiệt đới cho thấy sự suy giảm đáng kể về tỷ lệ hiện mắc của các kết quả cấy máu dương tính với Salmonella Typhi theo thời gian:
+
+```{r figure6, fig.cap="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/Typhoid_bloodculture_HTD.gif")
+```
+
+#### Dây chuyền lây
+
+_Nguồn bệnh_
+
+Người là nguồn bệnh duy nhất của _Salmonella Typhi_ [@wain2015]. Tuy có thể tồn tại lâu ngoài môi trường, vi khuẩn này không thể nhân lên ngoài cơ thể con người. 
+
+Ngõ ra chủ yếu của _Salmonella Typhi_ là qua phân, và có một số ghi nhận sự tồn tại của vi khuẩn trong nước tiểu [@crump2019]. _Salmonella Typhi_ có thể được thải ra qua phân hoặc nước tiểu trong và sau giai đoạn bệnh cấp tính. Việc thải ra vi khuẩn có thể ngắn hạn hoặc lâu dài. Một người mang trùng đã khỏi bệnh có thể thải ra vi khuẩn từ 3 đến 12 tháng sau đợt bệnh cấp. Một người mang trùng mạn tính có thể thải ra vi khuẩn sau hơn 12 tháng từ đợt bệnh cấp. Người mang trùng mạn tính được xem là nguồn bệnh chính của các trường hợp nhiễm trùng _Salmonella Typhi_ mắc phải trong nước tại các nước có tỷ lệ mới mắc thấp [@crump2019]. 
+
+_Cách thức lây_
+
+_Salmonella Typhi_ lây truyền qua đường phân-miệng, chủ yếu là gián tiếp qua vật chuyên chở là nước và thức ăn bị nhiễm phân người bệnh [@crump2019]. Nhiễm trực tiếp từ người bệnh đôi khi xảy ra qua quan hệ tình dục đường miệng - hậu môn. _Salmonella Typhi_ có thể lây truyền qua hai hình thức chính:
+
+* Lây truyền chu kỳ ngắn: nước và thức ăn nhiễm phân từ môi trường trung gian, và việc lây nhiễm diễn ra khi các biện pháp vệ sinh không được tuân thủ tốt.
+
+* Lây truyền chu kỳ dài: sự lây nhiễm diễn ra trong phạm vi lớn hơn, bao gồm nguồn nước sinh hoạt bị nhiễm phân người bệnh và việc dùng phân người và nước chưa qua xử lý trong trồng trọt. 
+
+Lây truyền chu kỳ ngắn thường gắn với các vụ dịch lẻ tẻ từ người mang trùng mạn tính tại các nước có tỷ lệ mới mắc thấp, còn lây truyền chu kỳ dài thường gắn với việc lây truyền với số lượng lớn qua nước sinh hoạt tại các nước có tỷ lệ lưu hành bệnh cao [@crump2019]. 
+
+_Ngõ vào và túc chủ cảm nhiễm_
+
+Ngõ vào của _Salmonella Typhi_ là miệng, thường là qua việc nuốt phải nước hay thức ăn bị nhiễm phân của người bệnh [@crump2019]. Sự nhiễm bệnh diễn ra ở người túc chủ cảm nhiễm. Giai đoạn ủ bệnh ngắn đi và nguy cơ nhiễm bệnh tăng lên theo số lượng vi khuẩn nuốt phải. Dịch dạ dày là cơ chế phòng vệ quan trọng giúp ngăn chặn vi khuẩn xâm nhập nhu mô ruột, còn hệ miễn dịch tự nhiên hoặc qua chủng ngừa giúp bảo vệ một phần sự phát sinh bệnh.
+
+
+#### Các yếu tố nguy cơ
+
+_Tuổi_
+
+Tỷ lệ mới mắc của thương hàn thay đổi theo tuổi [@radhakrishnan2018]. Tại các nước lưu hành bệnh, tỷ lệ mới mắc cao nhất ở trẻ nhỏ và giảm dần theo tuổi, trong khi ở các quốc gia bệnh ít lưu hành, tỷ lệ mới mắc tương tự nhau giữa các nhóm tuổi. 
+
+_Các yếu tố về kinh tế xã hội_
+
+Bệnh thường gặp tại các nước đang phát triển ở châu Á và châu Phi. Một số nghiên cứu cho thấy trẻ em ở vùng thành thị có nguy cơ mắc bệnh cao hơn so với trẻ ở vùng nông thôn [@radhakrishnan2018]. Tỷ lệ bệnh chịu ảnh hưởng bởi nhiều yếu tố về bối cảnh kinh tế xã hội như: tình trạng kinh tế xã hội, chất lượng nước sinh hoạt cũng như tình trạng vệ sinh [@nga2018; @crump2019]. 
+
+### Các biện pháp kiểm soát và phòng ngừa bệnh
+
+Có nhiều biện pháp khác nhau để kiểm soát và phòng ngừa bệnh thương hàn, với nhiều góc độ khác nhau [@radhakrishnan2018]
+
+Cấp độ                            | Biện pháp can thiệp
+--------------------------------- | ---------------------------------------------------------------------
+Cơ sở hạ tầng về nước và vệ sinh  | Sẵn sàng cho việc tiếp cận nước sạch
+&nbsp;                            | Cải thiện vệ sinh
+&nbsp;                            | Thu thập và xử lý nước thải
+Hệ thống y tế                     | Chẩn đoán nhanh, chính xác
+&nbsp;                            | Đánh giá độ nhạy cảm với kháng sinh 
+&nbsp;                            | Tìm và điều trị người mang trùng mạn tính
+&nbsp;                            | Điều trị khàng sinh phù hợp
+&nbsp;                            | Chủng ngừa
+&nbsp;                            | Triển khai và thực thi các quy định về an toàn thực phẩm
+Giáo dục                          | Rửa tay trước khi ăn, trước khi chuẩn bị đồ ăn và sau khi đi vệ sinh
+&nbsp;                            | Giáo dục về an toàn thực phẩm
+
+Do các yếu tố như mật độ dân cư cao, vệ sinh kém, nước không sạch, xử lý và sản xuất thực phẩm không an toàn góp phần vào việc lây truyền bệnh thương hàn, các biện pháp  thiệp cũng tập trung vào những yếu tố này để ngăn chặn đường lây của bệnh. Ngoài ra, biện pháp tập trung vào chẩn đoán nhanh chóng và điều trị phù hợp cũng sẽ góp phần cải thiện kết cuộc lâm sàng của bệnh.
+
+Tại Việt Nam, sự suy giảm ngoạn mục tỷ lệ mắc bệnh được cho là có nguyên nhân chủ yếu từ sự kết hợp của nhiều yếu tố: phát triển về kinh tế, giảm tình trạng nghèo đói, tăng cường sự tiếp cận nước sạch, cải thiện vệ sinh và chủng ngừa [@nga2018]. 
+
+#### Chẩn đoán sớm
+
+Việc phát triển các công cụ chẩn đoán chính xác, rẻ tiền và có khả năng ứng dụng cao có vai trò then chốt trong việc kiểm soát và điều trị thương hàn [@radhakrishnan2018]. Một số vấn đề về chẩn đoán bao gồm: độ nhạy thấp, mẫu xét nghiệm dễ bị dây nhiễm, âm tính giả do sử dụng kháng sinh, đặc biệt là hạn chế về nguồn lực (nhân sự, công cụ xét nghiệm, quản lý chất lượng) tại các nước đang phát triển.  
+
+#### Điều trị bằng kháng sinh
+
+Mặc dù việc sử dụng kháng sinh trong điều trị thương hàn đã cho thấy hiệu quả trong việc làm giảm tỷ lệ tử vong của bệnh, kháng kháng sinh hiện đang là vấn đề phải quan tâm [@radhakrishnan2018]. Chủng Salmonella đa kháng (kháng với ampicillin, chloramphenicol, và trimethoprim sulfamethoxazole) đã xuất hiện từ những năm 1980, trong đó Việt Nam là được xem là một điểm nóng [@nga2018]. Điều này dẫn đến việc phải sử dụng các fluoroquinolone như ciprofloxacin hay các cephalosporin phổ rộng. Các chủng Salmonella giảm nhạy cảm với ciprofloxacin và cephalosporin đã xuất hiện tại những nước bệnh lưu hành cao, như ở Nam Á và Đông Nam Á. Với sự xuất hiện của các chủng đề kháng với các nhóm kháng sinh tiêu chuẩn, các khảng sinh mới như carbapenems, tigecycline hay andazithromycin đang được đánh giá trong vai trò là các trị liệu thay thế.  
+
+#### Chủng ngừa
+
+Tại nhiều nước trên thế giới, chủng ngừa đã cho thấy là biện pháp phòng ngừa thành công và hiệu quả. Hiện có 3 loại vaccine được chứng nhận bở Tổ chức Y tế thế giới và được phép sử dụng tại nhiều nước trên thế giới:
+
+* Vaccine uống Ty21a: chứa chủng _Salmonella Typhi_ sống, giảm độc lực, có hiệu lực từ 67% đến 80%
+* Vaccine chích ViCPS: có hiệu lực 72% khi dùng ở nơi bệnh lưu hành cao và trong vụ dịch
+* Vaccine cộng hợp Tybar typhoid conjugate vaccine (TCV): có hiệu lực khoảng 55%
+
+Trong đó hai loại vaccine đầu tiên không được dùng cho trẻ dưới 2 tuổi. Vaccine cộng hợp đã được dùng để chủng ngừa cho trẻ từ 6 tháng tuổi tại Ấn Độ và Nepal. Hiện tại chưa có vaccine cho Salmonella Paratyphi.
+
+Tại Việt Nam, từ những năm 1980, chính phủ đã phát động các chương trình tiêm chủng với vaccine được sản xuất tại nước ngoài cho những nhóm có nguy cơ cao trong dân số, chủ yếu là trẻ em [@nga2018]. Viện Vệ sinh dịch tễ trung ương tại Hà Nội đã nghiên cứu và sản xuất vaccine Vi Polysaccharide và đã đưa vào các chương trình chủng ngừa tại trường học cho trẻ từ 3 đến 10 tuổi trong giai đoạn 1997-2012. Từ năm 1997 đến 2003, chính phủ Việt Nam đã chủng ngừa cho hơn 4 triệu trẻ từ 3-5 tuổi bằng vaccine TYPHIM Vi polysaccharide do Aventis Pasteur sản xuất. Sau khi tự sản xuất được vaccine Vi polysaccharide, Việt Nam đã chủng ngừa thêm 2 triệu liều cho trẻ 5-10 tuổi (2004-2010) và sau đó là trẻ 3-5 tuổi (2011-2012). Năm 2005, trẻ em ở 35 tỉnh thành khác nhau được chủng ngừa. Tỷ lệ bao phủ của các chương trình này rất cao (>90%) trong giai đoạn 1999-2010. Hiện tại chưa có đánh giá về tác dụng trực tiếp trong dân số của các chương trình chủng ngừa này (không bao gồm các can thiệp về vệ sinh), tuy nhiên tỷ lệ mới mắc đã giảm đáng kể trên khắp các tỉnh thành trong giai đoạn 1997-2007, đặc biệt ở khu vực Tây Bắc và đồng bằng sông Mê-kông, những nơi mà chương trình chủng ngừa bao phủ rộng khắp. 
+
+## Tài liệu tham khảo
+
+
