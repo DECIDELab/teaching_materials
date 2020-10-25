@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="NaturalHistory.svg"
+   inkscape:version="1.0beta1 (32d4812, 2019-09-19)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 297 210"
+   height="210mm"
+   width="297mm">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5945"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5943"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker3175"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path3173" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker2851"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path2849" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1378" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-1"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1384-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-1-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1384-9-3"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-16"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1384-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-16-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1384-2-4" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-16-0-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1384-2-4-6"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-16-0-0"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1384-2-4-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3175-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3173-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3175-4"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3173-0"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3175-1"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3173-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3175-46"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3173-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3175-8"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3173-97"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3175-6"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path3173-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker3175-6-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path3173-4-9" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:window-height="1440"
+     inkscape:window-width="2560"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg8"
+     inkscape:document-units="mm"
+     inkscape:cy="499.84962"
+     inkscape:cx="400"
+     inkscape:zoom="1.33"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
+    <inkscape:grid
+       id="grid1277"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer10"
+     inkscape:label="Axes"
+     style="display:inline">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2851)"
+       d="M 18.520833,153.4587 H 248.70833"
+       id="path3015"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="254"
+       y="153.45804"
+       id="text3115"><tspan
+         sodipodi:role="line"
+         id="tspan3113"
+         x="254"
+         y="153.45804"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';stroke-width:0.264583">Time</tspan></text>
+    <text
+       id="text3115-3"
+       y="15.7455"
+       x="-113.51321"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       transform="rotate(-90)"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';stroke-width:0.264583"
+         y="15.7455"
+         x="-113.51321"
+         id="tspan3113-6"
+         sodipodi:role="line">Size of population</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5945)"
+       d="M 18.520833,153.45833 V 42.333333"
+       id="path5941"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Population at risk"
+     style="display:inline">
+    <rect
+       y="44.979164"
+       x="21.166666"
+       height="105.83334"
+       width="224.89584"
+       id="rect2675-5"
+       style="display:inline;fill:#aaeeff;fill-opacity:1;stroke:none;stroke-width:0.515388;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Exposed"
+     style="display:inline">
+    <rect
+       style="fill:#55ddff;fill-opacity:1;stroke:none;stroke-width:0.467706;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2742"
+       width="185.20833"
+       height="95.25"
+       x="60.854168"
+       y="44.979164" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="60.706013"
+       y="26.511467"
+       id="text3115-0"><tspan
+         sodipodi:role="line"
+         id="tspan3113-7"
+         x="60.706013"
+         y="26.511467"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583">Onset of</tspan><tspan
+         sodipodi:role="line"
+         x="60.706013"
+         y="31.852135"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261">Exposure</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175)"
+       d="m 60.854166,34.395833 c 0,7.9375 0,7.9375 0,7.9375"
+       id="path3171"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4318"
+       width="39.687496"
+       height="10.583333"
+       x="21.166662"
+       y="156.10417" />
+    <text
+       id="text3115-0-1-1"
+       y="162.50732"
+       x="40.597675"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="162.50732"
+         x="40.597675"
+         sodipodi:role="line">Susceptibility</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Pathologic change"
+     style="display:inline">
+    <rect
+       style="fill:#00ccff;fill-opacity:1;stroke:none;stroke-width:0.433012;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2745"
+       width="158.74998"
+       height="84.666664"
+       x="87.3125"
+       y="44.979164" />
+    <text
+       id="text3115-0-3"
+       y="26.511469"
+       x="87.164345"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-9"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="26.511469"
+         x="87.164345"
+         sodipodi:role="line">Pathologic</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="31.852137"
+         x="87.164345"
+         sodipodi:role="line"
+         id="tspan3415">change</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3171-5"
+       d="m 87.312501,34.395835 c 0,7.9375 0,7.9375 0,7.9375"
+       style="fill:none;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175-5)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Symtomatic"
+     style="display:inline">
+    <rect
+       style="fill:#00aad4;fill-opacity:1;stroke:none;stroke-width:0.395284;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2748"
+       width="132.29167"
+       height="74.083336"
+       x="113.77084"
+       y="44.979164" />
+    <text
+       id="text3115-0-0"
+       y="26.511469"
+       x="113.62268"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="26.511469"
+         x="113.62268"
+         id="tspan3113-7-3"
+         sodipodi:role="line">Onset of</tspan><tspan
+         id="tspan3261-3"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="31.852137"
+         x="113.62268"
+         sodipodi:role="line">Symptoms</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3171-8"
+       d="m 113.77083,34.395835 c 0,7.9375 0,7.9375 0,7.9375"
+       style="fill:none;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175-4)" />
+    <rect
+       y="156.10402"
+       x="60.854164"
+       height="10.583333"
+       width="52.916668"
+       id="rect4533"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text3115-0-1-1-6"
+       y="162.50717"
+       x="87.164345"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="162.50717"
+         x="87.164345"
+         sodipodi:role="line">Subclinical disease</tspan></text>
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4533-0"
+       width="52.916668"
+       height="10.583333"
+       x="60.854164"
+       y="169.33319" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="87.164345"
+       y="175.73634"
+       id="text3115-0-1-1-6-2"><tspan
+         sodipodi:role="line"
+         x="87.164345"
+         y="175.73634"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261-37-8-9-53">Asymptomatic period</tspan></text>
+    <rect
+       y="182.56236"
+       x="60.854164"
+       height="10.583333"
+       width="52.916668"
+       id="rect4533-0-8"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text3115-0-1-1-6-2-6"
+       y="188.96552"
+       x="87.164345"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-53-3"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="188.96552"
+         x="87.164345"
+         sodipodi:role="line">Incubation period</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer20"
+     inkscape:label="Outcome"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="219.45601"
+       y="26.511471"
+       id="text3115-0-8"><tspan
+         sodipodi:role="line"
+         id="tspan3113-7-8"
+         x="219.45601"
+         y="26.511471"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583">Onset of</tspan><tspan
+         sodipodi:role="line"
+         x="219.45601"
+         y="31.852139"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261-4">Outcome</tspan></text>
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175-6-7)"
+       d="m 219.60417,34.395836 c 0,7.9375 0,7.9375 0,7.9375"
+       id="path3171-7"
+       inkscape:connector-curvature="0" />
+    <rect
+       y="156.10413"
+       x="113.77082"
+       height="10.583333"
+       width="132.29167"
+       id="rect4554"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="179.76843"
+       y="162.50728"
+       id="text3115-0-1-1-6-7"><tspan
+         sodipodi:role="line"
+         x="179.76843"
+         y="162.50728"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261-37-8-9-5">Clinical disease</tspan></text>
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4554-8"
+       width="132.29167"
+       height="10.583333"
+       x="113.77082"
+       y="169.3333" />
+    <text
+       id="text3115-0-1-1-6-7-1"
+       y="175.73645"
+       x="179.76843"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-5-0"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="175.73645"
+         x="179.76843"
+         sodipodi:role="line">Symtomatic period</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Seeking medical care"
+     style="display:inline">
+    <rect
+       style="fill:#0088aa;fill-opacity:1;stroke:none;stroke-width:0.353553;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2751"
+       width="105.83332"
+       height="63.5"
+       x="140.22917"
+       y="44.979164" />
+    <text
+       id="text3115-0-4"
+       y="13.282295"
+       x="140.08101"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="13.282295"
+         x="140.08101"
+         sodipodi:role="line">Seeking</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="18.622963"
+         x="140.08101"
+         sodipodi:role="line"
+         id="tspan3703">Medical care</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3171-58"
+       d="m 140.22917,21.166667 c 0,21.166668 0,21.166668 0,21.166668"
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175-1)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="Diagnosis"
+     style="display:inline">
+    <rect
+       style="fill:#006680;fill-opacity:1;stroke:none;stroke-width:0.306186;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2754"
+       width="79.374992"
+       height="52.916664"
+       x="166.6875"
+       y="44.979164" />
+    <text
+       id="text3115-0-1"
+       y="15.928126"
+       x="166.53935"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="15.928126"
+         x="166.53935"
+         sodipodi:role="line">Diagnosis</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3171-4"
+       d="m 166.6875,21.166667 c 0,21.166668 0,21.166668 0,21.166668"
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175-46)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="Treatment"
+     style="display:inline">
+    <rect
+       style="fill:#004455;fill-opacity:1;stroke:none;stroke-width:0.249999;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2757"
+       width="52.91666"
+       height="42.333332"
+       x="193.14583"
+       y="44.979164" />
+    <text
+       id="text3115-0-6"
+       y="15.928126"
+       x="192.99768"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="15.928126"
+         x="192.99768"
+         sodipodi:role="line">Treatment</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3171-46"
+       d="m 193.14583,21.166667 c 0,21.166668 0,21.166668 0,21.166668"
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3175-8)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer9"
+     inkscape:label="Outcome 2"
+     style="display:inline">
+    <rect
+       style="fill:#ffccaa;fill-opacity:1;stroke:none;stroke-width:0.176776;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2760"
+       width="26.458332"
+       height="10.583333"
+       x="219.60417"
+       y="44.979164" />
+    <rect
+       style="fill:#ff9955;fill-opacity:1;stroke:none;stroke-width:0.176776;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2762"
+       width="26.458334"
+       height="10.583335"
+       x="219.60417"
+       y="55.562496" />
+    <rect
+       style="fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:0.176776;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2764"
+       width="26.458334"
+       height="10.583336"
+       x="219.60417"
+       y="66.145828" />
+    <rect
+       style="fill:#aa4400;fill-opacity:1;stroke:none;stroke-width:0.176776;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2766"
+       width="26.458332"
+       height="10.583333"
+       x="219.60417"
+       y="76.729164" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="223.09134"
+       y="51.85833"
+       id="text4281"><tspan
+         sodipodi:role="line"
+         id="tspan4279"
+         x="223.09134"
+         y="51.85833"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';stroke-width:0.264583">Cure</tspan></text>
+    <text
+       id="text4281-3"
+       y="62.441666"
+       x="230.61955"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="62.441666"
+         x="230.61955"
+         id="tspan4279-4"
+         sodipodi:role="line">Control</tspan></text>
+    <text
+       id="text4281-4"
+       y="73.024994"
+       x="223.30838"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';stroke-width:0.264583"
+         y="73.024994"
+         x="223.30838"
+         id="tspan4279-46"
+         sodipodi:role="line">Disability</tspan></text>
+    <text
+       id="text4281-8"
+       y="83.60833"
+       x="223.30838"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic';stroke-width:0.264583"
+         y="83.60833"
+         x="223.30838"
+         id="tspan4279-2"
+         sodipodi:role="line">Death</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer16"
+     inkscape:label="F0"
+     style="display:inline;mix-blend-mode:normal">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.705064;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4703"
+       width="224.6902"
+       height="21.063868"
+       x="21.269474"
+       y="201.18613" />
+    <rect
+       y="201.08334"
+       x="60.854168"
+       height="10.583333"
+       width="52.916668"
+       id="rect4533-0-8-12"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text3115-0-1-1-6-2-6-4"
+       y="207.4865"
+       x="87.164352"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-53-3-1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="207.4865"
+         x="87.164352"
+         sodipodi:role="line">Incubation period</tspan></text>
+    <rect
+       y="201.08333"
+       x="113.77081"
+       height="10.583333"
+       width="132.29167"
+       id="rect4554-0"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="179.76854"
+       y="207.48648"
+       id="text3115-0-1-1-6-7-2"><tspan
+         sodipodi:role="line"
+         x="179.76854"
+         y="207.48648"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261-37-8-9-5-9">Clinical disease</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer14"
+     inkscape:label="Latent period"
+     style="display:inline">
+    <rect
+       y="211.66649"
+       x="60.854164"
+       height="10.583333"
+       width="39.687504"
+       id="rect4533-0-8-1"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text3115-0-1-1-6-2-6-8"
+       y="218.06964"
+       x="80.285172"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-53-3-2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+         y="218.06964"
+         x="80.285172"
+         sodipodi:role="line">Latent period</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer15"
+     inkscape:label="Infectious period"
+     style="display:inline">
+    <rect
+       y="211.71083"
+       x="100.5809"
+       height="10.494653"
+       width="111.08578"
+       id="rect4533-0-8-1-9"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text3115-0-1-1-6-2-6-8-1"
+       y="218.06964"
+       x="155.95584"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-53-3-2-8"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+         y="218.06964"
+         x="155.95584"
+         sodipodi:role="line">Infectious period</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer17"
+     inkscape:label="F1"
+     style="display:inline">
+    <rect
+       y="243.5195"
+       x="21.166666"
+       height="21.063868"
+       width="272.41803"
+       id="rect4703-1"
+       style="display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.776344;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4533-0-8-12-5"
+       width="52.916668"
+       height="10.583333"
+       x="108.47913"
+       y="243.41672" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="134.78922"
+       y="249.81989"
+       id="text3115-0-1-1-6-2-6-4-9"><tspan
+         sodipodi:role="line"
+         x="134.78922"
+         y="249.81989"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261-37-8-9-53-3-1-3">Incubation period</tspan></text>
+    <rect
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4554-0-8"
+       width="132.29167"
+       height="10.583333"
+       x="161.3956"
+       y="243.4167" />
+    <text
+       id="text3115-0-1-1-6-7-2-0"
+       y="249.81985"
+       x="227.39333"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-5-9-5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="249.81985"
+         x="227.39333"
+         sodipodi:role="line">Clinical disease</tspan></text>
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4533-0-8-1-5"
+       width="39.687504"
+       height="10.583333"
+       x="108.47913"
+       y="253.99985" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="127.91019"
+       y="260.40292"
+       id="text3115-0-1-1-6-2-6-8-5"><tspan
+         sodipodi:role="line"
+         x="127.91019"
+         y="260.40292"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+         id="tspan3261-37-8-9-53-3-2-5">Latent period</tspan></text>
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4533-0-8-1-9-0"
+       width="111.08578"
+       height="10.494653"
+       x="148.20569"
+       y="254.04419" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="203.58063"
+       y="260.40292"
+       id="text3115-0-1-1-6-2-6-8-1-4"><tspan
+         sodipodi:role="line"
+         x="203.58063"
+         y="260.40292"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+         id="tspan3261-37-8-9-53-3-2-8-1">Infectious period</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer18"
+     inkscape:label="Generation time"
+     style="display:inline">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 60.854166,222.25 v 21.16667"
+       id="path4833"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4835"
+       width="47.625004"
+       height="10.418987"
+       x="60.854164"
+       y="227.54173" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="84.518517"
+       y="233.9449"
+       id="text3115-0-1-1-6-2-6-4-3"><tspan
+         sodipodi:role="line"
+         x="84.518517"
+         y="233.9449"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan3261-37-8-9-53-3-1-7">Generation time</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 108.47917,222.25 v 21.16666"
+       id="path4877"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer19"
+     inkscape:label="Serial interval"
+     style="display:inline">
+    <rect
+       y="227.54152"
+       x="113.7708"
+       height="10.418987"
+       width="47.625004"
+       id="rect4835-5"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text3115-0-1-1-6-2-6-4-3-6"
+       y="233.94469"
+       x="137.43515"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan3261-37-8-9-53-3-1-7-5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="233.94469"
+         x="137.43515"
+         sodipodi:role="line">Serial interval</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 113.77083,222.25 v 21.16666 0"
+       id="path4879"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 161.39583,222.25 v 21.16666"
+       id="path4881"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
