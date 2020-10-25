@@ -6,6 +6,7 @@ output:
       theme: cerulean
       toc: yes
       toc_float: yes
+bibliography: reference.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -24,107 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Nhắc lại về tam giác dịch tễ học và dây chuyền lây
 
-Nội dung trong phần này dựa chủ yếu vào nội dung trong sách Principles of Epidemiology in Public Health Practice: An Introduction to Applied Epidemiology and Biostatistics do CDC Hoa Kỳ biên soạn [@CDC2012].
-
-### Tam giác dịch tễ học
-
-Trong dịch tễ học bệnh truyền nhiễm, mô hình sinh bệnh truyền thống cơ bản nhất là "tam giác dịch tễ học" (epidemiologic triad, epidemiologic triangle) [@CDC2012]. 
-
-```{r figure1, fig.cap="Tam giác dịch tễ học [Nguồn: @CDC2012]", echo=FALSE, out.width="100%"}
-knitr::include_graphics("assests/EpiTriad.jpg")
-```
-
-Trong mô hình này, bệnh xuất hiện do sự tương tác giữa __tác nhân__ (agent) và __túc chủ cảm nhiễm__ (susceptible host), trong __môi trường__ (environment) hỗ trợ cho việc lây truyền __tác nhân__ từ nguồn bệnh (sources) đến __túc chủ cảm nhiễm__. Trong đó:
-
-* __Tác nhân__: là vi sinh vật gây bệnh (virus, vi khuẩn, ký sinh trùng ...). Thông thường, để gây bệnh cần phải có tác nhân (điều kiện cần); tuy nhiên, sự hiện diện của tác nhân lại không phải là điều kiện đủ để gây bệnh. Có nhiều yếu tố ảnh hưởng đến việc liệu phơi nhiễm với một tác nhân gây bệnh có gây ra bệnh hay không, bao gồm độc lực (pathogenicity) và liều gây bệnh (dose) của tác nhân gây bệnh.
-
-* __Túc chủ cảm nhiễm__: thường chỉ người có khả năng nhiễm bệnh. Sự phơi nhiễm, cảm nhiễm và phản ứng trước tác nhân gây bệnh phụ thuộc vào nhiều yếu tố, bao gồm các hành vi (ví dụ vệ sinh, quan hệ tình dục, ...), các yêú tố nội tại (tuổi, giới, kiểu gen, tình trạng dinh dưỡng, tình trạng miễn dịch, cấu trúc giải phẫu học, tâm sinh lý, các bệnh và các thuốc kèm theo, ...)
-
-* __Môi trường__: bao gồm các yếu tố bên ngoài ảnh hưởng trên tác nhân gây bệnh và sự phơi nhiễm của túc chủ cảm nhiễm. Các yếu tố này bao gồm các yếu tố vật lý (địa lý, khí hậu, ...), yếu tố sinh học (các loại côn trùng giúp lây truyền tác nhân gây bệnh), các yếu tố kinh tế xã hội (mật độ dân cư, tình trạng vệ sinh, hệ thống dịch vụ y tế)
-
-### Dây chuyền lây
-
-Theo mô hình trên, bệnh sẽ được lây truyền thông qua __dây chuyền lây__ (chain of infection) [@CDC2012]. 
-
-```{r figure2, fig.cap="Dây chuyền lây [Nguồn: @CDC2012]", echo=FALSE, out.width="100%"}
-knitr::include_graphics("assests/ChainOfInfection.jpg")
-```
-
-Trong đó tác nhân gây bệnh sẽ rời __nguồn bệnh__ (reservoir) qua __ngõ ra__ (portal of exit), thông qua một __cách thức lây__ (mode of transmission), và xâm nhập túc chủ cảm nhiễm bằng __ngõ vào__ (portal of entry). Trong dây chuyền lây này:
-
-#### Nguồn bệnh 
-
-Có thể là người, động vật, hoặc môi trường (cây cối, đất, nước). 
-
-* Nguồn bệnh là người (human reservoir): người là nguồn bệnh của nhiều bệnh nhiễm trùng thường gặp, và đôi khi là vật chủ duy nhất (ví dụ như đối với virus đậu mùa). Người mang bệnh có thể có triệu chứng hoặc không. Khả năng lây nhiễm của người có triệu chứng thường không cao, do dễ nhận ra và dễ được áp dụng các biện pháp ngăn ngừa lây lan. __Người mang trùng__ (carrier) là người tuy mang tác nhân gây bệnh và có khả năng gây bệnh, nhưng lại không có biểu hiện nhiễm trùng. __Người lành mang trùng__ (healthy carrier) là người hoàn toàn không có biểu hiện triệu chứng. __Người mang trùng giai đoạn ủ bệnh__ (incubation carrier) là người có thể lây bệnh, nhưng đang trong giai đoạn ủ bệnh (các triệu chứng chưa xuất hiện). __Người khỏi bệnh mang trùng__ (convalescent carrier) là người đã khỏi bệnh nhưng vẫn có khả năng lây bệnh. __Người mang trùng mạn tính__ (chronic carrier) là người mang tác nhân gây bệnh hàng tháng đến hàng năm sau khi bị nhiễm bệnh.
-
-* Nguồn bệnh là động vật (animal reservoir): nhiều bệnh có nguồn bệnh từ động vật, nhiều trong số này lây truyền từ động vật sang động vật, và người chỉ là __túc chủ cơ hội__ (incidental host). Thuật ngữ __zoonosis__ được dùng để chỉ những bệnh nhiễm trùng có thể lây truyền trong điều kiện bình thường từ động vật có xương sống (vertebrate animals) sang người, ví dụ như: bệnh than (anthrax) từ cừu, bệnh dịch hạch (plague) từ chuột, bệnh dại (rabies) từ dơi, chó hay động vật có vú. Nhiều bệnh được cho là có nguồn gốc từ động vật nhưng nguồn bệnh chính xác vẫn chưa được xác định (ví dụ như HIV/AIDS, Ebola, SARS).
-
-* Nguồn bệnh là môi trường: ví dụ như đất là nguồn bệnh của các tác nhân dạng nấm, gây ra căn bệnh histoplasmosis; nước là nguồn bệnh của _Legionella pneumophila_ gây nên bệnh Legionnaires.
-
-#### Ngõ ra 
-
-Là con đường để tác nhân gây bệnh rời nguồn bệnh, và thường tương ứng với vị trí mà tác nhân gây bệnh khu trú. Ví dụ như virus cúm hay vi khuẩn lao _Mycobacterium tuberculosis_ có ngõ ra là đường hô hấp, schistosomes qua nước tiểu, còn vi khuẩn tả _Vibrio cholerae_ thì qua phân.
-
-#### Cách thức lây 
-
-Một tác nhân nhiễm trùng có thể lây truyền từ nguồn bệnh đến túc chủ cảm nhiễm bằng nhiều cách khác nhau. Có nhiều cách khác nhau để phân loại cách thức lây, một trong số đó là cách phân loại sau:
-
-* Trực tiếp (direct)
-    + Tiếp xúc trực tiếp (direct contact): có thể là tiếp xúc người với người (ví dụ quan hệ tình dục trong bệnh lậu), hoặc tiếp xúc giữa người với nguồn bệnh (ví dụ tiếp xúc với đất trong bệnh giun móc).
-    + Lan truyền qua giọt bắn (droplet spread): khi tiếp xúc với số lượng lớn khí dung (aerosol) ở tầm gần (khoảng 1m) tạo ra khi ho, sổ mũi hoặc nói, trước khi các khí dung này rơi xuống các bề mặt (ví dụ như vi khuẩn _Bordetella pertussis_ gây ho gà [pertussis], vi khuẩn _Neisseria meningitidis_ gây viêm não mô cầu, các virus gây bệnh cúm, quai bị, rubella). Tốc độ rơi và khả năng xâm nhập của các giọt bắn phụ thuộc vào kích thước của chúng, giọt bắn kích thước >5$\mu$m đến được mũi và đường hô hấp trên, kích thước 5-10$\mu$m đến được đường hô hấp dưới, còn $\leq$ 5$\mu$m có thể đến được phế nang [@ahrens2014].  
-
-* Gián tiếp (indirect)
-    + Qua không khí (airbone): tác nhân gây bệnh lây truyền qua bụi hay giọt bắn kích thước nhỏ ($\leq$ 5$\mu$m) lơ lửng trong không khí, ví dụ như vi khuẩn lao, virus gây bệnh sởi.
-    + Qua vật chuyên chở (vehicleborne): bao gồm thức ăn, nước, chế phẩm sinh học (máu), đồ vật (fomites, như khăn tay, chăn gối, dao mổ). Vật chuyên chở có thể mang tác nhân gây bệnh một cách thụ động hoặc tạo ra môi trường cho các tác nhân này sinh sôi và tạo ra độc tố (ví dụ như thức ăn đóng hộp tạo ra môi trường cho vi khuẩn _Clostridium botulinum_ phát triển và tạo ra độc tố botulinum).
-    + Qua vectơ (vectorborne): ví dụ như muỗi (mosquitoes), ruồi (flies), bọ chét (fleas) và ve (ticks), thông qua cơ chế cơ học đơn thuần (ví dụ như ruồi mang _Shigella_ gây bệnh lị, bọ chét mang _Yersinia pestis_ gây bệnh dịch hạch) hoặc qua cơ chế sinh học tạo môi trường cho tác nhân gây bệnh sinh sôi và phát triển (ví dụ như muỗi tạo điều kiện cho ký sinh trùng sốt rét trưởng thành trước khi lây qua người). 
-
-#### Ngõ vào 
-
-Là con đường mà tác nhân gây bệnh xâm nhập vào túc chủ cảm nhiễm. Thông thường các tác nhân nhiễm trùng xâm nhập túc chủ bằng cùng con đường với ngõ ra khỏi nguồn bệnh. Ví dụ virus cúm xâm nhập vào túc chủ bằng đường hô hấp.  
-
-### Ứng dụng trong y tế công cộng
-
-Hiểu biết tường tận về dây chuyền lây giúp chúng ta xác định và lựa chọn phương thức phù hợp để kiểm soát việc lây truyền bệnh. Để cắt đứt dây chuyền lây, chúng ta có thể:
-
-* Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
-* Bảo vệ ngõ vào
-* Tăng cường khả năng phản kháng của túc chủ
-
-#### Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
-
-Các biện pháp can thiệp có thể nhắm đến việc kiểm soát và loại trừ tác nhân gây bệnh tại nguồn bệnh hoặc tại cách thức lây.
-
-Tại nguồn bệnh, các biện pháp can thiệp có thể là: 
-
-* điều trị người bệnh (nếu nguồn bệnh là người), 
-* điều trị hoặc tiêu huỷ động vật nhiễm bệnh (nếu nguồn bệnh là động vật), hoặc 
-* khử trùng môi trường (nếu nguồn bệnh từ môi trường: cây cối, đất, nước). 
-
-Tại dây chuyền lây, các  pháp can thiệp có thể là: 
-
-* cách ly người bệnh (isolation), hạn chế tiếp xúc (social distance) (nếu bệnh lây truyền trực tiếp)
-* loại bỏ hoặc khử trùng vật chuyên chở (nếu bệnh lây gián tiếp qua vật chuyên chở)
-* điều chỉnh thông khí, áp lực không khí, lọc không khí (nếu bệnh lây gián tiếp qua không khí)
-* kiểm soát vectơ (nếu bệnh lây gián tiếp qua vectơ)
-
-#### Bảo vệ ngõ vào
-
-Một số biện pháp bảo vệ ngõ vào bao gồm: 
-
-* sử dụng mùng (bed net) khi ngủ để tránh bị muỗi đốt (đối với bệnh lây truyền qua muỗi đốt, ví dụ sốt rét)
-* mặc quần dài (long pants), áo dài tay (sleeves), chất thoa đuổi côn trùng (insect repellent) (đối với bệnh lây truyền qua muỗi đốt hay côn trùng cắn)
-
-#### Tăng cường khả năng chống đỡ của túc chủ
-
-Một số biện pháp giúp tăng cường khả năng chống đỡ của túc chủ bao gồm:
-
-* chủng ngừa (vaccination): giúp hình thành các kháng thể đặc hiệu chống lại nhiễm trùng
-* điều trị dự phòng (prophylaxis), ví dụ dùng thuốc kháng sốt rét chloroquine để ngăn ký sinh trùng sốt rét phát triển trong máu người bệnh
-
-#### Ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm
-
-Biện pháp can thiệp như chủng ngừa còn có thể giúp ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm thông qua __miễn dịch cộng đồng__ (herd immunity). Về lý thuyết, nếu một tỷ lệ đủ lớn người trong dân số có khả năng đề kháng với tác nhân gây bệnh, phần thiểu số túc chủ cảm nhiễm còn lại sẽ được bảo vệ, vì tác nhân gây bệnh sẽ khó gặp và gây bệnh trên số ít túc chủ cảm nhiễm đó.  
+Xem tại đây: [DTHBTN - Dịch tễ học bệnh truyền nhiễm](https://decidelab.github.io/teaching_materials/docs/DTHBTN_BenhTruyenNhiem.html)
 
 ## Dây chuyền lây của các bệnh lây qua đường tiêu hoá
 
@@ -198,6 +99,53 @@ Tuỳ theo nguồn lây (nguồn bệnh và dây chuyền lây), các biện ph�
 ### Tăng cường khả năng chống đỡ của túc chủ
 
 Bằng việc chủng ngừa, ví dụ như bệnh bại liệt, viêm gan A, thương hàn.
+
+## Dịch tễ học bệnh bại liệt 
+
+### Dây chuyền lây
+
+```{r figure1, fig.cap="Dây chuyền lây của bệnh bại liệt", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/polio_COI.png")
+```
+
+### Loại trừ bệnh bại liệt
+
+Vì sao có thể loại trừ hoàn toàn bệnh bại liệt?
+
+* Virus polio chỉ gây bệnh cấp tính
+* Virus chỉ có thể lây truyền từ người nhiễm bệnh hoặc chất thảo của họ
+* Virua chỉ tồn tại được trong một khoảng thời gian nhất định ngoài môi trường
+* Người là nguồn bệnh duy nhất
+* Việc chủng ngừa làm cắt đứt được dây chuyền lây của bệnh
+
+Các mốc thời gian
+
+* 1908: Karl Landsteiner và Erwin Popper xác định được bệnh bại liệt gây ra bởi virus
+* 1955: Dr. Jonas Salk phát minh ra vaccine đầu tiên (vaccine Salk)
+* 1960: Chính phủ Mỹ cấp license cho vaccine uống được phát triển bởi Dr. Albert Sabin (vaccine Sabin)
+* 1988: Rotary International và WHO bắt đầu Global Polio Eradication Initiative.
+* 1994: Loại trừ bại liệt tại châu Mỹ (PAHO)
+* 2000: Loại trừ bại liệt tại vùng Tây Thái Bình Dương (từ Australia đến Trung Quốc) (WPRO)
+* 2002: Loại trừ bại liệt tại vùng châu Âu (EURO)
+* 2014: Loại trừ bại liệt tại vùng Đông Nam Á (SEARO)
+* 2015: Loại trừ được chủng huyết thanh 2 của virus bại liệt
+* 2019: Loại trừ được chủng huyết thanh 3 của virus bại liệt
+* 2020: Loại trừ bại liệt tại vùng châu Phi (AFRO)
+
+```{r figure2, fig.cap="Tình hình loại trừ bệnh bại liệt trên toàn thế giới, 1990-2017 [Nguồn: Our World In Data]", echo=FALSE, out.width="100%"}
+knitr::include_graphics("assests/polio.gif")
+```
+
+World Polio Day 2020 (24/10/2020)
+
+<iframe width="560" height="315" src="https://youtu.be/SkSdFnzjNPs" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://youtu.be/Rp5Cg1I4OeE" frameborder="0" allowfullscreen></iframe>
+
+Link tham khảo thêm:
+
+* [Rotary International - End Polio now](https://www.endpolio.org/)
+* [Polio Global Eradication Initiative](http://polioeradication.org/)
 
 ## Dịch tễ học bệnh thương hàn
 

@@ -1,0 +1,175 @@
+---
+title: "Dịch tễ học bệnh truyền nhiễm"
+date: " 2020-10-25 (Update: `r Sys.Date()`)"
+output:
+    html_document:
+      theme: cerulean
+      toc: yes
+      toc_float: yes
+bibliography: reference.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mục tiêu bài học
+
+## Tam giác Dịch tễ học
+
+Có nhiều mô hình khác nhau nhằm giải thích sự xuất hiện của bệnh. Một mô hình kinh điển và đơn giản thường được sử dụng là **tam giác dịch tễ học** (epidemiologic triad, epidemiologic triangle) [@CDC2012]; trong đó bệnh là kết quả của sự tương tác giữa ba yếu tố **tác nhân gây bệnh** (agent), **túc chủ cảm nhiễm** (susceptible host), và **môi trường** (environment) tạo thuận lợi cho việc lây truyền __tác nhân__ từ nguồn bệnh (sources) đến túc chủ cảm nhiễm.  
+
+```{r figure1, fig.cap="Tam giác dịch tễ học [Nguồn: @CDC2012]", echo=FALSE, out.width="70%"}
+knitr::include_graphics("assests/EpiTriad.jpg")
+```
+
+### Tác nhân
+
+Trước đây, từ "tác nhân" ám chỉ một vi sinh vật truyền nhiễm như virus, vi trùng, ký sinh trùng, hoặc các vi sinh vật khác. Ngày nay, khái niệm về tác nhân được mở rộng ra để bao gồm những nguyên nhân vật lý và hoá học có thể gây ra bệnh đối với các bệnh lý mạn tính không lây.
+
+Thông thường, để gây bệnh cần phải có tác nhân (điều kiện cần); tuy nhiên, sự hiện diện của tác nhân lại không phải là điều kiện đủ để gây bệnh. Có nhiều yếu tố ảnh hưởng đến việc liệu phơi nhiễm với một tác nhân gây bệnh có gây ra bệnh hay không, bao gồm độc lực (pathogenicity) và liều gây bệnh (dose) của tác nhân gây bệnh.
+
+### Túc chủ
+
+Túc chủ chỉ người có thể mắc bệnh. Có nhiều yếu tố nội tại của túc chủ ảnh hưởng đến sự tiếp xúc, tính cảm nhiễm, hoặc đáp ứng của một cá nhân đối với tác nhân gây bệnh:
+
+* Sự tiếp xúc với yếu tố phơi nhiễm bị ảnh hưởng bởi tuổi, chủng tộc, giới, tình trạng kinh tế xã hội, và những hành vi (thí dụ, hút thuốc lá, lạm dụng thuốc, kiểu sống, những thực hành tính dục và ngừa thai, tập quán ăn). 
+
+* Tính cảm nhiễm và đáp ứng của một người đối với một tác nhân gây bệnh bị ảnh hưởng bởi thành phần di truyền, tình trạng dinh dưỡng và miễn dịch, cấu trúc cơ thể học, bệnh kèm theo hoặc thuốc đang sử dụng, và bản chất tâm lý.
+
+### Môi trường
+
+Bao gồm những yếu tố bên ngoài ảnh hưởng đến tác nhân và cơ hội tiếp xúc. Chúng bao gồm những yếu tố vật lý (địa dư, thời tiết), những yếu tố sinh học (côn trùng giúp lan truyền tác nhân); và những yếu tố kinh tế xã hội (sự đông đúc, vệ sinh, và sự sẵn có của những dịch vụ sức khoẻ).
+
+## Sự lây truyền bệnh
+
+### Dây Chuyền Lây
+
+Bệnh được lây truyền khi tác nhân rời bỏ __nguồn bệnh__ (reservoir) qua một **ngõ ra** (portal of exit), rồi thông qua một **cách thức lây** (mode of transmission) nào đó để xâm nhập qua một **ngõ vào** (portal of entry) thích hợp để gây nhiễm một túc chủ cảm thụ mới. Quá trình được gọi là **dây chuyền lây** (chain of infection) [@CDC2012]. 
+
+```{r figure2, fig.cap="Dây chuyền lây [Nguồn: @CDC2012]", echo=FALSE, out.width="70%"}
+knitr::include_graphics("assests/ChainOfInfection.jpg")
+```
+
+#### Nguồn bệnh (reservoir)
+
+Nguồn bệnh của một tác nhân gây bệnh là nơi cư trú mà trong đó tác nhân sống và phát triển. Nguồn bệnh có thể là người, động vật, hoặc môi trường (cây cối, đất, nước). 
+
+##### Nguồn bệnh là người (human reservoir) 
+
+Người là nguồn bệnh của nhiều bệnh nhiễm trùng thường gặp, và đôi khi là vật chủ duy nhất (ví dụ như đối với virus đậu mùa).
+
+Người mang bệnh có thể có triệu chứng hoặc không (người mang trùng - người bệnh không có biểu hiện lâm sàng nhưng có khả năng truyền tác nhân sang người khác [carrier]). Khả năng lây nhiễm của người có triệu chứng thường không cao, do dễ nhận ra và dễ được áp dụng các biện pháp chẩn đoán, điều trị và ngăn ngừa lây lan, do đó giảm thiểu cơ hội tiếp xúc với những người khác. Trong khi đó, người mang trùng có khả năng truyền bệnh cao hơn do họ không nhận thức được rằng họ bị nhiễm nên không có biện pháp phòng ngừa hợp lý. Có nhiều loại người mang trùng khác nhau:
+
+* __Người lành mang trùng__ (healthy carrier): là người hoàn toàn không có biểu hiện triệu chứng trong suốt thời gian mắc bệnh.
+* __Người mang trùng giai đoạn ủ bệnh__ (incubation carrier, còn gọi là người mang trùng ẩn): là người có thể lây bệnh, nhưng đang trong giai đoạn ủ bệnh (các triệu chứng chưa xuất hiện).
+* __Người khỏi bệnh mang trùng__ (convalescent carrier): là người đã khỏi bệnh nhưng vẫn có khả năng lây bệnh.
+* __Người mang trùng mạn tính__ (chronic carrier): là người tiếp tục mang một tác nhân (như virus viêm gan B, hoặc *Salmonella typhi*) trong một thời gian kéo dài (hàng tháng hoặc hàng năm) theo sau lần nhiễm trùng ban đầu. 
+
+##### Nguồn bệnh là động vật (animal reservoir)
+
+Những bệnh của động vật (thí dụ, bệnh lở mồm long móng ở bò, heo; bệnh than ở cừu; dịch hạch ở động vật gặm nhấm; giun lươn ở lợn; bệnh dại ở chó, mèo, v.v.) có thể lây từ súc vật sang người trong một số điều kiện. Trong những bệnh này, động vật là nguồn bệnh, và người là **túc chủ tình cờ** (túc chủ cơ hội, incidental host). Thuật ngữ __zoonosis__ được dùng để chỉ những bệnh nhiễm trùng có thể lây truyền trong điều kiện bình thường từ động vật có xương sống (vertebrate animals) sang người, ví dụ như: bệnh than (anthrax) từ cừu, bệnh dịch hạch (plague) từ chuột, bệnh dại (rabies) từ dơi, chó hay động vật có vú. Nhiều bệnh được cho là có nguồn gốc từ động vật nhưng nguồn bệnh chính xác vẫn chưa được xác định (ví dụ như HIV/AIDS, Ebola, SARS).
+
+##### Nguồn bệnh là môi trường
+
+Thực vật, đất, và nước trong môi trường cũng là nguồn bệnh đối với một số tác nhân lây, thí dụ, vi nấm (sống và nhân lên trong đất), trực khuẩn Legionnaire (trong những hồ chứa nước từ những tháp làm lạnh, hoặc những máy cô đặc sinh hơi tạo ra), *Clostridium botulinum* (đất).
+
+#### Ngõ ra
+
+Ngõ ra là con đường mà qua đó một tác nhân rời nguồn bệnh. Ngõ ra thường tương ứng với điểm mà tác nhân khu trú, thí dụ, trực khuẩn lao và virus cúm rời đường hô hấp; sán máng qua nước tiểu; vi khuẩn tả trong phân, những con cái ghẻ *Sarcoptes scabiei* trong vết thương ở da; và virus đường ruột 70, một tác nhân của viêm kết mạc xuất huyết, trong những chất tiết của kết mạc. Một vài những tác nhân qua đường máu có thể đi ra bằng cách xuyên qua nhau (bệnh ban Đức, giang mai, bệnh nhiễm toxoplasma), trong khi những loại khác đi ra bằng đường da, cụ thể là qua vết cắt hoặc kim (viêm gan B), hoặc qua những động vật tiết túc hút máu (sốt rét).
+
+#### Những cách thức lây
+
+Một tác nhân nhiễm trùng có thể lây truyền từ nguồn bệnh đến túc chủ cảm nhiễm bằng nhiều cách khác nhau, gọi là cách thức lây. Những cách thức lây có thể được xếp loại là trực tiếp hoặc gián tiếp; hoặc ngang hoặc dọc:
+
+Cách thức lây   | 
+--------------- | -------------
+Trực tiếp       | - Tiếp xúc trực tiếp
+&nbsp;          | - Sự lan ra của giọt nước bọt
+Gián tiếp       | - Qua không khí
+&nbsp;          | - Qua vật chuyên chở
+&nbsp;          | - Qua sinh vật trung gian
+&nbsp;          |       + Cơ học
+&nbsp;          |       + Sinh học
+Ngang           | - Qua vật chuyên chở
+&nbsp;          | - Tiếp xúc trực tiếp người - người
+&nbsp;          | - Qua sinh vật trung gian
+Thẳng           | - Mẹ truyền sang con qua nhau
+
+Trong sự lây truyền **trực tiếp** (direct), tác nhân được chuyển giao tức khắc từ nguồn bệnh sang một túc chủ cảm thụ do tiếp xúc trực tiếp (qua hôn, tiếp xúc da-da, giao hợp, tiếp xúc với đất hoặc thực vật có chứa những sinh vật lây), hoặc qua trung gian của giọt nước bọt (trong một khoảng cách ngắn trước khi giọt nước bọt rơi xuống đất).
+
+* Tiếp xúc trực tiếp (direct contact): có thể là tiếp xúc người với người (ví dụ quan hệ tình dục trong bệnh lậu), hoặc tiếp xúc giữa người với nguồn bệnh (ví dụ tiếp xúc với đất trong bệnh giun móc).
+
+* Lan truyền qua giọt bắn (droplet spread): khi tiếp xúc với số lượng lớn khí dung (aerosol) ở tầm gần (khoảng 1m) tạo ra khi ho, sổ mũi hoặc nói, trước khi các khí dung này rơi xuống các bề mặt (ví dụ như vi khuẩn _Bordetella pertussis_ gây ho gà [pertussis], vi khuẩn _Neisseria meningitidis_ gây viêm não mô cầu, các virus gây bệnh cúm, quai bị, rubella). Tốc độ rơi và khả năng xâm nhập của các giọt bắn phụ thuộc vào kích thước của chúng, giọt bắn kích thước >5$\mu$m đến được mũi và đường hô hấp trên, kích thước 5-10$\mu$m đến được đường hô hấp dưới, còn $\leq$ 5$\mu$m có thể đến được phế nang [@ahrens2014].  
+
+Trong sự lây truyền **gián tiếp**, một tác nhân được chuyên chở từ nguồn bệnh tới một túc chủ cảm thụ qua:
+
+* Không khí (air-borne): tác nhân gây bệnh lây truyền qua bụi hay giọt bắn kích thước nhỏ ($\leq$ 5$\mu$m) lơ lửng trong không khí, ví dụ như vi khuẩn lao, virus gây bệnh sởi.
+
+* Vật chuyên chở (vehicle-borne): những trung gian không có sự sống, bao gồm thức ăn, nước, chế phẩm sinh học (máu), đồ vật (fomites, như khăn tay, chăn gối, dao mổ). Vật chuyên chở có thể mang tác nhân gây bệnh một cách thụ động hoặc tạo ra môi trường cho các tác nhân này sinh sôi và tạo ra độc tố (ví dụ như thức ăn đóng hộp tạo ra môi trường cho vi khuẩn _Clostridium botulinum_ phát triển và tạo ra độc tố botulinum). 
+
+* Vectơ (vector-borne): trung gian có sự sống, ví dụ như muỗi (mosquitoes), ruồi (flies), bọ chét (fleas) và ve (ticks), thông qua cơ chế cơ học đơn thuần (ví dụ như ruồi mang _Shigella_ gây bệnh lị, bọ chét mang _Yersinia pestis_ gây bệnh dịch hạch) hoặc qua cơ chế sinh học tạo môi trường cho tác nhân gây bệnh sinh sôi và phát triển (ví dụ như muỗi tạo điều kiện cho ký sinh trùng sốt rét trưởng thành trước khi lây qua người). 
+
+#### Ngõ vào
+
+Là con đường mà tác nhân gây bệnh xâm nhập vào túc chủ cảm nhiễm. Thông thường các tác nhân nhiễm trùng xâm nhập túc chủ bằng cùng con đường với ngõ ra khỏi nguồn bệnh. Ví dụ virus cúm xâm nhập vào túc chủ bằng đường hô hấp. Đường lây truyền phổ biến của nhiều tác nhân gây bệnh đường ruột là đường "phân-miệng", vì những sinh vật được thải ra trong phân, được chuyên chở bởi những bàn tay bẩn, và rồi chuyển sang một vật chuyên chở (như thức ăn, nước, hoặc dụng cụ nấu nướng) để vào miệng của một túc chủ mới. Những ngõ vào khác gồm có da (bệnh giun móc), màng nhày (giang mai, mắt hột), và máu (viêm gan B).  
+
+#### Túc chủ
+
+Mắc xích cuối cùng trong dây chuyền lây là một túc chủ cảm thụ. Tính cảm thụ của một túc chủ tùy thuộc vào những yếu tố di truyền, tính miễn dịch thụ đắc đặc hiệu, và những yếu tố chung khác. Các yếu tố chung chống lại sự nhiễm bệnh gồm da, màng nhày, tính axít của bao tử, tiêm mao trong đường hô hấp, phản xạ ho, những đáp ứng miễn dịch không đặc hiệu có thể thay đổi khả năng của một cá nhân để kháng lại sự nhiễm hoặc hạn chế tính sinh bệnh. Những yếu tố chung có thể tăng tính cảm thụ là suy dinh dưỡng, nghiện rượu, và bệnh hoặc điều trị làm hỏng đáp ứng miễn dich không đặc hiệu.
+
+Tính miễn dịch thụ đắc đặc hiệu có liên quan đến những kháng thể bảo vệ trực tiếp chống lại một tác nhân cụ thể. Một cá nhân có được kháng thể bảo vệ bằng hai cách: 
+
+* Miễn dịch chủ động: tự phát triển kháng thể qua đáp ứng với nhiễm trùng, vắc-xin, hoặc giả độc tố. 
+* Miễn dịch thụ động: thụ đắc những kháng thể từ mẹ trước khi sanh, qua nhau, hoặc do được tiêm kháng độc tố hoặc globulin miễn dịch.
+
+Dây chuyền lây có thể bị gián đoạn khi một tác nhân không tìm được một túc chủ cảm thụ. Điều này có thể xảy ra khi trong quần thể có một tỉ lệ cao những cá thể đề kháng lại với tác nhân. Khả năng lan truyền của mầm bệnh ở nhóm người này là không cao mà tập trung vào một số ít người cảm nhiễm. Khái niệm này được gọi là **tính miễn dịch quần thể**.
+
+Mức độ cần có của tính miễn dịch quần thể để ngăn chận, hoặc triệt tiêu một trận bùng phát dịch là thay đổi tùy theo bệnh. Theo lý thuyết, tính miễn dịch quần thể có nghiã là không phải người nào ở trong cộng đồng cũng phải đề kháng (miễn dịch) để ngừa sự lan truyền bệnh và sự xảy ra dịch. Thực tế đã cho thấy, tính miễn dịch quần thể đã không ngăn được những trận bùng phát bệnh sởi và ban Đức trong những dân số có mức miễn dịch cao khoảng 85 đến 90%. Một vấn đề là, trong những dân số miễn dịch cao, con số tương đối ít của những người cảm nhiễm thường quần tụ thành những nhóm nhỏ, do có những đặc tính riêng về văn hoá và kinh tế xã hội. Nếu tác nhân được đưa vào một trong những nhóm nhỏ này, một trận bùng phát dịch có thể xảy ra.
+
+### Những Ứng Dụng Của Dây Chuyền Lây
+
+Nếu biết được một tác nhân đi ra và xâm nhập một túc chủ như thế nào, và những cách lây truyền của nó là gì, chúng ta có thể xác định và lựa chọn được những biện pháp kiểm soát thích hợp. Nói chung, những biện pháp kiểm soát nên nhắm vào mắt xích nào trong dây chuyền lây là nhạy cảm nhất với sự can thiệp. Để cắt đứt dây chuyền lây, chúng ta có thể:
+
+* Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
+* Bảo vệ ngõ vào
+* Tăng cường khả năng phản kháng của túc chủ
+
+#### Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây
+
+Các biện pháp can thiệp có thể nhắm đến việc kiểm soát và loại trừ tác nhân gây bệnh tại nguồn bệnh hoặc tại cách thức lây.
+
+Tại nguồn bệnh, các biện pháp can thiệp có thể là: 
+
+* điều trị người bệnh (nếu nguồn bệnh là người), 
+* điều trị hoặc tiêu huỷ động vật nhiễm bệnh (nếu nguồn bệnh là động vật), hoặc 
+* khử trùng môi trường (nếu nguồn bệnh từ môi trường: cây cối, đất, nước). 
+
+Tại dây chuyền lây, các biện pháp can thiệp có thể là: 
+
+* cách ly người bệnh (isolation), hạn chế tiếp xúc (social distance) (nếu bệnh lây truyền trực tiếp)
+* loại bỏ hoặc khử trùng vật chuyên chở (nếu bệnh lây gián tiếp qua vật chuyên chở)
+* điều chỉnh thông khí, áp lực không khí, lọc không khí (nếu bệnh lây gián tiếp qua không khí)
+* kiểm soát vectơ (nếu bệnh lây gián tiếp qua vectơ)
+
+#### Bảo vệ ngõ vào
+
+Một số biện pháp bảo vệ ngõ vào bao gồm: 
+
+* sử dụng mùng (bed net) khi ngủ để tránh bị muỗi đốt (đối với bệnh lây truyền qua muỗi đốt, ví dụ sốt rét)
+* mặc quần dài (long pants), áo dài tay (sleeves), chất thoa đuổi côn trùng (insect repellent) (đối với bệnh lây truyền qua muỗi đốt hay côn trùng cắn)
+
+#### Tăng cường khả năng chống đỡ của túc chủ
+
+Một số biện pháp giúp tăng cường khả năng chống đỡ của túc chủ bao gồm:
+
+* chủng ngừa (vaccination): giúp hình thành các kháng thể đặc hiệu chống lại nhiễm trùng
+* điều trị dự phòng (prophylaxis), ví dụ dùng thuốc kháng sốt rét chloroquine để ngăn ký sinh trùng sốt rét phát triển trong máu người bệnh
+
+#### Ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm
+
+Biện pháp can thiệp như chủng ngừa còn có thể giúp ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm thông qua __miễn dịch cộng đồng__ (herd immunity). Về lý thuyết, nếu một tỷ lệ đủ lớn người trong dân số có khả năng đề kháng với tác nhân gây bệnh, phần thiểu số túc chủ cảm nhiễm còn lại sẽ được bảo vệ, vì tác nhân gây bệnh sẽ khó gặp và gây bệnh trên số ít túc chủ cảm nhiễm đó.  
+
+## Tài liệu tham khảo
+
+
