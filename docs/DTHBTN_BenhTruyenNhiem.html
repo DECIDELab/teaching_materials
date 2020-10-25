@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dịch tễ học bệnh truyền nhiễm</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Teaching Materials</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/decidelab/teaching_materials">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dịch tễ học bệnh truyền nhiễm</h1>
+<h4 class="date">2020-10-25 (Update: 2020-10-25)</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-10-25
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20201025code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20201025)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20201025code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20201025)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree37abd2ad4adf175d7b38b29a45e0e8b5b70e5851targetblank37abd2aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/37abd2ad4adf175d7b38b29a45e0e8b5b70e5851" target="_blank">37abd2a</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree37abd2ad4adf175d7b38b29a45e0e8b5b70e5851targetblank37abd2aa" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/37abd2ad4adf175d7b38b29a45e0e8b5b70e5851" target="_blank">37abd2a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  analysis/reference.bib
+    Untracked:  assests/
+    Untracked:  code/00_setup.R
+    Untracked:  code/create_gif.R
+    Untracked:  figures/
+    Untracked:  reference.bib
+
+Unstaged changes:
+    Modified:   analysis/index.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/DTHBTN_BenhTruyenNhiem.Rmd</code>) and HTML (<code>docs/DTHBTN_BenhTruyenNhiem.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/37abd2ad4adf175d7b38b29a45e0e8b5b70e5851/analysis/DTHBTN_BenhTruyenNhiem.Rmd" target="_blank">37abd2a</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+<td>
+Add DTHBTN_BenhDuongTieuHoa
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="mục-tiêu-bài-học" class="section level2">
+<h2>Mục tiêu bài học</h2>
+</div>
+<div id="tam-giác-dịch-tễ-học" class="section level2">
+<h2>Tam giác Dịch tễ học</h2>
+<p>Có nhiều mô hình khác nhau nhằm giải thích sự xuất hiện của bệnh. Một mô hình kinh điển và đơn giản thường được sử dụng là <strong>tam giác dịch tễ học</strong> (epidemiologic triad, epidemiologic triangle) <span class="citation">(Disease Control and Prevention 2012)</span>; trong đó bệnh là kết quả của sự tương tác giữa ba yếu tố <strong>tác nhân gây bệnh</strong> (agent), <strong>túc chủ cảm nhiễm</strong> (susceptible host), và <strong>môi trường</strong> (environment) tạo thuận lợi cho việc lây truyền <strong>tác nhân</strong> từ nguồn bệnh (sources) đến túc chủ cảm nhiễm.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/EpiTriad.jpg" alt="Tam giác dịch tễ học [Nguồn: @CDC2012]" width="70%" />
+<p class="caption">
+Tam giác dịch tễ học <span class="citation">(Nguồn: Disease Control and Prevention 2012)</span>
+</p>
+</div>
+<div id="tác-nhân" class="section level3">
+<h3>Tác nhân</h3>
+<p>Trước đây, từ “tác nhân” ám chỉ một vi sinh vật truyền nhiễm như virus, vi trùng, ký sinh trùng, hoặc các vi sinh vật khác. Ngày nay, khái niệm về tác nhân được mở rộng ra để bao gồm những nguyên nhân vật lý và hoá học có thể gây ra bệnh đối với các bệnh lý mạn tính không lây.</p>
+<p>Thông thường, để gây bệnh cần phải có tác nhân (điều kiện cần); tuy nhiên, sự hiện diện của tác nhân lại không phải là điều kiện đủ để gây bệnh. Có nhiều yếu tố ảnh hưởng đến việc liệu phơi nhiễm với một tác nhân gây bệnh có gây ra bệnh hay không, bao gồm độc lực (pathogenicity) và liều gây bệnh (dose) của tác nhân gây bệnh.</p>
+</div>
+<div id="túc-chủ" class="section level3">
+<h3>Túc chủ</h3>
+<p>Túc chủ chỉ người có thể mắc bệnh. Có nhiều yếu tố nội tại của túc chủ ảnh hưởng đến sự tiếp xúc, tính cảm nhiễm, hoặc đáp ứng của một cá nhân đối với tác nhân gây bệnh:</p>
+<ul>
+<li><p>Sự tiếp xúc với yếu tố phơi nhiễm bị ảnh hưởng bởi tuổi, chủng tộc, giới, tình trạng kinh tế xã hội, và những hành vi (thí dụ, hút thuốc lá, lạm dụng thuốc, kiểu sống, những thực hành tính dục và ngừa thai, tập quán ăn).</p></li>
+<li><p>Tính cảm nhiễm và đáp ứng của một người đối với một tác nhân gây bệnh bị ảnh hưởng bởi thành phần di truyền, tình trạng dinh dưỡng và miễn dịch, cấu trúc cơ thể học, bệnh kèm theo hoặc thuốc đang sử dụng, và bản chất tâm lý.</p></li>
+</ul>
+</div>
+<div id="môi-trường" class="section level3">
+<h3>Môi trường</h3>
+<p>Bao gồm những yếu tố bên ngoài ảnh hưởng đến tác nhân và cơ hội tiếp xúc. Chúng bao gồm những yếu tố vật lý (địa dư, thời tiết), những yếu tố sinh học (côn trùng giúp lan truyền tác nhân); và những yếu tố kinh tế xã hội (sự đông đúc, vệ sinh, và sự sẵn có của những dịch vụ sức khoẻ).</p>
+</div>
+</div>
+<div id="sự-lây-truyền-bệnh" class="section level2">
+<h2>Sự lây truyền bệnh</h2>
+<div id="dây-chuyền-lây" class="section level3">
+<h3>Dây Chuyền Lây</h3>
+<p>Bệnh được lây truyền khi tác nhân rời bỏ <strong>nguồn bệnh</strong> (reservoir) qua một <strong>ngõ ra</strong> (portal of exit), rồi thông qua một <strong>cách thức lây</strong> (mode of transmission) nào đó để xâm nhập qua một <strong>ngõ vào</strong> (portal of entry) thích hợp để gây nhiễm một túc chủ cảm thụ mới. Quá trình được gọi là <strong>dây chuyền lây</strong> (chain of infection) <span class="citation">(Disease Control and Prevention 2012)</span>.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/ChainOfInfection.jpg" alt="Dây chuyền lây [Nguồn: @CDC2012]" width="70%" />
+<p class="caption">
+Dây chuyền lây <span class="citation">(Nguồn: Disease Control and Prevention 2012)</span>
+</p>
+</div>
+<div id="nguồn-bệnh-reservoir" class="section level4">
+<h4>Nguồn bệnh (reservoir)</h4>
+<p>Nguồn bệnh của một tác nhân gây bệnh là nơi cư trú mà trong đó tác nhân sống và phát triển. Nguồn bệnh có thể là người, động vật, hoặc môi trường (cây cối, đất, nước).</p>
+<div id="nguồn-bệnh-là-người-human-reservoir" class="section level5">
+<h5>Nguồn bệnh là người (human reservoir)</h5>
+<p>Người là nguồn bệnh của nhiều bệnh nhiễm trùng thường gặp, và đôi khi là vật chủ duy nhất (ví dụ như đối với virus đậu mùa).</p>
+<p>Người mang bệnh có thể có triệu chứng hoặc không (người mang trùng - người bệnh không có biểu hiện lâm sàng nhưng có khả năng truyền tác nhân sang người khác [carrier]). Khả năng lây nhiễm của người có triệu chứng thường không cao, do dễ nhận ra và dễ được áp dụng các biện pháp chẩn đoán, điều trị và ngăn ngừa lây lan, do đó giảm thiểu cơ hội tiếp xúc với những người khác. Trong khi đó, người mang trùng có khả năng truyền bệnh cao hơn do họ không nhận thức được rằng họ bị nhiễm nên không có biện pháp phòng ngừa hợp lý. Có nhiều loại người mang trùng khác nhau:</p>
+<ul>
+<li><strong>Người lành mang trùng</strong> (healthy carrier): là người hoàn toàn không có biểu hiện triệu chứng trong suốt thời gian mắc bệnh.</li>
+<li><strong>Người mang trùng giai đoạn ủ bệnh</strong> (incubation carrier, còn gọi là người mang trùng ẩn): là người có thể lây bệnh, nhưng đang trong giai đoạn ủ bệnh (các triệu chứng chưa xuất hiện).</li>
+<li><strong>Người khỏi bệnh mang trùng</strong> (convalescent carrier): là người đã khỏi bệnh nhưng vẫn có khả năng lây bệnh.</li>
+<li><strong>Người mang trùng mạn tính</strong> (chronic carrier): là người tiếp tục mang một tác nhân (như virus viêm gan B, hoặc <em>Salmonella typhi</em>) trong một thời gian kéo dài (hàng tháng hoặc hàng năm) theo sau lần nhiễm trùng ban đầu.</li>
+</ul>
+</div>
+<div id="nguồn-bệnh-là-động-vật-animal-reservoir" class="section level5">
+<h5>Nguồn bệnh là động vật (animal reservoir)</h5>
+<p>Những bệnh của động vật (thí dụ, bệnh lở mồm long móng ở bò, heo; bệnh than ở cừu; dịch hạch ở động vật gặm nhấm; giun lươn ở lợn; bệnh dại ở chó, mèo, v.v.) có thể lây từ súc vật sang người trong một số điều kiện. Trong những bệnh này, động vật là nguồn bệnh, và người là <strong>túc chủ tình cờ</strong> (túc chủ cơ hội, incidental host). Thuật ngữ <strong>zoonosis</strong> được dùng để chỉ những bệnh nhiễm trùng có thể lây truyền trong điều kiện bình thường từ động vật có xương sống (vertebrate animals) sang người, ví dụ như: bệnh than (anthrax) từ cừu, bệnh dịch hạch (plague) từ chuột, bệnh dại (rabies) từ dơi, chó hay động vật có vú. Nhiều bệnh được cho là có nguồn gốc từ động vật nhưng nguồn bệnh chính xác vẫn chưa được xác định (ví dụ như HIV/AIDS, Ebola, SARS).</p>
+</div>
+<div id="nguồn-bệnh-là-môi-trường" class="section level5">
+<h5>Nguồn bệnh là môi trường</h5>
+<p>Thực vật, đất, và nước trong môi trường cũng là nguồn bệnh đối với một số tác nhân lây, thí dụ, vi nấm (sống và nhân lên trong đất), trực khuẩn Legionnaire (trong những hồ chứa nước từ những tháp làm lạnh, hoặc những máy cô đặc sinh hơi tạo ra), <em>Clostridium botulinum</em> (đất).</p>
+</div>
+</div>
+<div id="ngõ-ra" class="section level4">
+<h4>Ngõ ra</h4>
+<p>Ngõ ra là con đường mà qua đó một tác nhân rời nguồn bệnh. Ngõ ra thường tương ứng với điểm mà tác nhân khu trú, thí dụ, trực khuẩn lao và virus cúm rời đường hô hấp; sán máng qua nước tiểu; vi khuẩn tả trong phân, những con cái ghẻ <em>Sarcoptes scabiei</em> trong vết thương ở da; và virus đường ruột 70, một tác nhân của viêm kết mạc xuất huyết, trong những chất tiết của kết mạc. Một vài những tác nhân qua đường máu có thể đi ra bằng cách xuyên qua nhau (bệnh ban Đức, giang mai, bệnh nhiễm toxoplasma), trong khi những loại khác đi ra bằng đường da, cụ thể là qua vết cắt hoặc kim (viêm gan B), hoặc qua những động vật tiết túc hút máu (sốt rét).</p>
+</div>
+<div id="những-cách-thức-lây" class="section level4">
+<h4>Những cách thức lây</h4>
+<p>Một tác nhân nhiễm trùng có thể lây truyền từ nguồn bệnh đến túc chủ cảm nhiễm bằng nhiều cách khác nhau, gọi là cách thức lây. Những cách thức lây có thể được xếp loại là trực tiếp hoặc gián tiếp; hoặc ngang hoặc dọc:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Cách thức lây</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trực tiếp</td>
+<td>- Tiếp xúc trực tiếp</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>- Sự lan ra của giọt nước bọt</td>
+</tr>
+<tr class="odd">
+<td>Gián tiếp</td>
+<td>- Qua không khí</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>- Qua vật chuyên chở</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>- Qua sinh vật trung gian</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>+ Cơ học</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>+ Sinh học</td>
+</tr>
+<tr class="even">
+<td>Ngang</td>
+<td>- Qua vật chuyên chở</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>- Tiếp xúc trực tiếp người - người</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>- Qua sinh vật trung gian</td>
+</tr>
+<tr class="odd">
+<td>Thẳng</td>
+<td>- Mẹ truyền sang con qua nhau</td>
+</tr>
+</tbody>
+</table>
+<p>Trong sự lây truyền <strong>trực tiếp</strong> (direct), tác nhân được chuyển giao tức khắc từ nguồn bệnh sang một túc chủ cảm thụ do tiếp xúc trực tiếp (qua hôn, tiếp xúc da-da, giao hợp, tiếp xúc với đất hoặc thực vật có chứa những sinh vật lây), hoặc qua trung gian của giọt nước bọt (trong một khoảng cách ngắn trước khi giọt nước bọt rơi xuống đất).</p>
+<ul>
+<li><p>Tiếp xúc trực tiếp (direct contact): có thể là tiếp xúc người với người (ví dụ quan hệ tình dục trong bệnh lậu), hoặc tiếp xúc giữa người với nguồn bệnh (ví dụ tiếp xúc với đất trong bệnh giun móc).</p></li>
+<li><p>Lan truyền qua giọt bắn (droplet spread): khi tiếp xúc với số lượng lớn khí dung (aerosol) ở tầm gần (khoảng 1m) tạo ra khi ho, sổ mũi hoặc nói, trước khi các khí dung này rơi xuống các bề mặt (ví dụ như vi khuẩn <em>Bordetella pertussis</em> gây ho gà [pertussis], vi khuẩn <em>Neisseria meningitidis</em> gây viêm não mô cầu, các virus gây bệnh cúm, quai bị, rubella). Tốc độ rơi và khả năng xâm nhập của các giọt bắn phụ thuộc vào kích thước của chúng, giọt bắn kích thước &gt;5<span class="math inline">\(\mu\)</span>m đến được mũi và đường hô hấp trên, kích thước 5-10<span class="math inline">\(\mu\)</span>m đến được đường hô hấp dưới, còn <span class="math inline">\(\leq\)</span> 5<span class="math inline">\(\mu\)</span>m có thể đến được phế nang <span class="citation">(Wolfgang Ahrens 2014)</span>.</p></li>
+</ul>
+<p>Trong sự lây truyền <strong>gián tiếp</strong>, một tác nhân được chuyên chở từ nguồn bệnh tới một túc chủ cảm thụ qua:</p>
+<ul>
+<li><p>Không khí (air-borne): tác nhân gây bệnh lây truyền qua bụi hay giọt bắn kích thước nhỏ (<span class="math inline">\(\leq\)</span> 5<span class="math inline">\(\mu\)</span>m) lơ lửng trong không khí, ví dụ như vi khuẩn lao, virus gây bệnh sởi.</p></li>
+<li><p>Vật chuyên chở (vehicle-borne): những trung gian không có sự sống, bao gồm thức ăn, nước, chế phẩm sinh học (máu), đồ vật (fomites, như khăn tay, chăn gối, dao mổ). Vật chuyên chở có thể mang tác nhân gây bệnh một cách thụ động hoặc tạo ra môi trường cho các tác nhân này sinh sôi và tạo ra độc tố (ví dụ như thức ăn đóng hộp tạo ra môi trường cho vi khuẩn <em>Clostridium botulinum</em> phát triển và tạo ra độc tố botulinum).</p></li>
+<li><p>Vectơ (vector-borne): trung gian có sự sống, ví dụ như muỗi (mosquitoes), ruồi (flies), bọ chét (fleas) và ve (ticks), thông qua cơ chế cơ học đơn thuần (ví dụ như ruồi mang <em>Shigella</em> gây bệnh lị, bọ chét mang <em>Yersinia pestis</em> gây bệnh dịch hạch) hoặc qua cơ chế sinh học tạo môi trường cho tác nhân gây bệnh sinh sôi và phát triển (ví dụ như muỗi tạo điều kiện cho ký sinh trùng sốt rét trưởng thành trước khi lây qua người).</p></li>
+</ul>
+</div>
+<div id="ngõ-vào" class="section level4">
+<h4>Ngõ vào</h4>
+<p>Là con đường mà tác nhân gây bệnh xâm nhập vào túc chủ cảm nhiễm. Thông thường các tác nhân nhiễm trùng xâm nhập túc chủ bằng cùng con đường với ngõ ra khỏi nguồn bệnh. Ví dụ virus cúm xâm nhập vào túc chủ bằng đường hô hấp. Đường lây truyền phổ biến của nhiều tác nhân gây bệnh đường ruột là đường “phân-miệng”, vì những sinh vật được thải ra trong phân, được chuyên chở bởi những bàn tay bẩn, và rồi chuyển sang một vật chuyên chở (như thức ăn, nước, hoặc dụng cụ nấu nướng) để vào miệng của một túc chủ mới. Những ngõ vào khác gồm có da (bệnh giun móc), màng nhày (giang mai, mắt hột), và máu (viêm gan B).</p>
+</div>
+<div id="túc-chủ-1" class="section level4">
+<h4>Túc chủ</h4>
+<p>Mắc xích cuối cùng trong dây chuyền lây là một túc chủ cảm thụ. Tính cảm thụ của một túc chủ tùy thuộc vào những yếu tố di truyền, tính miễn dịch thụ đắc đặc hiệu, và những yếu tố chung khác. Các yếu tố chung chống lại sự nhiễm bệnh gồm da, màng nhày, tính axít của bao tử, tiêm mao trong đường hô hấp, phản xạ ho, những đáp ứng miễn dịch không đặc hiệu có thể thay đổi khả năng của một cá nhân để kháng lại sự nhiễm hoặc hạn chế tính sinh bệnh. Những yếu tố chung có thể tăng tính cảm thụ là suy dinh dưỡng, nghiện rượu, và bệnh hoặc điều trị làm hỏng đáp ứng miễn dich không đặc hiệu.</p>
+<p>Tính miễn dịch thụ đắc đặc hiệu có liên quan đến những kháng thể bảo vệ trực tiếp chống lại một tác nhân cụ thể. Một cá nhân có được kháng thể bảo vệ bằng hai cách:</p>
+<ul>
+<li>Miễn dịch chủ động: tự phát triển kháng thể qua đáp ứng với nhiễm trùng, vắc-xin, hoặc giả độc tố.</li>
+<li>Miễn dịch thụ động: thụ đắc những kháng thể từ mẹ trước khi sanh, qua nhau, hoặc do được tiêm kháng độc tố hoặc globulin miễn dịch.</li>
+</ul>
+<p>Dây chuyền lây có thể bị gián đoạn khi một tác nhân không tìm được một túc chủ cảm thụ. Điều này có thể xảy ra khi trong quần thể có một tỉ lệ cao những cá thể đề kháng lại với tác nhân. Khả năng lan truyền của mầm bệnh ở nhóm người này là không cao mà tập trung vào một số ít người cảm nhiễm. Khái niệm này được gọi là <strong>tính miễn dịch quần thể</strong>.</p>
+<p>Mức độ cần có của tính miễn dịch quần thể để ngăn chận, hoặc triệt tiêu một trận bùng phát dịch là thay đổi tùy theo bệnh. Theo lý thuyết, tính miễn dịch quần thể có nghiã là không phải người nào ở trong cộng đồng cũng phải đề kháng (miễn dịch) để ngừa sự lan truyền bệnh và sự xảy ra dịch. Thực tế đã cho thấy, tính miễn dịch quần thể đã không ngăn được những trận bùng phát bệnh sởi và ban Đức trong những dân số có mức miễn dịch cao khoảng 85 đến 90%. Một vấn đề là, trong những dân số miễn dịch cao, con số tương đối ít của những người cảm nhiễm thường quần tụ thành những nhóm nhỏ, do có những đặc tính riêng về văn hoá và kinh tế xã hội. Nếu tác nhân được đưa vào một trong những nhóm nhỏ này, một trận bùng phát dịch có thể xảy ra.</p>
+</div>
+</div>
+<div id="những-ứng-dụng-của-dây-chuyền-lây" class="section level3">
+<h3>Những Ứng Dụng Của Dây Chuyền Lây</h3>
+<p>Nếu biết được một tác nhân đi ra và xâm nhập một túc chủ như thế nào, và những cách lây truyền của nó là gì, chúng ta có thể xác định và lựa chọn được những biện pháp kiểm soát thích hợp. Nói chung, những biện pháp kiểm soát nên nhắm vào mắt xích nào trong dây chuyền lây là nhạy cảm nhất với sự can thiệp. Để cắt đứt dây chuyền lây, chúng ta có thể:</p>
+<ul>
+<li>Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây</li>
+<li>Bảo vệ ngõ vào</li>
+<li>Tăng cường khả năng phản kháng của túc chủ</li>
+</ul>
+<div id="kiểm-soát-và-loại-trừ-tác-nhân-gây-bệnh-tại-nguồn-lây" class="section level4">
+<h4>Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây</h4>
+<p>Các biện pháp can thiệp có thể nhắm đến việc kiểm soát và loại trừ tác nhân gây bệnh tại nguồn bệnh hoặc tại cách thức lây.</p>
+<p>Tại nguồn bệnh, các biện pháp can thiệp có thể là:</p>
+<ul>
+<li>điều trị người bệnh (nếu nguồn bệnh là người),</li>
+<li>điều trị hoặc tiêu huỷ động vật nhiễm bệnh (nếu nguồn bệnh là động vật), hoặc</li>
+<li>khử trùng môi trường (nếu nguồn bệnh từ môi trường: cây cối, đất, nước).</li>
+</ul>
+<p>Tại dây chuyền lây, các biện pháp can thiệp có thể là:</p>
+<ul>
+<li>cách ly người bệnh (isolation), hạn chế tiếp xúc (social distance) (nếu bệnh lây truyền trực tiếp)</li>
+<li>loại bỏ hoặc khử trùng vật chuyên chở (nếu bệnh lây gián tiếp qua vật chuyên chở)</li>
+<li>điều chỉnh thông khí, áp lực không khí, lọc không khí (nếu bệnh lây gián tiếp qua không khí)</li>
+<li>kiểm soát vectơ (nếu bệnh lây gián tiếp qua vectơ)</li>
+</ul>
+</div>
+<div id="bảo-vệ-ngõ-vào" class="section level4">
+<h4>Bảo vệ ngõ vào</h4>
+<p>Một số biện pháp bảo vệ ngõ vào bao gồm:</p>
+<ul>
+<li>sử dụng mùng (bed net) khi ngủ để tránh bị muỗi đốt (đối với bệnh lây truyền qua muỗi đốt, ví dụ sốt rét)</li>
+<li>mặc quần dài (long pants), áo dài tay (sleeves), chất thoa đuổi côn trùng (insect repellent) (đối với bệnh lây truyền qua muỗi đốt hay côn trùng cắn)</li>
+</ul>
+</div>
+<div id="tăng-cường-khả-năng-chống-đỡ-của-túc-chủ" class="section level4">
+<h4>Tăng cường khả năng chống đỡ của túc chủ</h4>
+<p>Một số biện pháp giúp tăng cường khả năng chống đỡ của túc chủ bao gồm:</p>
+<ul>
+<li>chủng ngừa (vaccination): giúp hình thành các kháng thể đặc hiệu chống lại nhiễm trùng</li>
+<li>điều trị dự phòng (prophylaxis), ví dụ dùng thuốc kháng sốt rét chloroquine để ngăn ký sinh trùng sốt rét phát triển trong máu người bệnh</li>
+</ul>
+</div>
+<div id="ngăn-tác-nhân-gây-bệnh-tiếp-cận-túc-chủ-cảm-nhiễm" class="section level4">
+<h4>Ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm</h4>
+<p>Biện pháp can thiệp như chủng ngừa còn có thể giúp ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm thông qua <strong>miễn dịch cộng đồng</strong> (herd immunity). Về lý thuyết, nếu một tỷ lệ đủ lớn người trong dân số có khả năng đề kháng với tác nhân gây bệnh, phần thiểu số túc chủ cảm nhiễm còn lại sẽ được bảo vệ, vì tác nhân gây bệnh sẽ khó gặp và gây bệnh trên số ít túc chủ cảm nhiễm đó.</p>
+</div>
+</div>
+</div>
+<div id="tài-liệu-tham-khảo" class="section level2">
+<h2>Tài liệu tham khảo</h2>
+<div id="refs">
+<div id="ref-CDC2012">
+<p>Disease Control, Centers for, and Prevention. 2012. <em>Principles of Epidemiology in Public Health Practice: An Introduction to Applied Epidemiology and Biostatistics</em>. 3rd ed. Centers for Disease Control; Prevention. <a href="https://www.cdc.gov/csels/dsepd/ss1978/">https://www.cdc.gov/csels/dsepd/ss1978/</a>.</p>
+</div>
+<div id="ref-ahrens2014">
+<p>Wolfgang Ahrens, Iris Pigeot. 2014. <em>Handbook of Epidemiology</em>. 2nd ed. Springer.</p>
+</div>
+</div>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.1 (2020-06-06)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.4
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
+ [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
+ [9] evaluate_0.14   highr_0.8       stringi_1.4.6   rlang_0.4.7    
+[13] fs_1.4.1        promises_1.1.1  whisker_0.4     rmarkdown_2.3  
+[17] tools_4.0.1     stringr_1.4.0   glue_1.4.1      httpuv_1.5.4   
+[21] xfun_0.15       yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0
+[25] knitr_1.30     </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
