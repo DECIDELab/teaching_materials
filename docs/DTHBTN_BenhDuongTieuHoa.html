@@ -392,7 +392,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -401,7 +401,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -413,7 +413,7 @@ div.tocify {
 <strong>Last updated:</strong> 2020-10-25
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -429,12 +429,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -501,16 +501,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree37abd2ad4adf175d7b38b29a45e0e8b5b70e5851targetblank37abd2aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/37abd2ad4adf175d7b38b29a45e0e8b5b70e5851" target="_blank">37abd2a</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree849e15f4d949f025915f125500cb406fcb0f64d6targetblank849e15fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/849e15f4d949f025915f125500cb406fcb0f64d6" target="_blank">849e15f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree37abd2ad4adf175d7b38b29a45e0e8b5b70e5851targetblank37abd2aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree849e15f4d949f025915f125500cb406fcb0f64d6targetblank849e15fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/37abd2ad4adf175d7b38b29a45e0e8b5b70e5851" target="_blank">37abd2a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/849e15f4d949f025915f125500cb406fcb0f64d6" target="_blank">849e15f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -522,15 +522,13 @@ Ignored files:
     Ignored:    .Rproj.user/
 
 Untracked files:
-    Untracked:  analysis/reference.bib
     Untracked:  assests/
     Untracked:  code/00_setup.R
     Untracked:  code/create_gif.R
     Untracked:  figures/
-    Untracked:  reference.bib
 
 Unstaged changes:
-    Modified:   analysis/index.Rmd
+    Modified:   analysis/DTHBTN_BenhDuongTieuHoa.Rmd
 
 </code></pre>
 <p>
@@ -569,6 +567,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/decidelab/teaching_materials/db91e443ed3392507ea2a5aba6312278da0f2e02/docs/DTHBTN_BenhDuongTieuHoa.html" target="_blank">db91e44</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -725,6 +740,43 @@ Add DTHBTN_BenhDuongTieuHoa
 Dây chuyền lây của bệnh bại liệt
 </p>
 </div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-polio_COI">
+Past versions of polio_COI.png
+</button>
+</p>
+<div id="fig-polio_COI" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/polio_COI.png" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="loại-trừ-bệnh-bại-liệt" class="section level3">
 <h3>Loại trừ bệnh bại liệt</h3>
@@ -756,10 +808,53 @@ Dây chuyền lây của bệnh bại liệt
 Tình hình loại trừ bệnh bại liệt trên toàn thế giới, 1990-2017 [Nguồn: Our World In Data]
 </p>
 </div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-polio">
+Past versions of polio.gif
+</button>
+</p>
+<div id="fig-polio" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/polio.gif" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>World Polio Day 2020 (24/10/2020)</p>
-<iframe width="560" height="315" src="https://youtu.be/SkSdFnzjNPs" frameborder="0" allowfullscreen>
+<ul>
+<li>Certification of wild poliovirus eradication in the African region</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SkSdFnzjNPs" frameborder="0" allowfullscreen>
 </iframe>
-<iframe width="560" height="315" src="https://youtu.be/Rp5Cg1I4OeE" frameborder="0" allowfullscreen>
+<ul>
+<li>World Polio Day Global Update 2020</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rp5Cg1I4OeE" frameborder="0" allowfullscreen>
 </iframe>
 <p>Link tham khảo thêm:</p>
 <ul>
@@ -803,12 +898,86 @@ Tình hình loại trừ bệnh bại liệt trên toàn thế giới, 1990-2017
 Tần suất mới mắc (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 <span class="citation">(Nguồn: Typhoid and Collaborators 2019)</span>
 </p>
 </div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Typhoid_incidence_2017">
+Past versions of Typhoid_incidence_2017.jpg
+</button>
+</p>
+<div id="fig-Typhoid_incidence_2017" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Typhoid_incidence_2017.jpg" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Trước khi sử dụng kháng sinh trong điều trị thương hàn, tỷ lệ tử vong do bệnh vào khoảng 33% ở các nước đang phát triển, 10% ở các nước đang phát triển; tuy nhiên tỷ lệ này đã giảm đi nhiều với việc sử dụng kháng sinh trong điều trị thương hàn <span class="citation">(Radhakrishnan, A 2018)</span>. Năm 2017, ước tính tỷ lệ tử vong trên toàn cầu là 0.95% (0.54-1.53), với tỷ lệ tử vong cao hơn ở trẻ em và người lớn tuổi, và tại các nước thu nhập thấp <span class="citation">(Typhoid and Collaborators 2019)</span>. Ước tính thương hàn và phó thương hàn gây ra khoảng 135.000 (77.000-219.000) trường hợp tử vong, chịu trách nhiệm cho 9.8 triệu (5.6-15.8 triệu) DALYs trong năm 2017.</p>
 <div class="figure" style="text-align: center">
 <img src="assests/Typhoid_mortality_2017.jpg" alt="Tần suất tử vong (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 [Nguồn: @gbd2019]" width="100%" />
 <p class="caption">
 Tần suất tử vong (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 <span class="citation">(Nguồn: Typhoid and Collaborators 2019)</span>
 </p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Typhoid_mortality_2017">
+Past versions of Typhoid_mortality_2017.jpg
+</button>
+</p>
+<div id="fig-Typhoid_mortality_2017" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Typhoid_mortality_2017.jpg" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>Những con số về gánh nặng bệnh tật này đều đã giảm đi so với năm 1990, với số ca là 25.9 triệu (22.0-29.9 triệu), 230.000 (131.000-373.000) trường hợp tử vong và 17.2 triệu (9.9-27.8 triệu) DALYs. Một nghiên cứu tổng quan có hệ thống về khuynh hướng mắc bệnh trên toàn cầu trong khoảng thời gian từ 1990 đến 2016 cho thấy tỷ lệ mới mắc của thương hàn giảm đi ở hầu hết các nước phát triển, nhưng vẫn còn tồn tại ở các nước đang phát triển <span class="citation">(Als, D 2018)</span>. Tại một số quốc gia như Việt Nam và Thái Lan, thương hàn đã gần như không còn là vấn đề về y tế công cộng nữa <span class="citation">(Als, D 2018)</span>.</p>
 </div>
@@ -821,12 +990,86 @@ Tần suất tử vong (trên 100 000 dân) của thương hàn và phó thươn
 Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi <span class="citation">(Nguồn: Nga, TVT 2018)</span>
 </p>
 </div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Typhoid_incidence_Vietnam">
+Past versions of Typhoid_incidence_Vietnam.gif
+</button>
+</p>
+<div id="fig-Typhoid_incidence_Vietnam" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Typhoid_incidence_Vietnam.gif" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Tại TP Hồ Chí Minh, kết quả nghiên cứu dựa trên dữ liệu về cấy máu thường quy tại BV Bệnh Nhiệt đới cho thấy sự suy giảm đáng kể về tỷ lệ hiện mắc của các kết quả cấy máu dương tính với Salmonella Typhi theo thời gian:</p>
 <div class="figure" style="text-align: center">
 <img src="assests/Typhoid_bloodculture_HTD.gif" alt="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]" width="100%" />
 <p class="caption">
 Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM <span class="citation">(Nguồn: Nga, TVT 2018)</span>
 </p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Typhoid_bloodculture_HTD">
+Past versions of Typhoid_bloodculture_HTD.gif
+</button>
+</p>
+<div id="fig-Typhoid_bloodculture_HTD" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Typhoid_bloodculture_HTD.gif" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -984,17 +1227,14 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
-other attached packages:
-[1] workflowr_1.6.2
-
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
- [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
- [9] evaluate_0.14   highr_0.8       stringi_1.4.6   rlang_0.4.7    
-[13] fs_1.4.1        promises_1.1.1  whisker_0.4     rmarkdown_2.3  
-[17] tools_4.0.1     stringr_1.4.0   glue_1.4.1      httpuv_1.5.4   
-[21] xfun_0.15       yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0
-[25] knitr_1.30     </code></pre>
+ [1] workflowr_1.6.2 Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25  
+ [5] later_1.1.0.1   R6_2.4.1        backports_1.1.8 git2r_0.27.1   
+ [9] magrittr_1.5    evaluate_0.14   highr_0.8       stringi_1.4.6  
+[13] rlang_0.4.7     fs_1.4.1        promises_1.1.1  whisker_0.4    
+[17] rmarkdown_2.3   tools_4.0.1     stringr_1.4.0   glue_1.4.1     
+[21] httpuv_1.5.4    xfun_0.15       yaml_2.2.1      compiler_4.0.1 
+[25] htmltools_0.5.0 knitr_1.30     </code></pre>
 </div>
 </div>
 

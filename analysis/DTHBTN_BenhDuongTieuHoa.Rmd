@@ -138,9 +138,13 @@ knitr::include_graphics("assests/polio.gif")
 
 World Polio Day 2020 (24/10/2020)
 
-<iframe width="560" height="315" src="https://youtu.be/SkSdFnzjNPs" frameborder="0" allowfullscreen></iframe>
+* Certification of wild poliovirus eradication in the African region
 
-<iframe width="560" height="315" src="https://youtu.be/Rp5Cg1I4OeE" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SkSdFnzjNPs" frameborder="0" allowfullscreen></iframe>
+
+* World Polio Day Global Update 2020
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rp5Cg1I4OeE" frameborder="0" allowfullscreen></iframe>
 
 Link tham khảo thêm:
 
