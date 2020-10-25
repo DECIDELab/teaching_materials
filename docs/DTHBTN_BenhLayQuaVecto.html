@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dịch tễ học bệnh lây qua vectơ</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Teaching Materials</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/decidelab/teaching_materials">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dịch tễ học bệnh lây qua vectơ</h1>
+<h4 class="date">2020-03-18 (cập nhật: 2020-10-25)</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-10-25
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20201025code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20201025)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20201025code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20201025)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree9e7ab4321faf25c9ba022a830630fc0fcd08ad80targetblank9e7ab43a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/9e7ab4321faf25c9ba022a830630fc0fcd08ad80" target="_blank">9e7ab43</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree9e7ab4321faf25c9ba022a830630fc0fcd08ad80targetblank9e7ab43a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/9e7ab4321faf25c9ba022a830630fc0fcd08ad80" target="_blank">9e7ab43</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  assests/
+    Untracked:  code/00_setup.R
+    Untracked:  code/create_gif.R
+    Untracked:  figures/
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/DTHBTN_BenhLayQuaVecto.Rmd</code>) and HTML (<code>docs/DTHBTN_BenhLayQuaVecto.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/9e7ab4321faf25c9ba022a830630fc0fcd08ad80/analysis/DTHBTN_BenhLayQuaVecto.Rmd" target="_blank">9e7ab43</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+<td>
+Add DTHBTN_BenhLayQuaVecto
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="mục-tiêu-bài-học" class="section level2">
+<h2>Mục tiêu bài học</h2>
+<p>Mục tiêu</p>
+<ul>
+<li><p>Mô tả được quá trình lây nhiễm của các bệnh lây qua vectơ.</p></li>
+<li><p>Trình bày được các biện pháp phòng chống đối với các bệnh lây qua vectơ.</p></li>
+<li><p>Mô tả được các đặc điểm dịch tễ học của bệnh sốt dengue: nguồn bệnh, cách thức lây, tính nhạy cảm và sức đề kháng của túc chủ cảm thụ.</p></li>
+<li><p>Trình bày được các biện pháp dự phòng và kiểm soát bệnh sốt dengue.</p></li>
+</ul>
+</div>
+<div id="nhắc-lại-về-tam-giác-dịch-tễ-học-và-dây-chuyền-lây" class="section level2">
+<h2>Nhắc lại về tam giác dịch tễ học và dây chuyền lây</h2>
+<p>Xem tại đây: <a href="https://decidelab.github.io/teaching_materials/DTHBTN_BenhTruyenNhiem.html">DTHBTN - Dịch tễ học bệnh truyền nhiễm</a></p>
+</div>
+<div id="dịch-tễ-học-bệnh-lây-qua-vectơ" class="section level2">
+<h2>Dịch tễ học bệnh lây qua vectơ</h2>
+<p>Vectơ là những động vật không xương sống, bị nhiễm tác nhân gây bệnh từ người hoặc động vật mắc bệnh, và sau đó lây truyền bệnh đến túc chủ cảm nhiễm <span class="citation">(Alexander Krämer 2010)</span>. Các vector điển hình là côn trùng hoặc các động vật chân đốt (như muỗi).</p>
+<p>Các bệnh lây qua vectơ phân bố chủ yếu ở những nước nhiệt đới và cận nhiệt đới: sốt rét, sốt Dengue, SXHD, bệnh giun chỉ…, và thường lưu hành ở vùng cư trú tự nhiên của vectơ. Bệnh có tính chất gây dịch theo mùa phù hợp với thời điểm phát triển của vectơ, ví dụ như dịch sốt dengue thường xảy ra vào mùa mưa là thời điểm thuận lợi cho muỗi <em>Aedes aegypti</em> phát triển.</p>
+<div id="dây-chuyền-lây-của-các-bệnh-lây-qua-vectơ" class="section level3">
+<h3>Dây chuyền lây của các bệnh lây qua vectơ</h3>
+<div id="nguồn-bệnh" class="section level4">
+<h4>Nguồn bệnh</h4>
+<p>Thường là người (như sốt dengue, sốt rét, …) hoặc động vật:</p>
+<ul>
+<li>Các loài linh trưởng: ổ bệnh sốt vàng</li>
+<li>Chuột: ổ bệnh dịch hạch</li>
+<li>Chim: ổ bệnh viêm não Nhật Bản</li>
+</ul>
+</div>
+<div id="tác-nhân-gây-bệnh" class="section level4">
+<h4>Tác nhân gây bệnh</h4>
+<p>Nhiều tác nhân gây bệnh có thể lây truyền qua vectơ, bao gồm:</p>
+<ul>
+<li>Virus: viêm não Nhật Bản, sốt dengue, sốt vàng</li>
+<li>Vi khuẩn: sốt phát ban chấy rận, sốt mò, sốt hồi quy</li>
+<li>Ký sinh đơn bào: sốt rét, bệnh do nhiễm Leishmania</li>
+<li>Giun: bệnh giun chỉ Onchocerca</li>
+</ul>
+</div>
+<div id="cách-thức-lây" class="section level4">
+<h4>Cách thức lây</h4>
+<p>Sau khi bị nhiễm tác nhân gây bệnh từ nguồn bệnh (hoặc đôi khi từ thế hệ trước qua trứng), vectơ có thể lây truyền tác nhân gây bệnh qua hai cơ chế chính:</p>
+<ul>
+<li><p>Lây truyền thụ động (cơ học đơn thuần): chuyên chở đơn thuần tác nhân ngây bệnh trên chân, vòi, thải qua đường tiêu hoá của vectơ đến túc chủ cảm thụ. Không có giai đoạn ủ bệnh và tác nhân gây bệnh không nhân lên trong cơ thể vectơ. Cách lây truyền này không đặc hiệu và không hiệu quả.</p></li>
+<li><p>Lây truyền chủ động (sinh học): tác nhân gây bệnh nhân lên hoặc phát triển trong cơ thể vectơ. Cách lây truyền này hiệu quả hơn, nhưng chỉ áp dụng được đối với một số tác nhân và vectơ nhất định.</p></li>
+</ul>
+<p>Việc lây truyền bị ảnh hưởng bởi vòng đời của vectơ. Các loài chân đốt thường có vòng đời gồm nhiều giai đoạn phát triển:</p>
+<ul>
+<li>Trứng</li>
+<li>Ấu trùng</li>
+<li>Giai đoạn trưởng thành</li>
+</ul>
+</div>
+</div>
+<div id="các-biện-pháp-phòng-chống-bệnh-lây-qua-vectơ" class="section level3">
+<h3>Các biện pháp phòng chống bệnh lây qua vectơ</h3>
+<p>Các biện pháp phòng chống bệnh bao gồm:</p>
+<ul>
+<li>Kiểm soát nguồn bệnh</li>
+<li>Kiểm soát vectơ</li>
+<li>Bảo vệ túc chủ cảm thụ</li>
+</ul>
+</div>
+<div id="kiểm-soát-nguồn-bệnh" class="section level3">
+<h3>Kiểm soát nguồn bệnh</h3>
+<p>Bao gồm các biện pháp nhằm phát hiện và cách ly nguồn bệnh để tránh lây nhiễm cho vectơ, ví dụ như:</p>
+<ul>
+<li>Nuôi súc vật xa nhà</li>
+<li>Người nhiễm dengue phải nằm mùng để tránh lây nhiễm cho muỗi Aedes</li>
+</ul>
+</div>
+<div id="kiểm-soát-vectơ" class="section level3">
+<h3>Kiểm soát vectơ</h3>
+<p>Bao gồm các biện pháp kiểm soát để giữ cho quần thể vectơ ở dưới mức lây truyền hiệu quả, ví dụ như:</p>
+<ul>
+<li>Phun hoá chất diệt tiết túc trưởng thành</li>
+<li>Kiểm soát giai đoạn ấu trùng
+<ul>
+<li>Vệ sinh môi trường</li>
+<li>Hóa chất và sinh học</li>
+</ul></li>
+</ul>
+<p>Để hiệu quả, các biện pháp này thường phải đi kèm với giáo dục sức khỏe và kêu gọi sự tham gia của cộng đồng.</p>
+</div>
+<div id="bảo-vệ-túc-chủ-cảm-nhiễm" class="section level3">
+<h3>Bảo vệ túc chủ cảm nhiễm</h3>
+<p>Bao gồm chủng ngừa và các biện pháp bảo vệ cá nhân như:</p>
+<ul>
+<li>Nằm mùng tránh muỗi</li>
+<li>Bôi hóa chất đuổi côn trùng</li>
+</ul>
+</div>
+</div>
+<div id="dịch-tễ-học-bệnh-sốt-dengue" class="section level2">
+<h2>Dịch tễ học bệnh sốt dengue</h2>
+<p>Dengue là một trong những bệnh nhiệt đới bị lãng quên (neglected tropical diseases) quan trọng nhất trên thế giới với số ca mắc tăng gấp 30 lần trong thập kỷ qua <span class="citation">(Guzman, MG 2016)</span>. Bệnh gây ra do virus dengue, và lây truyền qua muỗi Aedes aegypti. Bệnh lưu hành trong vùng lưu hành của muỗi Aedes và virus dengue, chủ yếu ở phía Đông Địa Trung Hải, châu Mĩ, Đông Nam Á, châu Phi và phía Tây Thái Bình Dương. Những năm gần đây đã xuất hiện những ca bệnh tại Mĩ và châu Âu.</p>
+<p>Tác nhân gây bệnh là virus dengue, với 4 nhóm huyết thanh: 1, 2, 3, 4. Theo phân loại năm 2009 của Tổ chức Y tế thế giới, về lâm sàng sốt dengue được chia làm hai bệnh cảnh chính: sốt dengue có/không có dấu hiệu cảnh báo và sốt dengue nặng. Phân loại này nhấn mạnh đến hai cơ chế sinh bệnh chính của sốt dengue là thoát huyết tương và bất thường về đông cầm máu. Hầu hết người nhiễm bệnh có biểu hiện nhẹ và tự khỏi; tuy nhiên, thể bệnh nặng có thể đưa đến tử vong với các biến chứng sốc giảm thể tích, xuất huyết, suy đa tạng. Tại Việt Nam, tỷ lệ tử vong ở những ca sốc sốt dengue dưới 1% <span class="citation">(Lam, PK 2013)</span>.</p>
+<div id="chẩn-đoán-và-điều-trị" class="section level3">
+<h3>Chẩn đoán và điều trị</h3>
+<p>Chẩn đoán sốt dengue dựa vào yếu tố dịch tễ học (đến từ vùng lưu hành bệnh), triệu chứng lâm sàng và cận lâm sàng. Triệu chứng lâm sàng thường gồm sốt và các triệu chứng không đặc hiệu khác. Dấu hiệu cận lâm sàng quan trọng là giảm số lượng bạch cầu, giảm số lượng tiểu cầu và tăng dung tích hồng cầu.</p>
+<p>Để chẩn đoán xác định bệnh, có thể dùng test nhanh NS1 hoặc PCR để phát hiện kháng nguyên virus trong giai đoạn sớm. Ngoài ra có thể chẩn đoán dựa vào thay đổi huyêt thanh học về kháng thể IgG và IgM.</p>
+<p>Hiện vẫn chưa có điều trị đặc hiệu cho sốt dengue. Điều trị hiện tại chủ yếu dựa vào điều trị triệu chứng và truyền dịch cho những trường hợp có biểu hiện nặng.</p>
+</div>
+<div id="một-số-đặc-điểm-dịch-tễ-học" class="section level3">
+<h3>Một số đặc điểm dịch tễ học</h3>
+<div id="gánh-nặng-bệnh-tật" class="section level4">
+<h4>Gánh nặng bệnh tật</h4>
+<p>Dengue là bệnh nhiễm trùng virus lây qua muỗi phổ biến nhất trên thế giới. Bệnh gây ra gánh nặng về bệnh tật và kinh tế to lớn, với ước tính là 1.14 triệu DALYs và 8.9 tỉ USD vào 2013. Có khoảng 4 tỉ người trên 128 quốc gia có nguy cơ mắc bệnh, dù chỉ khoảng 25% số ca bệnh có triệu chứng.</p>
+<p>Năm 2013, tỷ suất lưu hành của bệnh là 810.1 (khoảng không chắc chắn 95% 327.4-1690.8) cho mỗi 100 000 người, cao nhất ở nhóm tuổi 10-14 (1175.6 [475.5-2451.8]) rồi giảm dần theo tuổi <span class="citation">(Stanaway, JD 2016)</span>. Tỷ suất tử vong là 1.27 (0.79-1.52) cho mỗi 100 000 người, cao nhất ở nhóm sơ sinh (5.21 [2.43-7.20]) giảm dần đến nhóm tuổi 45-49 (0.53 [0.39-0.60]) rồi tăng trở lại đến 3.03 (2.10-3.69) ở nhóm tuổi <span class="math inline">\(\geq\)</span> 80.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/Dengue_incidence.jpg" alt="Tần suất mới mắc của dengue (cho mỗi triệu người-năm), năm 2013  [Nguồn: @stanaway2016]" width="100%" />
+<p class="caption">
+Tần suất mới mắc của dengue (cho mỗi triệu người-năm), năm 2013 <span class="citation">(Nguồn: Stanaway, JD 2016)</span>
+</p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Dengue_incidence">
+Past versions of Dengue_incidence.jpg
+</button>
+</p>
+<div id="fig-Dengue_incidence" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Dengue_incidence.jpg" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="figure" style="text-align: center">
+<img src="assests/Dengue_mortality.jpg" alt="Tần suất tử vong của dengue (cho mỗi triệu người-năm), năm 2013  [Nguồn: @stanaway2016]" width="100%" />
+<p class="caption">
+Tần suất tử vong của dengue (cho mỗi triệu người-năm), năm 2013 <span class="citation">(Nguồn: Stanaway, JD 2016)</span>
+</p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Dengue_mortality">
+Past versions of Dengue_mortality.jpg
+</button>
+</p>
+<div id="fig-Dengue_mortality" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Dengue_mortality.jpg" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Tại Việt Nam, vụ dịch sốt dengue đầu tiên xảy ra vào năm 1958, được báo cáo vào năm 1959. Ở miền nam, dịch dengue được báo cáo đầu tiên vào năm 1960 với 60 trẻ tử vong. Theo báo cáo của Viện Vệ sinh dịch tễ trung ương, năm 2017 (tính đến 13/09/2017) có 124986 ca với 24 ca tử vong. Bệnh lưu hành cả thành thị và nông thôn, tại vùng châu thổ Sông Hồng, sông Cửu Long, dọc theo bờ biển miền Trung, nhưng không xuất hiện ở vùng núi, cao nguyên phía bắc. Do đặc điểm địa lý khí hậu khác nhau giữa các miền, bệnh xuất hiện quanh năm ở miền Nam và miền Trung, nhưng thường xuất hiện từ tháng 4 đến tháng 11 tại miền Bắc và Tây Nguyên.</p>
+</div>
+<div id="cách-thức-lây-1" class="section level4">
+<h4>Cách thức lây</h4>
+<p>Virus dengue lây truyền chủ yếu qua vectơ trung gian là muỗi. Tuy nhiên, bệnh cũng có thể lây truyền theo cách thức không qua vectơ như qua truyền máu, ghép tạng hay kim chích <span class="citation">(Wilder-Smith, A 2019)</span>. Lây truyền dọc từ mẹ sang con thường gặp ở mẹ ở giai đoạn có virus cao trong máu khi sinh <span class="citation">(Wilder-Smith, A 2019)</span>.</p>
+<p><em>Aedes aegypti</em> xuất hiện ở châu Mỹ qua quá trình mua bán nô lệ vào những năm 1600 và lan truyền khắp thế giới khi ngành công nghiệp vận chuyển được mở rộng <span class="citation">(Guzman, MG 2016)</span>. Loài muỗi này sống gần với người, hút máu người, ở trong nhà, và đẻ trứng trong các dụng cụ chứa nước nhân tạo <span class="citation">(Guzman, MG 2016)</span>. Đây là vectơ quan trọng nhất của sốt dengue tại thành phố. Trung bình muỗi cái sống trong 1 tuần, nhưng một số con có thể sống trên 2 tuần. Muỗi thường đậu ở nơi ít ánh sáng, có hơi ẩm, và thường đốt mồi vào ban ngày (cao điểm vào sáng sớm và xế chiều). Muỗi có tầm bay xa 100-150m quanh khu vực đẻ trứng. Thời gian phát triển của ấu trùng khoảng 10-15 ngày phụ thuộc vào: nhiệt độ môi trường (thích hợp nhất ở 25<span class="math inline">\(^\circ\)</span> C), thức ăn, mật độ ấu trùng.</p>
+<p>Sau khi hút máu người bệnh trong giai đoạn bệnh cấp tính (có virus lưu hành nhiều trong máu), muỗi cái bị nhiễm virus <span class="citation">(Guzman, MG 2016)</span>. Trong quá trình ủ bệnh ngoại sinh, virus sẽ nhiễm vào tế bào ruột giữa của muỗi sau đó phát tán và nhân lên trong các mô của muỗi, đặc biệt là nhiễm vào tuyến nước bọt sau 5-12 ngày. Khi tuyến nước bọt bị nhiễm virus, muỗi có thể truyền virus sang người khác khi hút máu. Lây truyền dọc (vertical transmission) có thể xảy ra khi muỗi cái truyền virus qua trứng đến thế hệ sau. Trong cơ thể người, thời gian từ khi nhiễm virus đến khi khởi phát triệu chứng bệnh (giai đoạn ủ bệnh nội sinh) thường từ 3 đến 14 ngày.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/Dengue_cycle.png" alt="Sự phát triển của virus trong người và muỗi [Nguồn: @guzman2016]" width="50%" />
+<p class="caption">
+Sự phát triển của virus trong người và muỗi <span class="citation">(Nguồn: Guzman, MG 2016)</span>
+</p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Dengue_cycle">
+Past versions of Dengue_cycle.png
+</button>
+</p>
+<div id="fig-Dengue_cycle" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/849e15f4d949f025915f125500cb406fcb0f64d6/docs/assests/Dengue_cycle.png" target="_blank">849e15f</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Ngoài muỗi <em>Aedes aegypti</em>, virus dengue còn được lây truyền qua muỗi <em>Aedes albopictus</em>. Muỗi này có nguồn gốc châu Á, và là vectơ truyền virus dengue quan trọng ở nông thôn và miền núi. Muỗi này thường đốt người trưởng thành ngoài nhà và ấu trùng thường phát triển ở các vật chứa nước tự nhiên như hốc cây, vỏ dừa, thân tre cụt.</p>
+</div>
+<div id="túc-chủ-cảm-thụ" class="section level4">
+<h4>Túc chủ cảm thụ</h4>
+<p>Ai cũng có thể mắc bệnh. Ở vùng dịch lưu hành thường xuyên trẻ nhỏ thường mắc bệnh. Tuy nhiên, ở lần nhiễm đầu tiên, bệnh thường nhẹ, thường không triệu chứng. Ở lần nhiễm sau, với các nhóm huyết thanh khác, bệnh thường nặng – dễ vào sốc.</p>
+<p>4 yếu tố chính ảnh hưởng đến đáp ứng của bệnh là <span class="citation">(Guzman, MG 2016)</span>:</p>
+<ul>
+<li>Tình trạng miễn dịch: nhiễm bệnh lần đầu thường nhẹ, nhưng nhiễm bệnh lần thứ hai thường nặng, do hiện tượng tăng cường phụ thuộc kháng thể (ADE, antibody-dependent enhancement).</li>
+<li>Chủng virus: nhiễm bệnh lần thứ hai với nhóm huyết thanh 2 thường nặng hơn so với các nhóm huyết thanh khác.</li>
+<li>Bộ gen: một số gen có liên quan đến độ nặng của bệnh</li>
+<li>Tuổi: ở lần nhiễm đầu, tuổi càng cao độ nặng càng cao; ở lần nhiễm thứ hai, tuổi càng nhỏ độ nặng càng cao.</li>
+</ul>
+</div>
+</div>
+<div id="các-biện-pháp-kiểm-soát-và-phòng-ngừa-bệnh" class="section level3">
+<h3>Các biện pháp kiểm soát và phòng ngừa bệnh</h3>
+<div id="giám-sát-bệnh-nhân" class="section level4">
+<h4>Giám sát bệnh nhân</h4>
+<p>Nhằm mục đích phát hiện sớm dịch. Sự xuất hiện dịch sốt dengue liên quan đến</p>
+<ul>
+<li>Mật độ muỗi và sự có mặt của người nhiễm.</li>
+<li>Sự di chuyển của người bệnh đóng vai trò quan trọng hơn trong sự lan xa bệnh vì muỗi Aedes có tầm bay ngắn.</li>
+</ul>
+<p>Chương trình giám sát ca bệnh tại Việt Nam bao gồm:</p>
+<ul>
+<li>Giám sát các ca sốt: theo dõi số ca sốt, phát hiện sự gia tăng các trường hợp sốt.</li>
+<li>Chẩn đoán sốt dengue: dựa vào triệu chứng lâm sàng và các xét nghiệm cận lâm sàng.</li>
+</ul>
+</div>
+<div id="chủng-ngừa" class="section level4">
+<h4>Chủng ngừa</h4>
+<p>Cơ chế miễn dịch chống lại virus dengue vẫn chưa được hiểu rõ. Kháng thể tạo ra trong quá trình nhiễm bệnh có tác dụng bảo vệ suốt đời với cùng chủng virus gây bệnh, nhưng chỉ có tác dụng bảo vệ ngắn hạn với các chủng huyết thanh còn lại <span class="citation">(Guzman, MG 2016)</span>. Việc phát triển các vaccine dengue an toàn và có hiệu quả bảo vệ đầy đủ vấp phải một số khó khăn sau <span class="citation">(Guzman, MG 2016)</span>:</p>
+<ul>
+<li>Vaccine phải bảo vệ cùng lúc khỏi cả 4 chủng huyết thanh.</li>
+<li>Tác dụng bảo vệ phải lâu dài, nếu không người được chủng ngừa có nguy cơ mắc bệnh nặng hơn nếu bị nhiễm bệnh khi tác dụng chủng ngừa đã bị giảm.</li>
+<li>Chưa có mô hình nghiên cứu trên động vật có thể mô phỏng chính xác bệnh dengue trên người.</li>
+<li>Các vaccine phải được đánh giá trong điều kiện thay đổi về khả năng lây truyền bệnh và chủng virus lưu hành.</li>
+</ul>
+<p>Một vài loại vaccine dengue đang được nghiên cứu nhưng cho đến nay, chưa có vaccine nào chính thức được sử dụng.</p>
+</div>
+<div id="kiểm-soát-vectơ-1" class="section level4">
+<h4>Kiểm soát vectơ</h4>
+<p>Sự gia tăng về gánh nặng bệnh tật và sự mở rộng phạm vi lưu hành của bệnh cho thấy những biện pháp kiểm soát vectơ hiện đang được sư dụng tại nhiều nước trên thế giới là không hiệu quả <span class="citation">(Guzman, MG 2016)</span>. Nguyên nhân thất bại có thể do sự thiếu quan tâm đúng mức của các chính phủ để tập trung đủ nguồn lực, cũng như những giới hạn trong việc sử dụng các chất diệt muỗi hiệu quả và việc sử dụng các công cụ kiểm soát muỗi không hợp lý.</p>
+<p>Tuy nhiên, có hai quốc gia ngoại lệ là Singapore và Cuba. Chương trình kiểm soát <em>Aedes agypti</em> tại Singapore đã thành công trong việc ngăn ngừa dịch bùng phát trong gần 20 năm. Chương trình này được triển khai từ năm 1968 với 3 thành phần chính <span class="citation">(Guzman, MG 2016)</span>:</p>
+<ul>
+<li>Luật pháp: phạt cá nhân có nhà/cơ sở có muỗi <em>Aedes agypti</em></li>
+<li>Làm giảm và kiểm soát nguồn ấu trùng muỗi</li>
+<li>Tiếp cận và giáo dục cộng đồng</li>
+</ul>
+<p>Mặc dù chương trình này vẫn hiệu quả trong việc kiểm soát <em>Aedes agypti</em>, chương trình vẫn thất bại trong việc ngăn chặn sự lây truyền virus dengue trỗi dậy. Lý do của việc lây truyền virus dengue trở lại vẫn chưa được hiểu rõ, và có thể do nhiều nguyên nhân như: miễn dịch cộng đồng thấp, sự xâm nhập của các ca nhiễm từ các nước lưu hành bệnh cao trong khu vực, mật độ dân cư đông.</p>
+<p>Chương trình kiểm soát vectơ của Cuba được tiến hành từ năm 1981, với ba thành phần giống chương trình của Singapore và thành phần thứ tư là phun thuốc diệt muỗi trên diện rộng <span class="citation">(Guzman, MG 2016)</span>. Dịch dengue được kiểm soát tại Cuba trong khoảng 30 năm trước khi thất bại, có thể do vấn đề về kinh tế và sự xâm nhập của các ca nhiễm từ các nước lưu hành bệnh cao trong khu vực.</p>
+<p>Từ những ví dụ này có thể thấy rằng:</p>
+<ul>
+<li>Một chương trình kiểm soát vectơ bền vững cần có sự hợp tác giữa các quốc gia có bệnh lưu hành.</li>
+<li>Một chương trình kiểm soát vectơ bền vững cần có sự cam kết lâu dài của từng quốc gia.</li>
+<li>Để hiệu quả, các công cụ kiểm soát muỗi phải được sử dụng hợp lý bởi người được đào tạo.</li>
+</ul>
+<p><em>Các biện pháp kiểm soát vectơ mới</em></p>
+<p>Các biện pháp kiểm soát vectơ mới bao gồm <span class="citation">(Guzman, MG 2016)</span>:</p>
+<ul>
+<li>sử dụng các thuốc diệt muỗi mới (cả trong và ngoài nhà) kết hợp với kiểm soát ấu trùng muỗi,</li>
+<li>kiểm soát sinh học (bằng Wolbachia)</li>
+<li>kiểm soát di truyền học (dùng muỗi đực không có khả năng sinh sản)</li>
+</ul>
+<p>Về kiểm soát sinh học, một chủng Wolbachia, vốn là một vi khuẩn sống ký sinh tự nhiên trên cơ thể của côn trùng, được lây nhiễm cho muỗi <em>Aedes agypti</em>. Khi bị nhiễm, muỗi <em>Aedes agypti</em> cái bị rút ngắn tuổi thọ và miễn nhiễm với virus dengue, từ đó giúp ngăn chặn sự lây truyền bệnh. Khi được thả trong môi trường tự nhiên, Wolbachia sẽ được lan truyền thông qua giao phối tự nhiên giữa muỗi đực và muỗi cái, và từ đó có thể tạo ra sự kiểm soát bền vững. Biện pháp này đang được thử nghiệm tại nhiều nước ở châu Mỹ, châu Đại Dương và châu Á, trong đó có Việt Nam (tỉnh Khánh Hoà).</p>
+<p><strong>Cơ chế của biện pháp kiểm soát muỗi bằng Wolbachia</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2UxF5gEDI" frameborder="0" allowfullscreen>
+</iframe>
+<p>Về kiểm soát di truyền học, muỗi đực không có khả năng sinh sản được thả vào môi trường tự nhiên rồi qua giao phối với muỗi cái bình thường sẽ làm giảm số lượng muỗi trong quần thể. Cách này có thể làm giảm nhanh chóng số lượng muỗi nhưng không bền vững. Biện pháp này hiện nay cũng đang được thử nghiệm.</p>
+<p>Hiện tại không một biện pháp riêng rẽ nào cho thấy có đủ khả năng để kiểm soát dengue, tuy nhiên nếu được kết hợp với nhau một cách hợp lý, mục tiêu kiểm soát bệnh hiệu quả có thể đạt được.</p>
+<p><em>Biện pháp kiểm soát vectơ tại Việt Nam</em></p>
+<p>Tại Việt Nam, kiểm soát vectơ truyền bệnh được thực hiện bằng phương pháp truyền thông GDSK cho cộng đồng</p>
+<ul>
+<li>Giảm vật chứa nước</li>
+<li>Đậy nắp các vật chứa nước</li>
+<li>Sử dụng các biện pháp sinh học diệt vectơ</li>
+<li>Sử dụng hóa chất: hạt các chứa temephos 1%</li>
+</ul>
+<p>Trong thời gian có dịch cần giảm nhanh mật độ muỗi trưởng thành để cắt đứt đường truyền virus</p>
+<ul>
+<li>Diệt muỗi trưởng thành: phun hóa chất malathion, fenitrothion có bán kính ít nhất 100m từ nhà người nhiễm</li>
+<li>Xử lý hóa chất nên nhắc lại sau 7-10 ngày</li>
+<li>Diệt bọ gậy/lăng quăng</li>
+</ul>
+<p>Ngoài ra còn thực hiện việc điều tra muỗi trên thực địa nhằm xác định</p>
+<ul>
+<li>Mật độ</li>
+<li>Sự phân bố theo thời gian và không gian</li>
+<li>Tính nhạy cảm với các thuốc diệt côn trùng</li>
+</ul>
+<p>Các chỉ số giám sát muỗi Aedes trưởng thành bao gồm:</p>
+<ul>
+<li>Chỉ số mật độ muỗi: số muỗi cái trung bình trong một nhà điều tra
+<ul>
+<li>CSMĐM (con/nhà): <span class="math inline">\(\frac{\text{Số muỗi cái bắt được}}{\text{Số nhà điều tra}}\)</span></li>
+</ul></li>
+<li>Chỉ số nhà có muỗi: tỷ lệ nhà có muỗi cái trưởng thành
+<ul>
+<li>CSNCM (%): <span class="math inline">\(\frac{\text{Số nhà có muỗi cái Aedes}}{\text{Số nhà điều tra}} \times 100\)</span></li>
+</ul></li>
+<li>Chỉ số nhà có bọ gậy/lăng quăng: tỷ lệ nhà có bọ gậy/lăng quăng
+<ul>
+<li>CSNCBG (%): <span class="math inline">\(\frac{\text{Số nhà có bọ gậy, lăng quăng}}{\text{Số nhà điều tra}} \times 100\)</span></li>
+</ul></li>
+<li>Chỉ số dụng cụ chứa nước (DCCN) có bọ gậy/lăng quăng: tỷ lệ DCCN có bọ gậy/lăng quăng
+<ul>
+<li>CSDCCN (%): <span class="math inline">\(\frac{\text{Số DCCN có bọ gậy/lăng quăng}}{\text{Số DCCN}} \times 100\)</span></li>
+</ul></li>
+<li>Chỉ số Breteau (BI): số DCCN có bọ gậy/lăng quăng trên số nhà điều tra
+<ul>
+<li>CSBI (%): <span class="math inline">\(\frac{\text{Số DCCN có bọ gậy/lăng quăng}}{\text{Số nhà điều tra}} \times 100\)</span></li>
+</ul></li>
+<li>Chỉ số mật độ bọ gậy/lăng quăng: số lượng bọ gậy/lăng quăng trung bình trên 1 nhà điều tra
+<ul>
+<li>CSMĐBG (%): <span class="math inline">\(\frac{\text{Số bọ gậy, lăng quăng thu được}}{\text{Số nhà điều tra}} \times 100\)</span></li>
+</ul></li>
+</ul>
+<p>Yếu tố nguy cơ cao bao gồm:</p>
+<ul>
+<li>Miền Nam: chỉ số mật độ muỗi <span class="math inline">\(\geq\)</span> 0,5 con/nhà hoặc chỉ số BI <span class="math inline">\(\geq\)</span> 30</li>
+<li>Miền Bắc: chỉ số mật độ muỗi <span class="math inline">\(\geq\)</span> 0,5 con/nhà hoặc chỉ số BI <span class="math inline">\(\geq\)</span> 20</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="tài-liệu-tham-khảo" class="section level2">
+<h2>Tài liệu tham khảo</h2>
+<div id="refs">
+<div id="ref-kramer2010">
+<p>Alexander Krämer, Klaus Krickeberg, Mirjam Kretzschmar. 2010. <em>Modern Infectious Disease Epidemiology: Concepts, Methods, Mathematical Models, and Public Health</em>. Springer.</p>
+</div>
+<div id="ref-guzman2016">
+<p>Guzman, MG, Izquierdo, A, Gubler, DJ. 2016. “Dengue Infection.” <em>Nature Reviews. Disease Primers</em> 2: 16055. <a href="https://doi.org/10.1038/nrdp.2016.55">https://doi.org/10.1038/nrdp.2016.55</a>.</p>
+</div>
+<div id="ref-lam2013">
+<p>Lam, PK, Diet, TV, Tam, DTH. 2013. “Clinical Characteristics of Dengue Shock Syndrome in Vietnamese Children: A 10-Year Prospective Study in a Single Hospital.” <em>Clinical Infectious Diseases</em> 57 (11): 1577–86. <a href="https://doi.org/10.1093/cid/cit594">https://doi.org/10.1093/cid/cit594</a>.</p>
+</div>
+<div id="ref-stanaway2016">
+<p>Stanaway, JD, Undurraga, EA, Shepard, DS. 2016. “The Global Burden of Dengue: An Analysis from the Global Burden of Disease Study 2013.” <em>The Lancet Infectious Diseases</em> 16 (6): 712–23. <a href="https://doi.org/10.1016/S1473-3099(16)00026-8">https://doi.org/10.1016/S1473-3099(16)00026-8</a>.</p>
+</div>
+<div id="ref-wilder2019">
+<p>Wilder-Smith, A, Horstick, O, Ooi, EE. 2019. “Dengue.” <em>The Lancet</em> 393 (10169): 350–63. <a href="https://doi.org/10.1016/S0140-6736(18)32560-1">https://doi.org/10.1016/S0140-6736(18)32560-1</a>.</p>
+</div>
+</div>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.1 (2020-06-06)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.4
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
+ [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
+ [9] evaluate_0.14   highr_0.8       stringi_1.4.6   rlang_0.4.7    
+[13] fs_1.4.1        promises_1.1.1  whisker_0.4     rmarkdown_2.3  
+[17] tools_4.0.1     stringr_1.4.0   glue_1.4.1      httpuv_1.5.4   
+[21] xfun_0.15       yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0
+[25] knitr_1.30     </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
