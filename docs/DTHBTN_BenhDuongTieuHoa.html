@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dịch tễ học bệnh lây qua đường tiêu hoá</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Teaching Materials</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/decidelab/teaching_materials">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dịch tễ học bệnh lây qua đường tiêu hoá</h1>
+<h4 class="date">2020-03-18 (Update: 2020-10-25)</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-10-25
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20201025code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20201025)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20201025code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20201025)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreedd82c85617460da85943248fb7b93469a2db21cetargetblankdd82c85a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/dd82c85617460da85943248fb7b93469a2db21ce" target="_blank">dd82c85</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreedd82c85617460da85943248fb7b93469a2db21cetargetblankdd82c85a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/dd82c85617460da85943248fb7b93469a2db21ce" target="_blank">dd82c85</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  assests/
+    Untracked:  code/00_setup.R
+    Untracked:  reference.bib
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/DTHBTN_BenhDuongTieuHoa.Rmd</code>) and HTML (<code>docs/DTHBTN_BenhDuongTieuHoa.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/dd82c85617460da85943248fb7b93469a2db21ce/analysis/DTHBTN_BenhDuongTieuHoa.Rmd" target="_blank">dd82c85</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+<td>
+Add DTHBTN_BenhDuongTieuHoa
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="mục-tiêu-bài-học" class="section level2">
+<h2>Mục tiêu bài học</h2>
+<ul>
+<li><p>Mô tả được quá trình lây nhiễm của các bệnh lây theo đường tiêu hóa</p></li>
+<li><p>Trình bày được các biện pháp phòng chống đối với các bệnh lây theo đường tiêu hóa</p></li>
+<li><p>Mô tả được các đặc điểm dịch tễ học của bệnh thương hàn</p></li>
+<li><p>Trình bày được các biện pháp dự phòng và kiểm soát bệnh thương hàn</p></li>
+</ul>
+</div>
+<div id="nhắc-lại-về-tam-giác-dịch-tễ-học-và-dây-chuyền-lây" class="section level2">
+<h2>Nhắc lại về tam giác dịch tễ học và dây chuyền lây</h2>
+<p>Nội dung trong phần này dựa chủ yếu vào nội dung trong sách Principles of Epidemiology in Public Health Practice: An Introduction to Applied Epidemiology and Biostatistics do CDC Hoa Kỳ biên soạn <span class="citation">[@CDC2012]</span>.</p>
+<div id="tam-giác-dịch-tễ-học" class="section level3">
+<h3>Tam giác dịch tễ học</h3>
+<p>Trong dịch tễ học bệnh truyền nhiễm, mô hình sinh bệnh truyền thống cơ bản nhất là “tam giác dịch tễ học” (epidemiologic triad, epidemiologic triangle) <span class="citation">[@CDC2012]</span>.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/EpiTriad.jpg" alt="Tam giác dịch tễ học [Nguồn: @CDC2012]" width="100%" />
+<p class="caption">
+Tam giác dịch tễ học <span class="citation">[Nguồn: @CDC2012]</span>
+</p>
+</div>
+<p>Trong mô hình này, bệnh xuất hiện do sự tương tác giữa <strong>tác nhân</strong> (agent) và <strong>túc chủ cảm nhiễm</strong> (susceptible host), trong <strong>môi trường</strong> (environment) hỗ trợ cho việc lây truyền <strong>tác nhân</strong> từ nguồn bệnh (sources) đến <strong>túc chủ cảm nhiễm</strong>. Trong đó:</p>
+<ul>
+<li><p><strong>Tác nhân</strong>: là vi sinh vật gây bệnh (virus, vi khuẩn, ký sinh trùng …). Thông thường, để gây bệnh cần phải có tác nhân (điều kiện cần); tuy nhiên, sự hiện diện của tác nhân lại không phải là điều kiện đủ để gây bệnh. Có nhiều yếu tố ảnh hưởng đến việc liệu phơi nhiễm với một tác nhân gây bệnh có gây ra bệnh hay không, bao gồm độc lực (pathogenicity) và liều gây bệnh (dose) của tác nhân gây bệnh.</p></li>
+<li><p><strong>Túc chủ cảm nhiễm</strong>: thường chỉ người có khả năng nhiễm bệnh. Sự phơi nhiễm, cảm nhiễm và phản ứng trước tác nhân gây bệnh phụ thuộc vào nhiều yếu tố, bao gồm các hành vi (ví dụ vệ sinh, quan hệ tình dục, …), các yêú tố nội tại (tuổi, giới, kiểu gen, tình trạng dinh dưỡng, tình trạng miễn dịch, cấu trúc giải phẫu học, tâm sinh lý, các bệnh và các thuốc kèm theo, …)</p></li>
+<li><p><strong>Môi trường</strong>: bao gồm các yếu tố bên ngoài ảnh hưởng trên tác nhân gây bệnh và sự phơi nhiễm của túc chủ cảm nhiễm. Các yếu tố này bao gồm các yếu tố vật lý (địa lý, khí hậu, …), yếu tố sinh học (các loại côn trùng giúp lây truyền tác nhân gây bệnh), các yếu tố kinh tế xã hội (mật độ dân cư, tình trạng vệ sinh, hệ thống dịch vụ y tế)</p></li>
+</ul>
+</div>
+<div id="dây-chuyền-lây" class="section level3">
+<h3>Dây chuyền lây</h3>
+<p>Theo mô hình trên, bệnh sẽ được lây truyền thông qua <strong>dây chuyền lây</strong> (chain of infection) <span class="citation">[@CDC2012]</span>.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/ChainOfInfection.jpg" alt="Dây chuyền lây [Nguồn: @CDC2012]" width="100%" />
+<p class="caption">
+Dây chuyền lây <span class="citation">[Nguồn: @CDC2012]</span>
+</p>
+</div>
+<p>Trong đó tác nhân gây bệnh sẽ rời <strong>nguồn bệnh</strong> (reservoir) qua <strong>ngõ ra</strong> (portal of exit), thông qua một <strong>cách thức lây</strong> (mode of transmission), và xâm nhập túc chủ cảm nhiễm bằng <strong>ngõ vào</strong> (portal of entry). Trong dây chuyền lây này:</p>
+<div id="nguồn-bệnh" class="section level4">
+<h4>Nguồn bệnh</h4>
+<p>Có thể là người, động vật, hoặc môi trường (cây cối, đất, nước).</p>
+<ul>
+<li><p>Nguồn bệnh là người (human reservoir): người là nguồn bệnh của nhiều bệnh nhiễm trùng thường gặp, và đôi khi là vật chủ duy nhất (ví dụ như đối với virus đậu mùa). Người mang bệnh có thể có triệu chứng hoặc không. Khả năng lây nhiễm của người có triệu chứng thường không cao, do dễ nhận ra và dễ được áp dụng các biện pháp ngăn ngừa lây lan. <strong>Người mang trùng</strong> (carrier) là người tuy mang tác nhân gây bệnh và có khả năng gây bệnh, nhưng lại không có biểu hiện nhiễm trùng. <strong>Người lành mang trùng</strong> (healthy carrier) là người hoàn toàn không có biểu hiện triệu chứng. <strong>Người mang trùng giai đoạn ủ bệnh</strong> (incubation carrier) là người có thể lây bệnh, nhưng đang trong giai đoạn ủ bệnh (các triệu chứng chưa xuất hiện). <strong>Người khỏi bệnh mang trùng</strong> (convalescent carrier) là người đã khỏi bệnh nhưng vẫn có khả năng lây bệnh. <strong>Người mang trùng mạn tính</strong> (chronic carrier) là người mang tác nhân gây bệnh hàng tháng đến hàng năm sau khi bị nhiễm bệnh.</p></li>
+<li><p>Nguồn bệnh là động vật (animal reservoir): nhiều bệnh có nguồn bệnh từ động vật, nhiều trong số này lây truyền từ động vật sang động vật, và người chỉ là <strong>túc chủ cơ hội</strong> (incidental host). Thuật ngữ <strong>zoonosis</strong> được dùng để chỉ những bệnh nhiễm trùng có thể lây truyền trong điều kiện bình thường từ động vật có xương sống (vertebrate animals) sang người, ví dụ như: bệnh than (anthrax) từ cừu, bệnh dịch hạch (plague) từ chuột, bệnh dại (rabies) từ dơi, chó hay động vật có vú. Nhiều bệnh được cho là có nguồn gốc từ động vật nhưng nguồn bệnh chính xác vẫn chưa được xác định (ví dụ như HIV/AIDS, Ebola, SARS).</p></li>
+<li><p>Nguồn bệnh là môi trường: ví dụ như đất là nguồn bệnh của các tác nhân dạng nấm, gây ra căn bệnh histoplasmosis; nước là nguồn bệnh của <em>Legionella pneumophila</em> gây nên bệnh Legionnaires.</p></li>
+</ul>
+</div>
+<div id="ngõ-ra" class="section level4">
+<h4>Ngõ ra</h4>
+<p>Là con đường để tác nhân gây bệnh rời nguồn bệnh, và thường tương ứng với vị trí mà tác nhân gây bệnh khu trú. Ví dụ như virus cúm hay vi khuẩn lao <em>Mycobacterium tuberculosis</em> có ngõ ra là đường hô hấp, schistosomes qua nước tiểu, còn vi khuẩn tả <em>Vibrio cholerae</em> thì qua phân.</p>
+</div>
+<div id="cách-thức-lây" class="section level4">
+<h4>Cách thức lây</h4>
+<p>Một tác nhân nhiễm trùng có thể lây truyền từ nguồn bệnh đến túc chủ cảm nhiễm bằng nhiều cách khác nhau. Có nhiều cách khác nhau để phân loại cách thức lây, một trong số đó là cách phân loại sau:</p>
+<ul>
+<li>Trực tiếp (direct)
+<ul>
+<li>Tiếp xúc trực tiếp (direct contact): có thể là tiếp xúc người với người (ví dụ quan hệ tình dục trong bệnh lậu), hoặc tiếp xúc giữa người với nguồn bệnh (ví dụ tiếp xúc với đất trong bệnh giun móc).</li>
+<li>Lan truyền qua giọt bắn (droplet spread): khi tiếp xúc với số lượng lớn khí dung (aerosol) ở tầm gần (khoảng 1m) tạo ra khi ho, sổ mũi hoặc nói, trước khi các khí dung này rơi xuống các bề mặt (ví dụ như vi khuẩn <em>Bordetella pertussis</em> gây ho gà [pertussis], vi khuẩn <em>Neisseria meningitidis</em> gây viêm não mô cầu, các virus gây bệnh cúm, quai bị, rubella). Tốc độ rơi và khả năng xâm nhập của các giọt bắn phụ thuộc vào kích thước của chúng, giọt bắn kích thước &gt;5<span class="math inline">\(\mu\)</span>m đến được mũi và đường hô hấp trên, kích thước 5-10<span class="math inline">\(\mu\)</span>m đến được đường hô hấp dưới, còn <span class="math inline">\(\leq\)</span> 5<span class="math inline">\(\mu\)</span>m có thể đến được phế nang <span class="citation">[@ahrens2014]</span>.</li>
+</ul></li>
+<li>Gián tiếp (indirect)
+<ul>
+<li>Qua không khí (airbone): tác nhân gây bệnh lây truyền qua bụi hay giọt bắn kích thước nhỏ (<span class="math inline">\(\leq\)</span> 5<span class="math inline">\(\mu\)</span>m) lơ lửng trong không khí, ví dụ như vi khuẩn lao, virus gây bệnh sởi.</li>
+<li>Qua vật chuyên chở (vehicleborne): bao gồm thức ăn, nước, chế phẩm sinh học (máu), đồ vật (fomites, như khăn tay, chăn gối, dao mổ). Vật chuyên chở có thể mang tác nhân gây bệnh một cách thụ động hoặc tạo ra môi trường cho các tác nhân này sinh sôi và tạo ra độc tố (ví dụ như thức ăn đóng hộp tạo ra môi trường cho vi khuẩn <em>Clostridium botulinum</em> phát triển và tạo ra độc tố botulinum).</li>
+<li>Qua vectơ (vectorborne): ví dụ như muỗi (mosquitoes), ruồi (flies), bọ chét (fleas) và ve (ticks), thông qua cơ chế cơ học đơn thuần (ví dụ như ruồi mang <em>Shigella</em> gây bệnh lị, bọ chét mang <em>Yersinia pestis</em> gây bệnh dịch hạch) hoặc qua cơ chế sinh học tạo môi trường cho tác nhân gây bệnh sinh sôi và phát triển (ví dụ như muỗi tạo điều kiện cho ký sinh trùng sốt rét trưởng thành trước khi lây qua người).</li>
+</ul></li>
+</ul>
+</div>
+<div id="ngõ-vào" class="section level4">
+<h4>Ngõ vào</h4>
+<p>Là con đường mà tác nhân gây bệnh xâm nhập vào túc chủ cảm nhiễm. Thông thường các tác nhân nhiễm trùng xâm nhập túc chủ bằng cùng con đường với ngõ ra khỏi nguồn bệnh. Ví dụ virus cúm xâm nhập vào túc chủ bằng đường hô hấp.</p>
+</div>
+</div>
+<div id="ứng-dụng-trong-y-tế-công-cộng" class="section level3">
+<h3>Ứng dụng trong y tế công cộng</h3>
+<p>Hiểu biết tường tận về dây chuyền lây giúp chúng ta xác định và lựa chọn phương thức phù hợp để kiểm soát việc lây truyền bệnh. Để cắt đứt dây chuyền lây, chúng ta có thể:</p>
+<ul>
+<li>Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây</li>
+<li>Bảo vệ ngõ vào</li>
+<li>Tăng cường khả năng phản kháng của túc chủ</li>
+</ul>
+<div id="kiểm-soát-và-loại-trừ-tác-nhân-gây-bệnh-tại-nguồn-lây" class="section level4">
+<h4>Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây</h4>
+<p>Các biện pháp can thiệp có thể nhắm đến việc kiểm soát và loại trừ tác nhân gây bệnh tại nguồn bệnh hoặc tại cách thức lây.</p>
+<p>Tại nguồn bệnh, các biện pháp can thiệp có thể là:</p>
+<ul>
+<li>điều trị người bệnh (nếu nguồn bệnh là người),</li>
+<li>điều trị hoặc tiêu huỷ động vật nhiễm bệnh (nếu nguồn bệnh là động vật), hoặc</li>
+<li>khử trùng môi trường (nếu nguồn bệnh từ môi trường: cây cối, đất, nước).</li>
+</ul>
+<p>Tại dây chuyền lây, các pháp can thiệp có thể là:</p>
+<ul>
+<li>cách ly người bệnh (isolation), hạn chế tiếp xúc (social distance) (nếu bệnh lây truyền trực tiếp)</li>
+<li>loại bỏ hoặc khử trùng vật chuyên chở (nếu bệnh lây gián tiếp qua vật chuyên chở)</li>
+<li>điều chỉnh thông khí, áp lực không khí, lọc không khí (nếu bệnh lây gián tiếp qua không khí)</li>
+<li>kiểm soát vectơ (nếu bệnh lây gián tiếp qua vectơ)</li>
+</ul>
+</div>
+<div id="bảo-vệ-ngõ-vào" class="section level4">
+<h4>Bảo vệ ngõ vào</h4>
+<p>Một số biện pháp bảo vệ ngõ vào bao gồm:</p>
+<ul>
+<li>sử dụng mùng (bed net) khi ngủ để tránh bị muỗi đốt (đối với bệnh lây truyền qua muỗi đốt, ví dụ sốt rét)</li>
+<li>mặc quần dài (long pants), áo dài tay (sleeves), chất thoa đuổi côn trùng (insect repellent) (đối với bệnh lây truyền qua muỗi đốt hay côn trùng cắn)</li>
+</ul>
+</div>
+<div id="tăng-cường-khả-năng-chống-đỡ-của-túc-chủ" class="section level4">
+<h4>Tăng cường khả năng chống đỡ của túc chủ</h4>
+<p>Một số biện pháp giúp tăng cường khả năng chống đỡ của túc chủ bao gồm:</p>
+<ul>
+<li>chủng ngừa (vaccination): giúp hình thành các kháng thể đặc hiệu chống lại nhiễm trùng</li>
+<li>điều trị dự phòng (prophylaxis), ví dụ dùng thuốc kháng sốt rét chloroquine để ngăn ký sinh trùng sốt rét phát triển trong máu người bệnh</li>
+</ul>
+</div>
+<div id="ngăn-tác-nhân-gây-bệnh-tiếp-cận-túc-chủ-cảm-nhiễm" class="section level4">
+<h4>Ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm</h4>
+<p>Biện pháp can thiệp như chủng ngừa còn có thể giúp ngăn tác nhân gây bệnh tiếp cận túc chủ cảm nhiễm thông qua <strong>miễn dịch cộng đồng</strong> (herd immunity). Về lý thuyết, nếu một tỷ lệ đủ lớn người trong dân số có khả năng đề kháng với tác nhân gây bệnh, phần thiểu số túc chủ cảm nhiễm còn lại sẽ được bảo vệ, vì tác nhân gây bệnh sẽ khó gặp và gây bệnh trên số ít túc chủ cảm nhiễm đó.</p>
+</div>
+</div>
+</div>
+<div id="dây-chuyền-lây-của-các-bệnh-lây-qua-đường-tiêu-hoá" class="section level2">
+<h2>Dây chuyền lây của các bệnh lây qua đường tiêu hoá</h2>
+<p>Bệnh lây qua đường tiêu hoá bao gồm một số những bệnh thường gặp, do nhiều loại tác nhân gây ra như:</p>
+<ul>
+<li>Vi rút: tiêu chảy do rotavirus, bại liệt, viêm gan siêu vi A và E</li>
+<li>Vi khuẩn: tả, lị do Shigella, thương hàn</li>
+<li>Ký sinh trùng đơn bào: lị do amip, <em>Giardia lamblia</em></li>
+<li>Giun sán: giun kim, sán lá</li>
+</ul>
+<div id="nguồn-bệnh-1" class="section level3">
+<h3>Nguồn bệnh</h3>
+<p>Nguồn bệnh của các bệnh này là người hoặc động vật. Đối với người, đó có thể là người đang trong giai đoạn ủ bệnh, người đang có biểu hiện lâm sàng, người đang trong giai đoạn phụ hồi, hoặc người lành mang bệnh.</p>
+</div>
+<div id="cách-thức-lây-1" class="section level3">
+<h3>Cách thức lây</h3>
+<p>Các tác nhân có thể lây theo các cách thức lây sau:</p>
+<div id="đường-phân-miệng" class="section level4">
+<h4>Đường phân-miệng</h4>
+<p>Đây là cách thức lây quan trọng thứ hai sau lây truyền qua đường hô hấp <span class="citation">[@ahrens2014]</span>.</p>
+<p>Mầm bệnh được thải qua phân rồi sau đó lây nhiễm cho túc chủ mới qua ngõ vào là đường miệng, gián tiếp thông qua thức ăn, nguồn nước, tay hay ruồi bị nhiễm bẩn, hoặc trực tiếp qua quan hệ tình dục liên quan đến đường phân miệng.</p>
+<p>Ngõ vào có thể là vùng hầu họng hoặc đường ruột (đối với hầu hết virus). Để lây nhiễm, mầm bệnh phải vượt qua được hàng rào bảo vệ tại đường tiêu hoá trên (hydrochloric acid ở dạ dày, acid mật ở tá tràng, muối và các enzyme ở ruột).</p>
+<p>Một số tác nhân gây bệnh thường gặp lây qua cách thức lây này: vi khuẩn thương hàn, vi khuẩn <em>Shigella</em>, vi khuẩn tả, virus gây bại liệt, norovirus, rotavirus, virus gây viêm gan A &amp; E.</p>
+</div>
+<div id="nguồn-bệnh-từ-động-vật-hoặc-thức-ăn-bị-nhiễm-bệnh" class="section level4">
+<h4>Nguồn bệnh từ động vật hoặc thức ăn bị nhiễm bệnh</h4>
+<p>Điển hình là vi khuẩn <em>Salmonella</em> vốn có thể lây nhiễm cho nhiều loại vật nuôi, chim và một số động vật hoang dã khác. Thức ăn tạo ra từ động vật bị nhiễm <em>Salmonella</em> (trứng, sữa, thịt) sẽ là nguồn lây chính nếu không được chuẩn bị kỹ.</p>
+<p>Một số tác nhân khác cũng có thể lây nhiễm qua thức ăn bị nhiễm bệnh như: vi khuẩn <em>Campylobacter</em>, vi khuẩn <em>Yersinia</em>, vi khuẩn <em>Listeria</em>.</p>
+</div>
+</div>
+<div id="biểu-hiện-lâm-sàng-của-túc-chủ-cảm-thụ" class="section level3">
+<h3>Biểu hiện lâm sàng của túc chủ cảm thụ</h3>
+<p>Biểu hiện lâm sàng thường gặp của túc chủ cảm thụ là tiêu chảy với nhiều dạng và mức độ khác nhau:</p>
+<ul>
+<li>Tiêu chảy ồ ạt với phân dạng nước trong suốt (trong bệnh tả)</li>
+<li>Tiêu chảy kiểu mót rặn với phân nhày máu (trong bệnh lị)</li>
+</ul>
+<p>Ngoài ra, một số bệnh còn có biểu hiện ngoài đường tiêu hoá (ví dụ như trong viêm gan), hoặc có biểu hiện toàn thân (ví dụ như trong bại liệt, viêm màng não do enterovirus, thương hàn).</p>
+</div>
+</div>
+<div id="các-biện-pháp-phòng-chống-bệnh-lây-qua-đường-tiêu-hoá" class="section level2">
+<h2>Các biện pháp phòng chống bệnh lây qua đường tiêu hoá</h2>
+<div id="kiểm-soát-và-loại-trừ-tác-nhân-gây-bệnh-tại-nguồn-lây-1" class="section level3">
+<h3>Kiểm soát và loại trừ tác nhân gây bệnh tại nguồn lây</h3>
+<p>Tuỳ theo nguồn lây (nguồn bệnh và dây chuyền lây), các biện pháp can thiệp bao gồm:</p>
+<div id="tại-nguồn-bệnh" class="section level4">
+<h4>Tại nguồn bệnh</h4>
+<ul>
+<li>Giám sát, phát hiện, cách ly, điều trị bệnh cho người bệnh.</li>
+<li>Giám sát, phát hiện người mang trùng (xét nghiệm phân người phơi nhiễm và người đã khỏi bệnh).</li>
+<li>Xử lý phân và chất thải hợp lý, đặc biệt là phân và chất thải của người bệnh.</li>
+</ul>
+<p>Để hiệu quả, các biện pháp này cần được tiến hành kết hợp với các chương trình giáo dục sức khoẻ nhằm giúp người dân:</p>
+<ul>
+<li>Phát hiện và điều trị cho người bệnh đúng cách (bằng vôi bột, hoá chất).</li>
+<li>Biết xử lý phân rác đúng cách.</li>
+</ul>
+</div>
+<div id="tại-dây-chuyền-lây" class="section level4">
+<h4>Tại dây chuyền lây</h4>
+<ul>
+<li>Kiểm tra vệ sinh tại nguồn nước uống, nơi chế biến và bảo quản thực phẩm.</li>
+<li>Đảm bảo cung cấp nước sạch bằng cách khử trùng nước sinh hoạt ô nhiễm bằng hoá chất: ví dụ như nước máy phải đảm bảo lượng clo tồn dư 0,5 mg/l, nước giếng cần phải được khử trùng với cloramin B.</li>
+</ul>
+<p>Để hiệu quả, các biện pháp này cần được tiến hành kết hợp với các chương trình giáo dục sức khoẻ nhằm giúp người dân:</p>
+<ul>
+<li>Chú ý giữ gìn vệ sinh thực phẩm, vệ sinh cá nhân.</li>
+<li>Thực hiện các biện pháp phòng ngừa: ăn chín, uống sôi, rửa tay sạch trước khi ăn và sau khi vệ sinh.</li>
+</ul>
+</div>
+</div>
+<div id="tăng-cường-khả-năng-chống-đỡ-của-túc-chủ-1" class="section level3">
+<h3>Tăng cường khả năng chống đỡ của túc chủ</h3>
+<p>Bằng việc chủng ngừa, ví dụ như bệnh bại liệt, viêm gan A, thương hàn.</p>
+</div>
+</div>
+<div id="dịch-tễ-học-bệnh-thương-hàn" class="section level2">
+<h2>Dịch tễ học bệnh thương hàn</h2>
+<div id="giới-thiệu" class="section level3">
+<h3>Giới thiệu</h3>
+<div id="tác-nhân-gây-bệnh" class="section level4">
+<h4>Tác nhân gây bệnh</h4>
+<p>Bệnh thương hàn (typhoid) và phó thương hàn (paratyphoid) là các bệnh nhiễm trùng lây qua đường tiêu hoá, gây ra bởi các chủng vi khuẩn <em>Salmonella enterica</em>:</p>
+<ul>
+<li>Typhi (<em>Salmonella typhi</em>)</li>
+<li>Paratyphi A, B, C (<em>Salmonella paratyphi A, B, C</em>)</li>
+</ul>
+</div>
+<div id="chẩn-đoán-và-điều-trị" class="section level4">
+<h4>Chẩn đoán và điều trị</h4>
+<p>Việc chẩn đoán và điều trị sốt thương hàn được tóm tắt như sau <span class="citation">[@wain2015]</span>:</p>
+<ul>
+<li><p>Chẩn đoán sốt thương hàn dựa chủ yếu vào việc phát hiện vi khuẩn trong máu bằng PCR hoặc cấy máu. Chẩn đoán dựa trên việc phát hiện kháng thể (ví dụ như Widal test) không tin cậy. Một công cụ chẩn đoán mới là bộ xét nghiệm chẩn đoán thương hàn-phó thương hàn (typhoid–paratyphoid diagnostic assay) giúp xác định IgA lưu hành có khả năng cho độ nhạy và độ đặc hiệu cao.</p></li>
+<li><p>Nếu không được điều trị kịp thời, thương hàn và phó thương hàn có thể ra tử vong. Điều trị thương hàn dựa vào việc sử dụng kháng sinh. Các kháng sinh chủ đạo là fluoroquinolones, azithromycin và cephalosporin thế hệ 3. Ngoài ra, chloramphenicol cũng có thể được sử dụng ở những nơi có chủng vi khuẩn nhạy cảm.</p></li>
+</ul>
+</div>
+</div>
+<div id="một-số-đặc-điểm-dịch-tễ-học" class="section level3">
+<h3>Một số đặc điểm dịch tễ học</h3>
+<p>Hầu hết các quốc gia có bệnh lưu hành không có hệ thống giám sát quốc gia hoàn chỉnh cho bệnh thương hàn. Hầu hết dữ liệu được dựa trên các nghiên cứu tiến hành tại bệnh viện, khiến cho hiểu biết về dịch tễ học của bệnh thương hàn không hoàn chỉnh, đặc biệt là tại những khu vực mà việc sử dụng các dịch vụ y tế thấp <span class="citation">[@radhakrishnan2018]</span>.</p>
+<div id="gánh-nặng-bệnh-tật" class="section level4">
+<h4>Gánh nặng bệnh tật</h4>
+<div id="trên-thế-giới" class="section level5">
+<h5>Trên thế giới</h5>
+<p>Theo dữ liệu từ nghiên cứu GBD 2017 <span class="citation">[@gbd2019]</span>, trên thế giới có 14.3 triệu (khoảng không chắc chắn 95% là 12.5-16.3 triệu) ca bệnh thương hàn và phó thương hàn vào năm 2017, phổ biến chủ yếu ở Nam Á, Đông Nam Á, Đông Á, châu Đại Dương và châu Phi cận Sahara. Trong đó, vi khuẩn <em>Salmonella enterica</em> nhóm huyết thanh Typhi chiếm 76.3% (71.8-80.5) số ca bệnh.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/Typhoid_incidence_2017.jpg" alt="Tần suất mới mắc (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 [Nguồn: @gbd2019]" width="100%" />
+<p class="caption">
+Tần suất mới mắc (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 <span class="citation">[Nguồn: @gbd2019]</span>
+</p>
+</div>
+<p>Trước khi sử dụng kháng sinh trong điều trị thương hàn, tỷ lệ tử vong do bệnh vào khoảng 33% ở các nước đang phát triển, 10% ở các nước đang phát triển; tuy nhiên tỷ lệ này đã giảm đi nhiều với việc sử dụng kháng sinh trong điều trị thương hàn <span class="citation">[@radhakrishnan2018]</span>. Năm 2017, ước tính tỷ lệ tử vong trên toàn cầu là 0.95% (0.54-1.53), với tỷ lệ tử vong cao hơn ở trẻ em và người lớn tuổi, và tại các nước thu nhập thấp <span class="citation">[@gbd2019]</span>. Ước tính thương hàn và phó thương hàn gây ra khoảng 135.000 (77.000-219.000) trường hợp tử vong, chịu trách nhiệm cho 9.8 triệu (5.6-15.8 triệu) DALYs trong năm 2017.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/Typhoid_mortality_2017.jpg" alt="Tần suất tử vong (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 [Nguồn: @gbd2019]" width="100%" />
+<p class="caption">
+Tần suất tử vong (trên 100 000 dân) của thương hàn và phó thương hàn theo quốc gia, năm 2017 <span class="citation">[Nguồn: @gbd2019]</span>
+</p>
+</div>
+<p>Những con số về gánh nặng bệnh tật này đều đã giảm đi so với năm 1990, với số ca là 25.9 triệu (22.0-29.9 triệu), 230.000 (131.000-373.000) trường hợp tử vong và 17.2 triệu (9.9-27.8 triệu) DALYs. Một nghiên cứu tổng quan có hệ thống về khuynh hướng mắc bệnh trên toàn cầu trong khoảng thời gian từ 1990 đến 2016 cho thấy tỷ lệ mới mắc của thương hàn giảm đi ở hầu hết các nước phát triển, nhưng vẫn còn tồn tại ở các nước đang phát triển <span class="citation">[@als2018]</span>. Tại một số quốc gia như Việt Nam và Thái Lan, thương hàn đã gần như không còn là vấn đề về y tế công cộng nữa <span class="citation">[@als2018]</span>.</p>
+</div>
+<div id="tại-việt-nam" class="section level5">
+<h5>Tại Việt Nam</h5>
+<p>Trong giai đoạn 1999-2003, số ca thương hàn cho toàn dân số được ước tính là 14.7/100,000 người mỗi năm, trong đó cao nhất là Điện Biên và Sóc Trăng (&gt;100/100,000 người mỗi năm) <span class="citation">[@nga2018]</span>.</p>
+<div class="figure" style="text-align: center">
+<img src="assests/Typhoid_incidence_Vietnam.gif" alt="Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi [Nguồn: @nga2018]" width="100%" />
+<p class="caption">
+Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi <span class="citation">[Nguồn: @nga2018]</span>
+</p>
+</div>
+<p>Tại TP Hồ Chí Minh, kết quả nghiên cứu dựa trên dữ liệu về cấy máu thường quy tại BV Bệnh Nhiệt đới cho thấy sự suy giảm đáng kể về tỷ lệ hiện mắc của các kết quả cấy máu dương tính với Salmonella Typhi theo thời gian:</p>
+<div class="figure" style="text-align: center">
+<img src="assests/Typhoid_bloodculture_HTD.gif" alt="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]" width="100%" />
+<p class="caption">
+Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM <span class="citation">[Nguồn: @nga2018]</span>
+</p>
+</div>
+</div>
+</div>
+<div id="dây-chuyền-lây-1" class="section level4">
+<h4>Dây chuyền lây</h4>
+<p><em>Nguồn bệnh</em></p>
+<p>Người là nguồn bệnh duy nhất của <em>Salmonella Typhi</em> <span class="citation">[@wain2015]</span>. Tuy có thể tồn tại lâu ngoài môi trường, vi khuẩn này không thể nhân lên ngoài cơ thể con người.</p>
+<p>Ngõ ra chủ yếu của <em>Salmonella Typhi</em> là qua phân, và có một số ghi nhận sự tồn tại của vi khuẩn trong nước tiểu <span class="citation">[@crump2019]</span>. <em>Salmonella Typhi</em> có thể được thải ra qua phân hoặc nước tiểu trong và sau giai đoạn bệnh cấp tính. Việc thải ra vi khuẩn có thể ngắn hạn hoặc lâu dài. Một người mang trùng đã khỏi bệnh có thể thải ra vi khuẩn từ 3 đến 12 tháng sau đợt bệnh cấp. Một người mang trùng mạn tính có thể thải ra vi khuẩn sau hơn 12 tháng từ đợt bệnh cấp. Người mang trùng mạn tính được xem là nguồn bệnh chính của các trường hợp nhiễm trùng <em>Salmonella Typhi</em> mắc phải trong nước tại các nước có tỷ lệ mới mắc thấp <span class="citation">[@crump2019]</span>.</p>
+<p><em>Cách thức lây</em></p>
+<p><em>Salmonella Typhi</em> lây truyền qua đường phân-miệng, chủ yếu là gián tiếp qua vật chuyên chở là nước và thức ăn bị nhiễm phân người bệnh <span class="citation">[@crump2019]</span>. Nhiễm trực tiếp từ người bệnh đôi khi xảy ra qua quan hệ tình dục đường miệng - hậu môn. <em>Salmonella Typhi</em> có thể lây truyền qua hai hình thức chính:</p>
+<ul>
+<li><p>Lây truyền chu kỳ ngắn: nước và thức ăn nhiễm phân từ môi trường trung gian, và việc lây nhiễm diễn ra khi các biện pháp vệ sinh không được tuân thủ tốt.</p></li>
+<li><p>Lây truyền chu kỳ dài: sự lây nhiễm diễn ra trong phạm vi lớn hơn, bao gồm nguồn nước sinh hoạt bị nhiễm phân người bệnh và việc dùng phân người và nước chưa qua xử lý trong trồng trọt.</p></li>
+</ul>
+<p>Lây truyền chu kỳ ngắn thường gắn với các vụ dịch lẻ tẻ từ người mang trùng mạn tính tại các nước có tỷ lệ mới mắc thấp, còn lây truyền chu kỳ dài thường gắn với việc lây truyền với số lượng lớn qua nước sinh hoạt tại các nước có tỷ lệ lưu hành bệnh cao <span class="citation">[@crump2019]</span>.</p>
+<p><em>Ngõ vào và túc chủ cảm nhiễm</em></p>
+<p>Ngõ vào của <em>Salmonella Typhi</em> là miệng, thường là qua việc nuốt phải nước hay thức ăn bị nhiễm phân của người bệnh <span class="citation">[@crump2019]</span>. Sự nhiễm bệnh diễn ra ở người túc chủ cảm nhiễm. Giai đoạn ủ bệnh ngắn đi và nguy cơ nhiễm bệnh tăng lên theo số lượng vi khuẩn nuốt phải. Dịch dạ dày là cơ chế phòng vệ quan trọng giúp ngăn chặn vi khuẩn xâm nhập nhu mô ruột, còn hệ miễn dịch tự nhiên hoặc qua chủng ngừa giúp bảo vệ một phần sự phát sinh bệnh.</p>
+</div>
+<div id="các-yếu-tố-nguy-cơ" class="section level4">
+<h4>Các yếu tố nguy cơ</h4>
+<p><em>Tuổi</em></p>
+<p>Tỷ lệ mới mắc của thương hàn thay đổi theo tuổi <span class="citation">[@radhakrishnan2018]</span>. Tại các nước lưu hành bệnh, tỷ lệ mới mắc cao nhất ở trẻ nhỏ và giảm dần theo tuổi, trong khi ở các quốc gia bệnh ít lưu hành, tỷ lệ mới mắc tương tự nhau giữa các nhóm tuổi.</p>
+<p><em>Các yếu tố về kinh tế xã hội</em></p>
+<p>Bệnh thường gặp tại các nước đang phát triển ở châu Á và châu Phi. Một số nghiên cứu cho thấy trẻ em ở vùng thành thị có nguy cơ mắc bệnh cao hơn so với trẻ ở vùng nông thôn <span class="citation">[@radhakrishnan2018]</span>. Tỷ lệ bệnh chịu ảnh hưởng bởi nhiều yếu tố về bối cảnh kinh tế xã hội như: tình trạng kinh tế xã hội, chất lượng nước sinh hoạt cũng như tình trạng vệ sinh <span class="citation">[@nga2018; @crump2019]</span>.</p>
+</div>
+</div>
+<div id="các-biện-pháp-kiểm-soát-và-phòng-ngừa-bệnh" class="section level3">
+<h3>Các biện pháp kiểm soát và phòng ngừa bệnh</h3>
+<p>Có nhiều biện pháp khác nhau để kiểm soát và phòng ngừa bệnh thương hàn, với nhiều góc độ khác nhau <span class="citation">[@radhakrishnan2018]</span></p>
+<table>
+<colgroup>
+<col width="32%" />
+<col width="67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cấp độ</th>
+<th>Biện pháp can thiệp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cơ sở hạ tầng về nước và vệ sinh</td>
+<td>Sẵn sàng cho việc tiếp cận nước sạch</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>Cải thiện vệ sinh</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>Thu thập và xử lý nước thải</td>
+</tr>
+<tr class="even">
+<td>Hệ thống y tế</td>
+<td>Chẩn đoán nhanh, chính xác</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>Đánh giá độ nhạy cảm với kháng sinh</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>Tìm và điều trị người mang trùng mạn tính</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>Điều trị khàng sinh phù hợp</td>
+</tr>
+<tr class="even">
+<td> </td>
+<td>Chủng ngừa</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>Triển khai và thực thi các quy định về an toàn thực phẩm</td>
+</tr>
+<tr class="even">
+<td>Giáo dục</td>
+<td>Rửa tay trước khi ăn, trước khi chuẩn bị đồ ăn và sau khi đi vệ sinh</td>
+</tr>
+<tr class="odd">
+<td> </td>
+<td>Giáo dục về an toàn thực phẩm</td>
+</tr>
+</tbody>
+</table>
+<p>Do các yếu tố như mật độ dân cư cao, vệ sinh kém, nước không sạch, xử lý và sản xuất thực phẩm không an toàn góp phần vào việc lây truyền bệnh thương hàn, các biện pháp thiệp cũng tập trung vào những yếu tố này để ngăn chặn đường lây của bệnh. Ngoài ra, biện pháp tập trung vào chẩn đoán nhanh chóng và điều trị phù hợp cũng sẽ góp phần cải thiện kết cuộc lâm sàng của bệnh.</p>
+<p>Tại Việt Nam, sự suy giảm ngoạn mục tỷ lệ mắc bệnh được cho là có nguyên nhân chủ yếu từ sự kết hợp của nhiều yếu tố: phát triển về kinh tế, giảm tình trạng nghèo đói, tăng cường sự tiếp cận nước sạch, cải thiện vệ sinh và chủng ngừa <span class="citation">[@nga2018]</span>.</p>
+<div id="chẩn-đoán-sớm" class="section level4">
+<h4>Chẩn đoán sớm</h4>
+<p>Việc phát triển các công cụ chẩn đoán chính xác, rẻ tiền và có khả năng ứng dụng cao có vai trò then chốt trong việc kiểm soát và điều trị thương hàn <span class="citation">[@radhakrishnan2018]</span>. Một số vấn đề về chẩn đoán bao gồm: độ nhạy thấp, mẫu xét nghiệm dễ bị dây nhiễm, âm tính giả do sử dụng kháng sinh, đặc biệt là hạn chế về nguồn lực (nhân sự, công cụ xét nghiệm, quản lý chất lượng) tại các nước đang phát triển.</p>
+</div>
+<div id="điều-trị-bằng-kháng-sinh" class="section level4">
+<h4>Điều trị bằng kháng sinh</h4>
+<p>Mặc dù việc sử dụng kháng sinh trong điều trị thương hàn đã cho thấy hiệu quả trong việc làm giảm tỷ lệ tử vong của bệnh, kháng kháng sinh hiện đang là vấn đề phải quan tâm <span class="citation">[@radhakrishnan2018]</span>. Chủng Salmonella đa kháng (kháng với ampicillin, chloramphenicol, và trimethoprim sulfamethoxazole) đã xuất hiện từ những năm 1980, trong đó Việt Nam là được xem là một điểm nóng <span class="citation">[@nga2018]</span>. Điều này dẫn đến việc phải sử dụng các fluoroquinolone như ciprofloxacin hay các cephalosporin phổ rộng. Các chủng Salmonella giảm nhạy cảm với ciprofloxacin và cephalosporin đã xuất hiện tại những nước bệnh lưu hành cao, như ở Nam Á và Đông Nam Á. Với sự xuất hiện của các chủng đề kháng với các nhóm kháng sinh tiêu chuẩn, các khảng sinh mới như carbapenems, tigecycline hay andazithromycin đang được đánh giá trong vai trò là các trị liệu thay thế.</p>
+</div>
+<div id="chủng-ngừa" class="section level4">
+<h4>Chủng ngừa</h4>
+<p>Tại nhiều nước trên thế giới, chủng ngừa đã cho thấy là biện pháp phòng ngừa thành công và hiệu quả. Hiện có 3 loại vaccine được chứng nhận bở Tổ chức Y tế thế giới và được phép sử dụng tại nhiều nước trên thế giới:</p>
+<ul>
+<li>Vaccine uống Ty21a: chứa chủng <em>Salmonella Typhi</em> sống, giảm độc lực, có hiệu lực từ 67% đến 80%</li>
+<li>Vaccine chích ViCPS: có hiệu lực 72% khi dùng ở nơi bệnh lưu hành cao và trong vụ dịch</li>
+<li>Vaccine cộng hợp Tybar typhoid conjugate vaccine (TCV): có hiệu lực khoảng 55%</li>
+</ul>
+<p>Trong đó hai loại vaccine đầu tiên không được dùng cho trẻ dưới 2 tuổi. Vaccine cộng hợp đã được dùng để chủng ngừa cho trẻ từ 6 tháng tuổi tại Ấn Độ và Nepal. Hiện tại chưa có vaccine cho Salmonella Paratyphi.</p>
+<p>Tại Việt Nam, từ những năm 1980, chính phủ đã phát động các chương trình tiêm chủng với vaccine được sản xuất tại nước ngoài cho những nhóm có nguy cơ cao trong dân số, chủ yếu là trẻ em <span class="citation">[@nga2018]</span>. Viện Vệ sinh dịch tễ trung ương tại Hà Nội đã nghiên cứu và sản xuất vaccine Vi Polysaccharide và đã đưa vào các chương trình chủng ngừa tại trường học cho trẻ từ 3 đến 10 tuổi trong giai đoạn 1997-2012. Từ năm 1997 đến 2003, chính phủ Việt Nam đã chủng ngừa cho hơn 4 triệu trẻ từ 3-5 tuổi bằng vaccine TYPHIM Vi polysaccharide do Aventis Pasteur sản xuất. Sau khi tự sản xuất được vaccine Vi polysaccharide, Việt Nam đã chủng ngừa thêm 2 triệu liều cho trẻ 5-10 tuổi (2004-2010) và sau đó là trẻ 3-5 tuổi (2011-2012). Năm 2005, trẻ em ở 35 tỉnh thành khác nhau được chủng ngừa. Tỷ lệ bao phủ của các chương trình này rất cao (&gt;90%) trong giai đoạn 1999-2010. Hiện tại chưa có đánh giá về tác dụng trực tiếp trong dân số của các chương trình chủng ngừa này (không bao gồm các can thiệp về vệ sinh), tuy nhiên tỷ lệ mới mắc đã giảm đáng kể trên khắp các tỉnh thành trong giai đoạn 1997-2007, đặc biệt ở khu vực Tây Bắc và đồng bằng sông Mê-kông, những nơi mà chương trình chủng ngừa bao phủ rộng khắp.</p>
+</div>
+</div>
+</div>
+<div id="tài-liệu-tham-khảo" class="section level2">
+<h2>Tài liệu tham khảo</h2>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.1 (2020-06-06)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.4
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
+ [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
+ [9] evaluate_0.14   highr_0.8       stringi_1.4.6   rlang_0.4.7    
+[13] fs_1.4.1        promises_1.1.1  whisker_0.4     rmarkdown_2.3  
+[17] tools_4.0.1     stringr_1.4.0   glue_1.4.1      httpuv_1.5.4   
+[21] xfun_0.15       yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0
+[25] knitr_1.30     </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
