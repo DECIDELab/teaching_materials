@@ -19,9 +19,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * Trình bày được các biện pháp phòng chống đối với các bệnh lây theo đường tiêu hóa
 
-* Mô tả được các đặc điểm dịch tễ học của bệnh thương hàn
-
-* Trình bày được các biện pháp dự phòng và kiểm soát bệnh thương hàn
+* Mô tả được quá trình lây nhiễm và các biện pháp kiểm soát/dự phòng của một số bệnh l6y qua đường tiêu hoá:
+    + Bệnh bại liệt
+    + Bệnh thương hàn
 
 ## Nhắc lại về tam giác dịch tễ học và dây chuyền lây
 
@@ -196,13 +196,13 @@ Những con số về gánh nặng bệnh tật này đều đã giảm đi so v
 
 Trong giai đoạn 1999-2003, số ca thương hàn cho toàn dân số được ước tính là 14.7/100,000 người mỗi năm, trong đó cao nhất là Điện Biên và Sóc Trăng (>100/100,000 người mỗi năm) [@nga2018]. 
 
-```{r figure5, fig.cap="Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi [Nguồn: @nga2018]", echo=FALSE, out.width="100%"}
+```{r figure5, fig.cap="Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi [Nguồn: @nga2018]", echo=FALSE, out.width="70%"}
 knitr::include_graphics("assests/Typhoid_incidence_Vietnam.gif")
 ```
 
 Tại TP Hồ Chí Minh, kết quả nghiên cứu dựa trên dữ liệu về cấy máu thường quy tại BV Bệnh Nhiệt đới cho thấy sự suy giảm đáng kể về tỷ lệ hiện mắc của các kết quả cấy máu dương tính với Salmonella Typhi theo thời gian:
 
-```{r figure6, fig.cap="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]", echo=FALSE, out.width="100%"}
+```{r figure6, fig.cap="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]", echo=FALSE, out.width="70%"}
 knitr::include_graphics("assests/Typhoid_bloodculture_HTD.gif")
 ```
 

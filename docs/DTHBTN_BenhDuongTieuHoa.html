@@ -392,7 +392,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -401,7 +401,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -413,7 +413,7 @@ div.tocify {
 <strong>Last updated:</strong> 2020-10-25
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -429,12 +429,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -501,16 +501,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreeb7acc55220f35d9194b15552454c1cd44e4e3fabtargetblankb7acc55a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/b7acc55220f35d9194b15552454c1cd44e4e3fab" target="_blank">b7acc55</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree64fe11bd157c025876b20d818f43f424b58c8836targetblank64fe11ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/64fe11bd157c025876b20d818f43f424b58c8836" target="_blank">64fe11b</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreeb7acc55220f35d9194b15552454c1cd44e4e3fabtargetblankb7acc55a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstree64fe11bd157c025876b20d818f43f424b58c8836targetblank64fe11ba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/b7acc55220f35d9194b15552454c1cd44e4e3fab" target="_blank">b7acc55</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/64fe11bd157c025876b20d818f43f424b58c8836" target="_blank">64fe11b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -526,6 +526,10 @@ Untracked files:
     Untracked:  code/00_setup.R
     Untracked:  code/create_gif.R
     Untracked:  figures/
+
+Unstaged changes:
+    Modified:   analysis/DTHBTN_BenhDuongTieuHoa.Rmd
+    Modified:   analysis/reference.bib
 
 </code></pre>
 <p>
@@ -564,6 +568,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/decidelab/teaching_materials/64fe11bd157c025876b20d818f43f424b58c8836/docs/DTHBTN_BenhDuongTieuHoa.html" target="_blank">64fe11b</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-10-25
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -678,8 +699,11 @@ Add DTHBTN_BenhDuongTieuHoa
 <ul>
 <li><p>Mô tả được quá trình lây nhiễm của các bệnh lây theo đường tiêu hóa</p></li>
 <li><p>Trình bày được các biện pháp phòng chống đối với các bệnh lây theo đường tiêu hóa</p></li>
-<li><p>Mô tả được các đặc điểm dịch tễ học của bệnh thương hàn</p></li>
-<li><p>Trình bày được các biện pháp dự phòng và kiểm soát bệnh thương hàn</p></li>
+<li><p>Mô tả được quá trình lây nhiễm và các biện pháp kiểm soát/dự phòng của một số bệnh l6y qua đường tiêu hoá:</p>
+<ul>
+<li>Bệnh bại liệt</li>
+<li>Bệnh thương hàn</li>
+</ul></li>
 </ul>
 </div>
 <div id="nhắc-lại-về-tam-giác-dịch-tễ-học-và-dây-chuyền-lây" class="section level2">
@@ -1016,7 +1040,7 @@ lampk
 <h5>Tại Việt Nam</h5>
 <p>Trong giai đoạn 1999-2003, số ca thương hàn cho toàn dân số được ước tính là 14.7/100,000 người mỗi năm, trong đó cao nhất là Điện Biên và Sóc Trăng (&gt;100/100,000 người mỗi năm) <span class="citation">(Nga, TVT 2018)</span>.</p>
 <div class="figure" style="text-align: center">
-<img src="assests/Typhoid_incidence_Vietnam.gif" alt="Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi [Nguồn: @nga2018]" width="100%" />
+<img src="assests/Typhoid_incidence_Vietnam.gif" alt="Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi [Nguồn: @nga2018]" width="70%" />
 <p class="caption">
 Tỷ lệ mới mắc thương hàn và các tỉnh thành triển khai chương trình chủng ngừa vaccine Vi <span class="citation">(Nguồn: Nga, TVT 2018)</span>
 </p>
@@ -1060,7 +1084,7 @@ lampk
 </div>
 <p>Tại TP Hồ Chí Minh, kết quả nghiên cứu dựa trên dữ liệu về cấy máu thường quy tại BV Bệnh Nhiệt đới cho thấy sự suy giảm đáng kể về tỷ lệ hiện mắc của các kết quả cấy máu dương tính với Salmonella Typhi theo thời gian:</p>
 <div class="figure" style="text-align: center">
-<img src="assests/Typhoid_bloodculture_HTD.gif" alt="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]" width="100%" />
+<img src="assests/Typhoid_bloodculture_HTD.gif" alt="Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM [Nguồn: @nga2018]" width="70%" />
 <p class="caption">
 Sự suy giảm tỷ lệ cấy máu dương tính tại BV Bệnh Nhiệt đới TP HCM <span class="citation">(Nguồn: Nga, TVT 2018)</span>
 </p>
@@ -1221,7 +1245,7 @@ lampk
 <p>Crump, JA. 2019. “Progress in Typhoid Fever Epidemiology.” <em>Clinical Infectious Diseases</em> 68 (1 Suppl): S4–S9. <a href="https://doi.org/10.1093/cid/ciy846">https://doi.org/10.1093/cid/ciy846</a>.</p>
 </div>
 <div id="ref-nga2018">
-<p>Nga, TVT, Lan, NPH, Duy, PT. 2018. “The Control of Typhoid Fever in Vietnam. The American Journal of Tropical Medicine and Hygiene.” <em>The American Journal of Tropical Medicine and Hygiene</em> 99 (3 Suppl): 72–78. <a href="https://doi.org/10.4269/ajtmh.18-0035">https://doi.org/10.4269/ajtmh.18-0035</a>.</p>
+<p>Nga, TVT, Lan, NPH, Duy, PT. 2018. “The Control of Typhoid Fever in Vietnam.” <em>The American Journal of Tropical Medicine and Hygiene</em> 99 (3 Suppl): 72–78. <a href="https://doi.org/10.4269/ajtmh.18-0035">https://doi.org/10.4269/ajtmh.18-0035</a>.</p>
 </div>
 <div id="ref-radhakrishnan2018">
 <p>Radhakrishnan, A, Mintz, ED, Als, D. 2018. “Introductory Article on Global Burden and Epidemiology of Typhoid Fever.” <em>The American Journal of Tropical Medicine and Hygiene</em> 99 (3 Suppl): 4–9. <a href="https://doi.org/10.4269/ajtmh.18-0032">https://doi.org/10.4269/ajtmh.18-0032</a>.</p>
@@ -1258,17 +1282,14 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
-other attached packages:
-[1] workflowr_1.6.2
-
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
- [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
- [9] evaluate_0.14   highr_0.8       stringi_1.4.6   rlang_0.4.7    
-[13] fs_1.4.1        promises_1.1.1  whisker_0.4     rmarkdown_2.3  
-[17] tools_4.0.1     stringr_1.4.0   glue_1.4.1      httpuv_1.5.4   
-[21] xfun_0.15       yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0
-[25] knitr_1.30     </code></pre>
+ [1] workflowr_1.6.2 Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25  
+ [5] later_1.1.0.1   R6_2.4.1        backports_1.1.8 git2r_0.27.1   
+ [9] magrittr_1.5    evaluate_0.14   highr_0.8       stringi_1.4.6  
+[13] rlang_0.4.7     fs_1.4.1        promises_1.1.1  whisker_0.4    
+[17] rmarkdown_2.3   tools_4.0.1     stringr_1.4.0   glue_1.4.1     
+[21] httpuv_1.5.4    xfun_0.15       yaml_2.2.1      compiler_4.0.1 
+[25] htmltools_0.5.0 knitr_1.30     </code></pre>
 </div>
 </div>
 
