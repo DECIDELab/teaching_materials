@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Nhắc lại về tam giác dịch tễ học và dây chuyền lây
 
-Xem tại đây: [DTHBTN - Dịch tễ học bệnh truyền nhiễm](https://decidelab.github.io/teaching_materials/docs/DTHBTN_BenhTruyenNhiem.html)
+Xem tại đây: [DTHBTN - Dịch tễ học bệnh truyền nhiễm](https://decidelab.github.io/teaching_materials/DTHBTN_BenhTruyenNhiem.html)
 
 ## Dây chuyền lây của các bệnh lây qua đường tiêu hoá
 
