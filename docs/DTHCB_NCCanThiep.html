@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Phùng Khánh Lâm" />
+
+
+<title>Bệnh và sự xuất hiện Dịch</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Teaching Materials</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/decidelab/teaching_materials">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Bệnh và sự xuất hiện Dịch</h1>
+<h4 class="author">Phùng Khánh Lâm</h4>
+<h4 class="date">2020-09-21 (cập nhật: 2020-11-18)</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-11-18
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+</p>
+<p>
+<strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20201025code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20201025)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20201025code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20201025)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreefb5a83ac276d2ffa8c546b69a334c9debe0bbbbetargetblankfb5a83aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/fb5a83ac276d2ffa8c546b69a334c9debe0bbbbe" target="_blank">fb5a83a</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreefb5a83ac276d2ffa8c546b69a334c9debe0bbbbetargetblankfb5a83aa" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/fb5a83ac276d2ffa8c546b69a334c9debe0bbbbe" target="_blank">fb5a83a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  analysis/CausalInference.Rmd
+    Untracked:  analysis/DTHCB_NCCanThiep.Rmd
+    Untracked:  analysis/DTHCB_SoDoBenhTat.Rmd
+    Untracked:  analysis/DTHCB_SoDoKetHop.Rmd
+    Untracked:  assests/
+    Untracked:  code/00_setup.R
+    Untracked:  code/create_gif.R
+    Untracked:  figures/
+    Untracked:  slides/
+
+Unstaged changes:
+    Modified:   analysis/DTHCB_BenhDich.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+<p>
+There are no past versions. Publish this analysis with <code>wflow_publish()</code> to start tracking its development.
+</p>
+<hr>
+</div>
+</div>
+</div>
+<div id="giới-thiệu" class="section level2">
+<h2>Giới thiệu</h2>
+<p>Tài liệu học tập này được xây dựng dựa trên Chương 10 của sách Dịch tễ học cơ bản do bộ môn Dịch tễ học (Khoa Y tế công cộng, Đại học Y Dược TP Hồ Chí Minh) mà chủ biên là PGS. TS. Nguyễn Đỗ Nguyên biên soạn.</p>
+<div id="mục-tiêu-bài-giảng" class="section level3">
+<h3>Mục tiêu bài giảng</h3>
+<ol style="list-style-type: decimal">
+<li>Mô tả bản chất của các loại nghiên cứu can thiệp.</li>
+<li>Liệt kê được những bước cơ bản để tiến hành một nghiên cứu can thiệp.</li>
+</ol>
+</div>
+</div>
+<div id="ba-loại-nghiên-cứu-can-thiệp" class="section level2">
+<h2>Ba loại nghiên cứu can thiệp</h2>
+<p>Một nghiên cứu can thiệp có thể nhằm đánh giá hiệu lực của một biện pháp điều trị hoặc một biện pháp dự phòng.</p>
+<ul>
+<li><p>Nếu đánh giá biện pháp điều trị, thí dụ một phác đồ thuốc, nghiên cứu can thiệp là <strong>thử nghiệm lâm sàng</strong> với đối tượng nghiên cứu là những người mắc một bệnh cụ thể, và phác đồ điều trị có hiệu lực làm giảm triệu chứng, ngăn ngừa tái phát, hoặc giảm nguy cơ tử vong.</p></li>
+<li><p>Nếu đánh giá một biện pháp dự phòng thì đối tượng nghiên cứu là những người không có bệnh, và biện pháp dự phòng được xem là có khả năng ngăn không cho bệnh xảy ra. Biện pháp dự phòng có thể áp dụng trên từng cá nhân (<strong>thử nghiệm thực địa</strong>), hoặc có thể trên toàn cộng đồng (<strong>can thiệp cộng đồng</strong>).</p></li>
+</ul>
+<div id="thử-nghiệm-lâm-sàng" class="section level3">
+<h3>Thử nghiệm lâm sàng</h3>
+<p>Thử nghiệm lâm sàng là một nghiên cứu thử nghiệm với đối tượng nghiên cứu là bệnh nhân, với hai mục đích:</p>
+<ul>
+<li>Xác định hiệu quả của một phác đồ điều trị bệnh, <em>hoặc</em></li>
+<li>Tìm một biện pháp ngăn ngừa những dư chứng hoặc biến chứng của bệnh, thí dụ, tàn phế hoặc tử vong.</li>
+</ul>
+<p>Bệnh nhân được phân bổ ngẫu nhiên thành hai nhóm, một nhóm có phơi nhiễm (được áp dụng phác đồ thử nghiệm), và một nhóm không phơi nhiễm (không áp dụng phác đồ thử nghiệm mà sử dụng phác đồ điều trị hiện hành sẵn có hoặc giả dược). Yếu tố phơi nhiễm trong thử nghiệm lâm sàng không phải là yếu tố phòng ngừa bậc 1, vì thử nghiệm lâm sàng không có mục đích ngăn ngừa sự xuất hiện của bệnh. Nếu chưa có sẵn một phác đồ điều trị thì phác đồ thử nghiệm sẽ được so sánh với một giả dược. Nếu phác đồ điều trị đã có sẵn, việc dùng giả dược cho nhóm chứng sẽ không được cho phép về mặt y đức, và phác đồ thử nghiệm sẽ được so sánh với một phác đồ có hiệu lực cao nhất vào thời điểm nghiên cứu. Hơn nữa, giả dược là không cần thiết nếu mục đích của thử nghiệm lâm sàng là so sánh hiệu lực của những phác đồ điều trị khác nhau.</p>
+</div>
+<div id="thử-nghiệm-thực-địa" class="section level3">
+<h3>Thử nghiệm thực địa</h3>
+<p>Khác với thử nghiệm lâm sàng, thử nghiệm thực địa nhắm đến đối tượng nghiên cứu là người khỏe hay cụ thể hơn là nhóm dân số nguy cơ, chứ không phải bệnh nhân. Nghiên cứu thực địa thường đòi hỏi chi phí rất lớn vì hai lý do:</p>
+<ul>
+<li><p>Khả năng mắc bệnh của người khỏe là nhỏ hơn nhiều so với khả năng có biến chứng, trong một thời gian ngắn, của một người bệnh, do đó, thử nghiệm thực địa thường đòi hỏi một cỡ mẫu lớn;</p></li>
+<li><p>Quá trình thu thập dữ kiện với những đối tượng nghiên cứu là người khỏe đòi hỏi phải tiếp xúc tại nhà, cơ quan, trường học, v.v., do đó, càng tăng thêm chi phí.</p></li>
+</ul>
+<p>Vì những lý do đó, mục đích của những thử nghiệm thực địa được khu trú vào việc tìm những biện pháp phòng những bệnh</p>
+<ul>
+<li><p>Rất phổ biến (thí dụ, thử nghiệm thực địa xác định hiệu lực của sinh tố C liều cao để phòng ngừa cảm lạnh),</p></li>
+<li><p>Rất trầm trọng (thí dụ, thử nghiệm thực địa xác định hiệu lực của vắc-xin Salk để phòng ngừa bại liệt là một nghiên cứu thí nghiệm trên con người lớn nhất trong lịch sử, bao gồm hàng trăm ngàn học sinh được sử dụng vắc-xin hoặc giả dược)</p></li>
+</ul>
+</div>
+<div id="thử-nghiệm-can-thiệp-cộng-đồng" class="section level3">
+<h3>Thử nghiệm can thiệp cộng đồng</h3>
+<p>Nghiên cứu can thiệp cộng đồng có thể được xem là một dạng mở rộng của nghiên cứu thử nghiệm thực địa, nhưng biện pháp can thiệp được áp dụng và đánh giá cho cả một cộng đồng chứ không cho từng cá nhân. Những biện pháp can thiệp sử dụng trong nghiên cứu can thiệp cộng đồng là những biện pháp dễ áp dụng cho cả cộng đồng hơn là cho từng cá nhân, thí dụ, cung cấp fluor trong nước sinh hoạt, giáo dục sức khỏe bằng phương tiện truyền thông đại chúng, v.v.</p>
+</div>
+</div>
+<div id="y-đức-trong-nghiên-cứu-can-thiệp" class="section level2">
+<h2>Y đức trong nghiên cứu can thiệp</h2>
+<p>Một phác đồ điều trị mà tác dụng đã quá rõ ràng trong thực tế sẽ không cần tìm thêm bằng chứng với thử nghiệm lâm sàng, thí dụ, khi đưa penicillin vào phác đồ điều trị viêm phổi do phế cầu, tỉ suất tử vong được hạ thấp rất đáng kể, từ 95% xuống 15%, thì việc tiến hành một thử nghiệm lâm sàng để xác định hiệu lực của penicillin trong điều trị viêm phổi do phế cầu là chắc chắn không cần thiết.</p>
+<p>Tuy nhiên, điều quan trọng cần được quan tâm trước tiên khi tiến hành một nghiên cứu can thiệp là <strong>những biện pháp can thiệp được sử dụng có gây tổn hại cho đối tượng nghiên cứu hay không?</strong> Một yếu tố được xem là nguy hiểm đối với sức khỏe của con người thì không nên đưa vào nghiên cứu can thiệp để phân bổ cho đối tượng nghiên cứu, thí dụ, hút thuốc lá. Với những yếu tố nguy hại, nghiên cứu can thiệp sẽ được tiến hành một cách gián tiếp, thí dụ, tác động của việc bỏ hút thuốc lá với sự giảm tỉ suất mắc hoặc chết. Ngược lại, nếu một biện pháp can thiệp được xem là có lợi cho sức khỏe, thí dụ immunoglobulin đối với bệnh Kawasaki, thì không thể không áp dụng nó cho bệnh nhân. Chính vì vậy việc sử dụng giả dược cho nhóm chứng trong thử nghiệm lâm sàng là không được chấp nhận, trừ khi cho đến thời điểm nghiên cứu không có một phác đồ điều trị nào sẵn có, và phác đồ nghiên cứu là phác đồ duy nhất mà hiệu lực còn chưa được khẳng định.</p>
+<div id="quyết-định-ngưng-nghiên-cứu" class="section level3">
+<h3>Quyết định ngưng nghiên cứu</h3>
+<p>Khi thiết kế một nghiên cứu can thiệp, người nghiên cứu luôn luôn phải xác định trong những tình huống nào cần phải thay đổi kế hoạch, hoặc ngừng nghiên cứu. Ngoài ra, trong nhiều nghiên cứu can thiệp, các đối tượng được thu nhận trong một thời gian kéo dài, và những kết quả ghi nhận đuợc ở những bệnh nhân tham gia trước đó có thể đã đủ để trả lời câu hỏi nghiên cứu. Vì <strong>sự an toàn của đối tượng nghiên cứu</strong>, phân tích dữ kiện trong từng giai đoạn là bắt buộc, và nếu kết quả phân tích ở bất kỳ thời điểm nào cho thấy rõ ràng, hoặc phác đồ là thật sự rất có hiệu lực, hoặc phác đồ là rất nguy hại, bắt buộc phải chấm dứt nghiên cứu. Trong thử nghiệm sử dụng chất ức chế <span class="math inline">\(\beta\)</span> cho nhồi máu cơ tim (Beta-Blocker Heart Attack Trial), 3.837 bệnh nhân được phân bổ ngẫu nhiên để sử dụng propranolol và giả dược. Kết quả phân tích vào tháng thứ 9 cho thấy nhóm can thiệp có tỉ lệ các biến cố chính và tử vong chung giảm 26% so với nhóm giả dược (p=0,005), và nghiên cứu đã được ngưng sớm hơn dự định.</p>
+<p>Tương tự như vậy là quyết định tiếp tục nghiên cứu. Một câu hỏi được đặt ra là sẽ có phạm y đức hay không nếu ngừng nghiên cứu khi chỉ căn cứ vào một vài kết quả có được từ một số ít bệnh nhân, vì những kết quả đó có thể chỉ là tạm thời, và thậm chí có thể thay đổi khi cỡ mẫu là đủ lớn. Thí dụ, vào 3 thời điểm trong 30 tháng đầu của thử nghiệm Dự Án Thuốc Mạch Vành (Coronary Drug Project), tỉ suất tử vong của nhóm sử dụng clofibrate là thấp hơn có ý nghĩa thống kê (p=0,05) so với tỉ lệ tương ứng của nhóm giả dược. Kết quả này chưa đạt được mức rất có ý nghĩa thống kê theo qui định của chấm dứt sớm nghiên cứu. Do đó, nhóm nghiên cứu quyết định tiếp tục nghiên cứu, và kết quả phân tích cuối cùng cho thấy tỉ suất tử vong là như nhau ở nhóm clofibrate và nhóm giả dược (tương ứng là 25,5% và 25,4%).</p>
+<p>Việc chấm dứt sớm một nghiên cứu can thiệp phải được quyết định rất cẩn trọng dựa vào nhiều bằng chứng. Cơ sở ban đầu là những kết quả phân tích dữ kiện nếu cho thấy một sự khác biệt rất có ý nghĩa thống kê để khó có thể giải thích kết quả có được là do cơ hội. Tuy nhiên, kết quả phân tích thống kê không phải là cơ sở duy nhất, người nghiên cứu cần dựa vào tất cả những bằng chứng sinh học, những kết quả từ những nghiên cứu đi trước. Mục đích tối hậu là bảo vệ đối tượng nghiên cứu khỏi một phác đồ nguy hại, nhưng cũng không phạm sai lầm vì đã quyết định chấm dứt sớm nghiên cứu.</p>
+</div>
+</div>
+<div id="các-bước-tiến-hành-một-thử-nghiệm-lâm-sàng" class="section level2">
+<h2>Các bước tiến hành một thử nghiệm lâm sàng</h2>
+<p>Nghiên cứu can thiệp được tiến hành theo cách tiếp cận đoàn hệ, trong đó nguyên nhân (hay yếu tố phơi nhiễm) là biện pháp can thiệp, và kết quả đánh giá là sự cải thiện của tình trạng sức khỏe (trong nghiên cứu điều trị) hoặc bệnh mới mắc (trong nghiên cứu dự phòng). Những đặc điểm riêng của nghiên cứu can thiệp được trình bày dưới đây trong từng bước cụ thể của quá trình tiến hành nghiên cứu, và tập trung vào thử nghiệm lâm sàng.</p>
+<div id="xác-định-câu-hỏi-nghiên-cứu" class="section level3">
+<h3>Xác định câu hỏi nghiên cứu</h3>
+<p>Bước đầu tiên là xác định câu hỏi nghiên cứu, trong đó các thành phần sau cần được xác định một cách cụ thể và rõ ràng:</p>
+<ul>
+<li>Loại can thiệp: thường được xác định dựa trên bối cảnh xã hội và sự tích luỹ bằng chứng hiện có. Biện pháp can thiệp này vừa phải đảm bảo y đức và vừa phải khả thi.</li>
+<li>Nhóm chứng: có thể là giả dược (placebo) hoặc một can thiệp đang được sử dụng khác (active comparator) hoặc điều trị chuẩn (standard of care). Việc lựa chọn này vừa phụ thuộc vào bối cảnh hiện tại, y đức vừa phụ thuộc vào bản chất của câu hỏi muốn trả lời.</li>
+<li>Kết cuộc/tiêu chí đánh giá.</li>
+</ul>
+</div>
+<div id="chọn-nhóm-nghiên-cứu" class="section level3">
+<h3>Chọn Nhóm Nghiên Cứu</h3>
+<p>Việc chọn nhóm nghiên cứu bao gồm việc lựa chọn các dân số quan tâm và việc phân nhóm đối tượng nghiên cứu vào các nhóm điều trị.</p>
+<div id="các-dân-số-quan-tâm-trong-một-nghiên-cứu-can-thiệp" class="section level4">
+<h4>Các dân số quan tâm trong một nghiên cứu can thiệp</h4>
+<p>Bao gồm:</p>
+<ul>
+<li><p><strong>Dân số tham chiếu</strong>: là tập hợp những người mà kết quả của nghiên cứu sẽ được áp dụng. Đây chính là dân số mục tiêu của câu hỏi nghiên cứu, thí dụ, với câu hỏi nghiên cứu là “Ở những bệnh nhân tăng huyết áp người lớn, phác đồ amlodipin 5mg một viên/ngày có kiểm soát huyết áp tốt hơn so với phác đồ nifedipin 5mg một viên/ngày hay không?”, dân số tham chiếu sẽ là tất cả bệnh nhân tăng huyết áp. Nếu người nghiên cứu cho rằng kết quả của nghiên cứu có thể áp dụng cho tất cả mọi người thì dân số tham chiếu có thể là tất cả những bệnh nhân người lớn tăng huyết áp trên thế giới. Tuy nhiên, nếu người nghiên cứu cho rằng amlodipin chỉ tốt hơn nifedipin trên những bệnh nhân tăng huyết áp có một đặc tính riêng, thí dụ, một giới tính, một nhóm tuổi cụ thể, thì dân số tham chiếu sẽ được khu trú vào nhóm những đối tượng đó.</p></li>
+<li><p><strong>Dân số thí nghiệm</strong>: là tập hợp những đối tượng mà trong đó nghiên cứu sẽ được tiến hành, và theo nguyên tắc, dân số này phải có những đặc tính tương tự như dân số tham chiếu để kết quả của nghiên cứu có thể suy diễn vào dân số tham chiếu. Tuy nhiên, để bảo đảm tính giá trị bên trong của kết quả nghiên cứu, những chi tiết sau đây cần được quan tâm:</p>
+<ul>
+<li>Dân số thí nghiệm phải đủ lớn để bảo đảm cỡ mẫu cần thiết của nghiên cứu. Thí dụ, trong một thử nghiệm lâm sàng về tác dụng của streptokinase tiêm tĩnh mạch trong điều trị nhồi máu cơ tim cấp nhằm giảm tử vong, nếu chỉ chọn mẫu tại một bệnh viện có khả năng sẽ không đủ mẫu nghiên cứu dù trong nhiều năm, do đó, dân số thí nghiệm có thể được chọn từ nhiều trung tâm khác nhau.</li>
+<li>Dân số thí nghiệm phải đủ lớn để có đủ tần số những kết quả đầu ra mong muốn, trong khoảng thời gian cho phép của nghiên cứu, bảo đảm khả năng phân tích thống kê. Một nghiên cứu xác định hiệu lực của phác đồ sử dụng aspirin hàng ngày nhằm giảm tỉ suất tử vong của các bệnh tim mạch tiến hành ở 20.000 phụ nữ dưới 40 tuổi có thể đòi hỏi một khoảng thời gian nhiều thập niên để có đủ tần số kết quả mong đợi, vì tử vong tim mạch ở nhóm này là hiếm. Tuy nhiên, nếu nghiên cứu ở đàn ông từ 40 tuổi trở lên thì chỉ cần thời gian vài năm, vì tử vong tim mạch ở đàn ông là cao hơn nhiều lần so với đàn bà, và tăng đáng kể ở tuổi trung niên. Dân số thí nghiệm bao gồm những người nam từ 40 tuổi trở lên sẽ bảo đảm được tính khả thi của nghiên cứu.</li>
+<li>Vì nghiên cứu can thiệp đòi hỏi phải theo dõi đối tượng nghiên cứu trong một khoảng thời gian tương đối dài để đánh giá được những kết cuộc, do đó, dân số thí nghiệm phải bảo đảm khả năng theo dõi đầy đủ của các đối tượng nghiên cứu. Một dân số biến động, hoặc nghiên cứu đòi hỏi tái khám thường xuyên với những đối tượng già yếu có thể sẽ bị mất theo dõi.</li>
+<li>Trong nghiên cứu Sức Khỏe Bác Sĩ (Physicians’ Health Study) của Hoa kỳ, dân số thí nghiệm bao gồm những bác sĩ trong lứa tuổi có khả năng chết vì những bệnh tim mạch cũng như mắc các bệnh ung thư. Đây là một dân số đủ lớn, ổn định, và với trình độ chuyên môn trong y khoa, những thông tin về sức khỏe do các đối tượng nghiên cứu cung cấp có tính chính xác cao. Ngoài ra, sự hợp tác của các bác sĩ này là rất tốt nên việc thu thập dữ kiện được thực hiện bằng thư đã tiết kiệm được chi phí và thời gian.</li>
+</ul></li>
+<li><p><strong>Dân số nghiên cứu</strong>: Sau khi xác định được dân số thí nghiệm, người nghiên cứu sẽ thông báo cho các đối tượng về mục đích nghiên cứu để có sự đồng thuận tham gia. Dân số nghiên cứu bao gồm những người trong dân số thí nghiệm thoả tiêu chuẩn chọn vào và đồng ý tham gia nghiên cứu. Dân số này có thể không đại diện cho dân số thí nghiệm; những người đủ tiêu chí chọn vào mẫu nghiên cứu nhưng từ chối tham gia có thể ảnh hưởng đến giá trị bên ngoài của nghiên cứu.</p></li>
+</ul>
+<p>Tuy nhiên, điều quan trọng cần nhớ là một mẫu nghiên cứu thiếu tính đại diện chỉ hạn chế khả năng khái quát hoá vào dân số thí nghiệm chứ không ảnh hưởng đến tính giá trị bên trong của kết quả nghiên cứu. Nếu có đủ những dữ kiện giúp cho người nghiên cứu mô tả được những đặc điểm của nhóm từ chối tham gia, và nếu không có sự khác biệt giữa nhóm đồng ý và nhóm từ chối tham gia, người nghiên cứu vẫn có thể áp dụng kết quả nghiên cứu vào dân số thí nghiệm, hoặc dân số tham chiếu.</p>
+</div>
+<div id="phân-nhóm-nghiên-cứu---phân-bổ-ngẫu-nhiên" class="section level4">
+<h4>Phân nhóm nghiên cứu - phân bổ ngẫu nhiên</h4>
+<p>Sau khi có được dân số nghiên cứu, người nghiên cứu sẽ phân bổ các đối tượng vào nhóm can thiệp (là nhóm được áp dụng biện pháp can thiệp, thí dụ, một phác đồ điều trị mới) và nhóm không can thiệp, còn được gọi là nhóm so sánh (là nhóm được áp dụng biện pháp so sánh, thí dụ, một phác đồ điều trị chuẩn đang được sử dụng). Có nhiều cách để phân bổ phác đồ điều trị vào nhóm can thiệp và nhóm so sánh, ví dụ như:</p>
+<ul>
+<li><p>Phân bổ theo ngày nhập viện chẵn lẻ trong tháng, thí dụ, những bệnh nhân nhập viện vào ngày 2, 4, 6, v.v., sẽ được điều trị với phác đồ A, và những bệnh nhân nhập viện vào các ngày 3, 5, 7, v.v., sẽ nhận phác đồ B. Với cách này, người nghiên cứu có thể đoán biết được phác đồ trên bệnh nhân tiếp theo là phác đồ nào. Trong một nghiên cứu về hiệu lực của điều trị chống đông máu được thực hiện trong Thế Chiến Thứ Nhì, kết quả cho thấy có rất nhiều bệnh nhân nhập viện vào các ngày lẻ. Người nghiên cứu có nhận xét rằng “vì các bác sĩ thấy được những lợi ích của điều trị, do đó, khi có thể được, họ tăng tốc việc nhập viện càng nhiều càng tốt các bệnh nhân,… nếu bình thường sẽ nhập viện vào ngày chẵn, để họ được nhập viện vào các ngày lẻ.”</p></li>
+<li><p>Phân bổ luân phiên: kết quả của một nghiên cứu về hiệu lực của BCG phòng lao được thực hiện tại New York, cho thấy tỉ suất tử vong vì bệnh lao trong nhóm so sánh là cao hơn gấp 5 lần tỉ suất tương ứng trong nhóm can thiệp. Tuy nhiên, quá trình phân bổ can thiệp để những trẻ có phụ huynh hiểu biết và hợp tác được chủng ngừa nhiều hơn, và những trẻ con của các phụ huynh kém hợp tác thường được đưa vào nhóm chứng. Do đó, tỉ suất tử vong thấp quan sát thấy trong nhóm tiêm chủng chưa hẳn đã là do hiệu lực của BCG. Vì thế, nhóm nghiên cứu đã thay đổi cách phân bổ can thiệp, các trẻ em sẽ luân phiên được chủng BCG, và số còn lại đi vào nhóm chứng. Đây không phải là phân bổ ngẫu nhiên, nhưng kết quả nghiên cứu có thay đổi so với cách phân bổ ban đầu. Tuy nhiên, phân bổ luân phiên có khả năng phạm vào sai lệch chọn lựa. Khi hai bệnh nhân xuất hiện cùng một lúc nhưng có dự hậu khác nhau, người nghiên cứu, có thể biết hoặc không biết, cho người bệnh nặng nhận phác đồ điều trị mà họ tin rằng tốt hơn (hoặc có thể kém hơn). Hậu quả là một sự mất cân đối của các yếu tố có thể ảnh hưởng đến kết quả giữa hai nhóm nghiên cứu, và một phác đồ thật sự có hiệu lực có thể sẽ được thấy là kém hiệu lực chỉ vì nó được phân bổ vào nhóm bệnh nhân có những đặc tính riêng, và những đặc tính đó đã làm giảm hiệu lực điều trị.</p></li>
+</ul>
+<p>Để hai nhóm có thể so sánh được với nhau, việc phân bổ các đối tượng vào hai nhóm nghiên cứu phải được thực hiện một cách ngẫu nhiên. Ý nghĩa của phân bổ ngẫu nhiên là mỗi đối tượng nghiên cứu có cơ hội như nhau để nhận mỗi phác đồ khác nhau trong nghiên cứu, có nghĩa là khả năng để một đối tượng được nhận phác đồ A (hoặc B) không tùy thuộc vào khả năng nhận được phác đồ A (hoặc B) của bất kỳ một cá nhân nào khác trong dân số nghiên cứu. Ngoài ra, nếu kết quả nghiên cứu có thể thay đổi do những đặc tính khác nhau của đối tượng nghiên cứu, thí dụ, giới tính, tuổi, mức độ bệnh, thì sự phân bổ ngẫu nhiên sẽ bảo đảm sự phân bố đều của các đặc tính này giữa hai nhóm nghiên cứu.</p>
+<p>Những ưu điểm của sự phân bổ ngẫu nhiên là:</p>
+<ul>
+<li><p><strong>Không tiên đoán được phác đồ tiếp theo là gì</strong>, thí dụ, sau khi phân bổ phác đồ A vào một đối tượng, người nghiên cứu sẽ không biết trước đối tượng tiếp theo sẽ được sử dụng phác đồ A hoặc B, mà khả năng A hoặc B trong thực tế sẽ được quyết định một cách ngẫu nhiên. Nói một cách khác, quá trình phân bổ ngẫu nhiên loại bỏ khả năng gán phác đồ điều trị một cách chủ quan cho một đối tượng nghiên cứu.</p></li>
+<li><p><strong>Tạo sự phân bố đều của các biến số gây nhiễu tiềm ẩn</strong>: một sự kết hợp có ý nghĩa thống kê tìm thấy trong một nghiên cứu can thiệp chưa hẳn là một sự kết hợp nhân quả, mà có thể do ảnh hưởng của những biến số bên ngoài có tác động gây nhiễu. Sự phân bổ ngẫu nhiên giúp tạo sự phân bố đều của các biến số gây nhiễu tiềm ẩn giữa các nhóm nghiên cứu, bảo đảm khả năng so sánh được giữa các nhóm, do đó, loại trừ được tác động của các biến số gây nhiễu.</p></li>
+</ul>
+</div>
+</div>
+<div id="thu-thập-dữ-kiện" class="section level3">
+<h3>Thu Thập Dữ Kiện</h3>
+<p>Những dữ kiện cần thu thập của một nghiên cứu can thiệp là những kết quả đầu ra trong câu hỏi nghiên cứu, đó là sự cải thiện của tình trạng sức khỏe (kết quả mong đợi), và cả những tác dụng phụ (kết quả không mong đợi). Để có những dữ kiện này, người nghiên cứu bắt buộc phải có những tiêu chí để định nghĩa cụ thể những kết quả đầu ra. Yêu cầu quan trọng của thu thập dữ kiện trong nghiên cứu can thiệp là khả năng so sánh được của những kết quả đầu ra ở hai nhóm nghiên cứu. Những khiá cạnh sau đây cần được quan tâm để bảo đảm khả năng so sánh được giữa hai nhóm:</p>
+<ul>
+<li><p>Phương pháp đo lường phải được áp dụng giống nhau cho cả hai nhóm, bằng cách áp dụng chặt chẽ những tiêu chí đã được thiết lập để xác định đầu ra.</p></li>
+<li><p>Dữ kiện thu thập phải đầy đủ và có giá trị. Dù đã đồng ý tham gia và đã được phân bổ ngẫu nhiên vào các nhóm điều trị, điều này vẫn chưa bảo đảm được việc đối tượng nghiên cứu sẽ tham gia trọn vẹn. Một đối tượng nghiên cứu có thể bỏ cuộc trong suốt thời gian diễn ra nghiên cứu vì nhiểu lý do khác nhau, do những tác dụng phụ của thuốc, hoặc tự ý đổi phác đồ mà họ cho rằng tốt hơn, hoặc do không chấp nhận được một thời gian nghiên cứu quá dài, hoặc thay đổi chỗ ở, hoặc thậm chí chết vì những nguyên nhân khác, v.v. Trong những tình huống đó, những kết quả đầu ra sẽ không thể xác định được vì tỉ lệ kết quả ở các nhóm là không đầy đủ, hậu quả là khả năng phân tích thống kê sẽ bị hạn chế, hoặc những khác biệt thấy được trên kết quả của hai nhóm là không thật. Khả năng tuân thủ của đối tượng nghiên cứu tùy thuộc vào thời gian kéo dài cũng như tính phức tạp của qui trình nghiên cứu. Để bảo đảm sự tuân thủ cao của đối tượng nghiên cứu, người nghiên cứu có thể chọn dân số nghiên cứu gồm những người quan tâm, tin cậy, đồng thời tăng cường khả năng tuân thủ bằng cách tiếp cận thường xuyên, hoặc thậm chí có bồi dưỡng cho đối tượng khi khai thác thông tin. Do ảnh hưởng nghiêm trọng của nó, việc xác định tỉ lệ không tuân thủ là quan trọng, dù rằng không đơn giản. Những biện pháp có thể sử dụng để đo lường mức độ không tuân thủ là tự khai báo của đối tượng (thí dụ, trong những nghiên cứu về vận động thể lực, thay đối hành vi như bỏ hút thuôc lá, giảm uống rượu, v.v.), hoặc đếm số viên thuốc còn sót. Một biện pháp khách quan, nhưng có khả năng đắt tiền và thực tế ít đưọc sử dụng, là đo những chất biến dưỡng của dược phẩm được thải vào máu hoặc qua nước tiểu. Hạn chế của phương pháp này là chỉ xác định rằng đối tượng có uống thuốc trong một vài ngày trước khi xét nghiệm chứ không xác định được sự tuân thủ lâu dài.</p></li>
+<li><p>Tính khách quan của thu thập dữ kiện phải được bảo đảm. Trong một số tình huống, vì một số lý do, người nghiên cứu có thể biết được đối tượng nghiên cứu được áp dụng biện pháp điều trị nào, thí dụ, phác đồ điều trị mới mà người nghiên cứu cho rằng có hiệu quả tốt hơn, thì việc đánh giá sự cải thiện của tình trạng sức khỏe (hoặc các tác dụng không mong đợi) trên nhóm này có thể sẽ theo hướng có lợi cho nghiên cứu. Tương tự, nếu đối tượng nghiên cứu biết phác đồ mà mình đang được áp dụng (thí dụ, phác đồ mới mà họ nghĩ rằng có tác dụng tốt) thì những triệu chứng mà họ khai báo sẽ theo hướng thuận lợi cho nghiên cứu. Trừ kết quả đầu ra là tử vong, hầu hết những thông tin về triệu chứng, hoặc ngay cả dấu hiệu lâm sàng, đều có khả năng thiếu chính xác do đánh giá của cả hai phiá, người nghiên cứu và đối tượng nghiên cứu. Để khắc phục tình trạng này, biện pháp mù nên được áp dụng cho cả người nghiên cứu và đối tượng nghiên cứu.</p></li>
+</ul>
+<div id="làm-mù-trong-nghiên-cứu-can-thiệp" class="section level4">
+<h4>Làm mù trong nghiên cứu can thiệp</h4>
+<div id="hiệu-ứng-rosenthal" class="section level5">
+<h5>Hiệu ứng Rosenthal</h5>
+<p>Rosenthal (1976) đã tiến hành một nghiên cứu tập huấn chuột đi qua mê lộ. Ông sử dụng hai nhóm sinh viên để tập hai lô chuột, một lô “thông minh” và một lô “đần độn”. Sau một thời gian tập, kết quả xảy ra đúng như mong đợi là lô chuột thông minh đi qua mê lộ tốt hơn lô đần độn. Khi đó, Rosenthal mới thông báo rằng hai lô chuột thí nghiệm là một, nhưng được chia đôi và gán cho thông minh và đần độn. Vì giả thuyết nghiên cứu đã bị lộ (chuột thông minh sẽ làm tốt hơn), nhóm sinh viên nhận lô chuột “thông minh” tin rằng chúng sẽ có kết quả tốt hơn nên đã cố gắng tập, và từ đó, làm cho chúng có khả năng hơn.</p>
+<p>Để tránh sai lệch thông tin trong trường hợp này, nên giữ cho đối tượng nghiên cứu không biết họ đang được áp dụng biện pháp can thiệp nào (phác đồ thử nghiệm hay phác đồ so sánh), và cả người theo dõi thu thập dữ kiện cũng không được biết đối tượng nghiên cứu ở trong nhóm nào (nhóm can thiệp hay nhóm so sánh):</p>
+<ul>
+<li>Nếu đối tượng nghiên cứu không biết phác đồ điều trị của mình, nghiên cứu là <strong>mù đơn</strong>;</li>
+<li>Nếu cả người thu thập dữ kiện cũng không biết nhóm nghiên cứu của đối tượng, nghiên cứu là <strong>mù đôi</strong>.</li>
+<li>Nếu cả người phân bổ điều trị cũng không biết phác đồ là phác đồ thử nghiệm hoặc so sánh (thí dụ, phác đồ điều trị sử dụng những viên thuốc được mã hoá, và người phân bổ điều trị không biết được mã số), nghiên cứu là <strong>mù ba</strong>.</li>
+</ul>
+<p>Một nghiên cứu hoàn toàn không mù được gọi là <strong>nghiên cứu mở</strong> (open-label).</p>
+<p>Sử dụng giả dược cũng là một biện pháp để làm mù. Tuy nhiên, nhiều bằng chứng cho thấy rằng nhóm những người được sử dụng giả dược đôi khi cũng báo cáo những kết quả tương tự như nhóm những người thực sự được can thiệp. Hiện tượng này được gọi là hiệu ứng giả dược (còn được gọi là <strong>hiệu ứng Hawthorne</strong>), được giải thích do cơ chế tâm lý hơn là tác động sinh học thật sự.</p>
+</div>
+<div id="hiệu-ứng-hawthorne" class="section level5">
+<h5>Hiệu ứng Hawthorne</h5>
+<p>Trong thập niên 1920, một nhóm các nhà nghiên cứu tại Nhà máy điện Hawthorne miền Tây (Western Electric Hawthorne Works, ở Chicago) tiến hành một nghiên cứu xem tác động của ánh sáng, nhiệt, và những điều kiện vật lý khác trên khả năng sản xuất của công nhân. Kết quả nghiên cứu cho thấy khả năng sản xuất của công nhân lại cao hơn dù ánh sáng yếu. Những nhà nghiên cứu nhận ra rằng sự hiện diện của họ có tác dụng thuận lợi: công nhân đã tăng cường sản xuất có lẽ vì sợ mất việc. Hiệu ứng Hawthorne cho thấy ngay cả giả dược cũng có thể tạo ra hiệu quả đáng kể.</p>
+<p>Hiệu ứng giả dược được ghi nhận trong nhiều thử nghiệm lâm sàng. Năm 1962, Wangensteen và cộng sự giới thiệu một phương pháp mới để điều trị loét tá tràng bằng cách bơm một dung dịch lạnh qua ống thông mũi dạ dày để ức chế bài tiết. Họ đã nghiên cứu trên một nhóm 31 bệnh nhân, và tất cả đều cảm thấy giảm đau đáng kể. Dù rằng kết quả nghiên cứu chỉ là những dữ kiện mô tả, nhưng biện pháp này đã được áp dụng tại một số bệnh viện. Để xác định lại hiệu lực của chất làm lạnh dạ dày, một thử nghiệm lâm sàng ngẫu nhiên hoá đã được tiến hành sau đó, với 69 bệnh nhân được can thiệp và 68 bệnh nhân sử dụng giả dược. Ở nhóm giả dược, chất làm lạnh cũng qua ống thông mũi dạ dày nhưng chỉ được bơm đến phần trên của thực quản. Như vậy, tất cả bệnh nhân ở hai nhóm đều sẽ cảm nhận được sự hiện diện của chất làm lạnh, nhưng ở nhóm giả dược sẽ không có tác dụng bài tiết xảy ra. Kết quả nghiên cứu ghi nhận tỉ lệ như nhau ở hai nhóm về giảm đau, hết đau, ức chế bài tiết, không tái phát; và khẳng định rằng hiệu quả giảm triệu chứng của những bệnh nhân trong nghiên cứu của Wangensteen chỉ là do tác dụng tâm lý.</p>
+<p>Tuy nhiên, sử dụng giả dược là quan trọng khi nghiên cứu tỉ suất của những tác dụng phụ hoặc phản ứng. Trong Nghiên cứu Aspirin Nhồi Máu Cơ Tim (Aspirin Myocardial Infarction Study), 23,7% trong nhóm can thiệp (1g aspirin/ngày) và 14,9% trong nhóm giả dược khai báo những triệu chứng viêm loét dạ dày. Nếu không có nhóm giả dược, tỉ lệ tác dụng phụ được gán cho aspirin là đến 23,7%, trong khi thật ra chỉ là 8,8%. Trong một nghiên cứu can thiệp có nhóm giả dược, căn cứ vào tỉ lệ khai báo những kết quả giống nhau giữa hai nhóm, người nghiên cứu có thể xác định được tỉ suất những tác dụng chủ quan liên quan đến phác đồ điều trị.</p>
+</div>
+</div>
+</div>
+<div id="phân-tích-dữ-kiện-và-lý-giải-kết-quả" class="section level3">
+<h3>Phân Tích Dữ Kiện và Lý Giải Kết Quả</h3>
+<p>Những dữ kiện của nghiên cứu can thiệp được phân tích theo nguyên tắc của một nghiên cứu đoàn hệ, đó là so sánh tỉ suất kết quả đầu ra ở hai nhóm được can thiệp và nhóm so sánh. Kết quả của nghiên cứu được lý giải dựa vào giá trị của <strong>số đo kết hợp</strong>. Như đối với những nghiên cứu phân tích, việc đánh giá vai trò của cơ hội, sai lệch, và tác dụng của các biến số gây nhiễu cần được quan tâm. Phân bổ ngẫu nhiên là một điểm mạnh của nghiên cứu can thiệp, và nếu được thực hiện tốt, với cỡ mẫu nghiên cứu đủ lớn, hai nhóm nghiên cứu sẽ có khả năng so sánh được với nhau. Tuy nhiên, nếu cỡ mẫu nghiên cứu là không đủ lớn, hoặc quá trình phân bổ ngẫu nhiên là không hiệu quả, thì bước đầu tiên trong quá trình phân tích dữ kiện là xác định khả năng so sánh được giữa hai nhóm nghiên cứu, bằng cách mô tả những đặc tính nền của hai nhóm, và bảng dữ kiện này là bảng dữ kiện đầu tiên khi trình bày kết quả. Nếu có sự mất cân xứng giữa hai nhóm theo những biến số gây nhiễu, thì những kỹ thuật phân tích thống kê để kiểm soát những biến số này cũng giống như trong phân tích dữ kiện của nghiên cứu đoàn hệ.</p>
+<p>Một câu hỏi thường được đặt ra trong những thử nghiệm lâm sàng là xử trí như thế nào với những đối tượng nghiên cứu không tuân thủ điều trị. Điều cần nhớ là những đối tượng tuân thủ đầy đủ chỉ là một phần trong toàn bộ dân số nghiên cứu, và những đối tượng không tuân thủ thường mang những đặc tính có liên quan đến kết quả đầu ra của nghiên cứu. Trong thử nghiệm Dự Án Thuốc Mạch Vành (Coronary Drug Project), khi đưa vào phân tích tất cả các đối tượng nghiên cứu đã được chọn, kết quả cho thấy tỉ suất tử vong trong 5 năm ở hai nhóm là tương đương (18% và 19,5%). Để thăm dò ảnh hưởng của sự tuân thủ trên kết quả nghiên cứu, phân tích đã được tiến hành riêng ở nhóm sử dụng clofibrate, và kết quả cho thấy rằng tỉ suất tử vong ở nhóm tuân thủ tốt và không tuân thủ là 15% và 24,6%, tương ứng. Những kết quả tương tự cũng được ghi nhận ở nhóm giả dược, với tỉ suất tử vong ở nhóm tuân thủ và không tuân thủ là 15,1% và 28,2%, tương ứng. Như vậy, rõ ràng nhóm không tuân thủ có những đặc tính riêng mà những đặc tính đó có liên quan đến khả năng tuân thủ cũng như liên quan đến dự hậu của họ. Do đó, phân tích riêng trên nhóm tuân thủ sẽ cho những kết quả không có giá trị.</p>
+<p>Khi một đối tượng đã được phân bổ ngẫu nhiên vào một nhóm nghiên cứu, kết quả cuối cùng của họ phải được đánh giá và phân tích cùng với những đối tượng khác, bất kể họ có tuân thủ hay không. Điều này đòi hỏi phải cố gắng duy trì tối đa tính tuân thủ của những đối tượng nghiên cứu, giảm đến tối thiểu mất theo dõi, và những thông tin về kết quả cuối cùng trên những đối tượng không tuân thủ phải được thu thập.</p>
+<div id="nguyên-tắc-của-phân-tích-dữ-kiện" class="section level4">
+<h4>Nguyên tắc của phân tích dữ kiện</h4>
+<p>Nguyên tắc của phân tích dữ kiện trong nghiên cứu can thiệp là <strong>phân tích theo chủ định điều trị</strong> (intention-to-treat analysis), có nghĩa là luôn luôn đưa vào phân tích khi một đối tượng đã được phân bổ ngẫu nhiên. Lý do là để xác định rằng phác đồ thử nghiệm là có hiệu lực, sự phân bổ ngẫu nhiên chỉ dựa trên cơ sở gán phác đồ điều trị, do đó, phân tích dữ kiện phải dựa trên cơ sở này để bảo đảm sức mạnh của sự phân bổ ngẫu nhiên. Sự phân bổ ngẫu nhiên đã phân bố đều các biến số gây nhiễu tiềm ẩn giữa các nhóm nghiên cứu, do đó, phân tích trên những nhóm nhỏ, thí dụ, nhóm tuân thủ, chỉ có khả năng kiểm soát những yếu tố gây nhiễu được biết, nhưng sẽ đánh mất sự kiểm soát những yếu tố gây nhiễu tiềm ẩn mà trước đó sự phân bổ ngẫu nhiên đã đạt được.</p>
+</div>
+</div>
+</div>
+<div id="lượng-giá-trước-buổi-học-chính-thức" class="section level2">
+<h2>Lượng giá trước buổi học chính thức</h2>
+<p>Mời các học viên trả lời các câu hỏi trong phiếu lượng giá trước buổi học dưới đây:</p>
+<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=-Miz6oh0D0aitEEurd6ov5n02b8-tohPqXmBIVH6UQxUMFZDOVAzOFFTS1ZGTEFMMVpUTzNLUVdaMi4u">Phiếu lượng giá trước buổi học</a></p>
+</div>
+<div id="tài-liệu-tham-khảo" class="section level2">
+<h2>Tài liệu tham khảo</h2>
+<div id="refs">
+
+</div>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.1 (2020-06-06)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Catalina 10.15.4
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
+ [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
+ [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.7     fs_1.4.1       
+[13] promises_1.1.1  rmarkdown_2.3   tools_4.0.1     stringr_1.4.0  
+[17] glue_1.4.1      httpuv_1.5.4    xfun_0.19       yaml_2.2.1     
+[21] compiler_4.0.1  htmltools_0.5.0 knitr_1.30     </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

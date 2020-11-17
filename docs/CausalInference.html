@@ -12,7 +12,7 @@
 <meta name="author" content="Phùng Khánh Lâm" />
 
 
-<title>Bệnh và sự xuất hiện Dịch</title>
+<title>Causal Inference</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -385,9 +385,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Bệnh và sự xuất hiện Dịch</h1>
+<h1 class="title toc-ignore">Causal Inference</h1>
 <h4 class="author">Phùng Khánh Lâm</h4>
-<h4 class="date">2020-09-14 (cập nhật: 2020-11-18)</h4>
+<h4 class="date">2020-11-17 (cập nhật: 2020-11-18)</h4>
 
 </div>
 
@@ -436,7 +436,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 </div>
 <div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -548,78 +548,140 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
-
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/DTHCB_BenhDich.Rmd</code>) and HTML (<code>docs/DTHCB_BenhDich.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+There are no past versions. Publish this analysis with <code>wflow_publish()</code> to start tracking its development.
 </p>
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-File
-</th>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-<th>
-Message
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/decidelab/teaching_materials/fb5a83ac276d2ffa8c546b69a334c9debe0bbbbe/docs/DTHCB_BenhDich.html" target="_blank">fb5a83a</a>
-</td>
-<td>
-lampk
-</td>
-<td>
-2020-11-05
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/decidelab/teaching_materials/blob/f71b32561cba529602c643a5d148185911d35251/analysis/DTHCB_BenhDich.Rmd" target="_blank">f71b325</a>
-</td>
-<td>
-lampk
-</td>
-<td>
-2020-11-05
-</td>
-<td>
-Add DTHCB_BenhDich
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 <hr>
 </div>
 </div>
 </div>
 <div id="giới-thiệu" class="section level2">
 <h2>Giới thiệu</h2>
-<p>Tài liệu học tập này được xây dựng dựa trên Chương 2 của sách Dịch tễ học cơ bản do bộ môn Dịch tễ học (Khoa Y tế công cộng, Đại học Y Dược TP Hồ Chí Minh) mà chủ biên là PGS. TS. Nguyễn Đỗ Nguyên biên soạn.</p>
-<div id="mục-tiêu-bài-giảng" class="section level3">
-<h3>Mục tiêu bài giảng</h3>
+<p>From the course Causal questions and principled answers: a guide through the landscape for practising statisticians.</p>
+</div>
+<div id="a-causal-effect-question-for-a-purpose-the-steps" class="section level2">
+<h2>A causal effect question for a purpose: the steps</h2>
+<ol style="list-style-type: decimal">
+<li>Define the treatment and its relevant levels/values corresponding to the scientific question of the study.</li>
+<li>Define the outcome that corresponds to the scientific questions under study.</li>
+<li>Define the population (s) of interest.</li>
+<li>Formalise potential outcomes, one for each level of the treatment that the subject could have possibly experienced</li>
+<li>Chose the causal target parameter or estimand , as a (summary) contrast between the potential outcome distributions.</li>
+<li>State the assumptions validating that the causal effect can be estimated with the data at hand.</li>
+<li>Estimation of ‘the’ causal effect</li>
+<li>Evaluate assumptions, sensitivity analysis .</li>
+</ol>
+</div>
+<div id="potential-outcomes-and-causal-estimands" class="section level2">
+<h2>Potential outcomes and causal estimands</h2>
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+</div>
+<div id="causal-questions-for-a-purpose" class="section level3">
+<h3>Causal questions for a purpose</h3>
+<p>Two general questions as a running thread throughout:</p>
+<ol style="list-style-type: decimal">
+<li>Does some form of breastfeeding (BF) action increase the babies weight at three months?</li>
+<li>Is the use of a pulmonary artery catheter prolonging survival time for patients admitted to an intensive care unit (ICU) in critical condition?</li>
+</ol>
+<p>Questions posed</p>
+<ul>
+<li>by the ‘patient’, care giver, health insurance, …</li>
+<li>for decisions</li>
+</ul>
+</div>
+<div id="randomised-exposure" class="section level3">
+<h3>Randomised exposure</h3>
+<div id="promotion-of-breastfeeding-intervention-trial---probit" class="section level4">
+<h4>Promotion of Breastfeeding Intervention Trial - PROBIT</h4>
+<ul>
+<li>(Kramer et al, 2001) our inspiration</li>
+<li>Women living in a low income area of Belarus who gave birth to a full-term singleton baby between June ’96- Dec ’97</li>
+<li>were (cluster) randomised to BF encouraging educational program or not, during their last term of pregnancy.</li>
+<li>All babies were weighed at age 3 months.</li>
+<li>A simulated version of individually randomised women Probitsim included: 17,044 women with singleton births (8,667 in the active arm and 8,377 in the control arm).</li>
+<li>Simulated on www.ofcaus.org (cfr. practical 2)</li>
+</ul>
+</div>
+<div id="general-notation-for-the-observed-data" class="section level4">
+<h4>General notation for the observed data</h4>
+<ul>
+<li>A for observed Action or Active exposure level</li>
+<li>Y for the observed outcome</li>
+<li>L for observed Lifestyle factors or baseline covariates</li>
+</ul>
+</div>
+<div id="what-can-we-learn-itt" class="section level4">
+<h4>What can we learn? ITT</h4>
+<p>If A is randomised</p>
+<ul>
+<li>L−distribution common to all A−levels</li>
+<li>learn causal effect of training offer on <a href="mailto:weight@3m" class="email">weight@3m</a></li>
+</ul>
+<p>Comparing (mean) outcomes between randomized arms</p>
+<p><span class="math display">\[E(Y|A = 1) − E(Y|A = 0)\]</span></p>
+<p>measures a comparative causal effect…</p>
+<p>A Randomised –&gt; causal effect of training offer on <a href="mailto:weight@3m" class="email">weight@3m</a> compares (mean) outcomes between randomized arms</p>
+<ul>
+<li>ACE: Average Causal Effect also called</li>
+<li>ATE: Average Treatment Effect</li>
+</ul>
+<p>averaging over</p>
+<ul>
+<li>the entire study population</li>
+<li>or subpopulations of given measured baseline covariates L education level, health of the parents, job of the mother, …</li>
+</ul>
+<p>Estimate in PROBITsim: 94.2 grams (SE 9.1 grams) We may wish to know more.</p>
+</div>
+</div>
+<div id="observed-exposures" class="section level3">
+<h3>Observed exposures</h3>
+<div id="further-questions-on-related-exposure-measures" class="section level4">
+<h4>Further questions on related exposure measures</h4>
+<p>Pregnant woman may ask about impact on <a href="mailto:weight@3m" class="email">weight@3m</a> of:</p>
+<ol style="list-style-type: decimal">
+<li>following a BF program that is offered</li>
+<li>starting BF</li>
+<li>continuing BF for the full 3 months</li>
+</ol>
+<p>in ‘her’ population stratum</p>
+<p>Health insurer may ask about impact on <a href="mailto:weight@3m" class="email">weight@3m</a> of:</p>
+<ol style="list-style-type: decimal">
+<li>offering a BF encouragement program</li>
+<li>following the BF program</li>
+<li>starting BF</li>
+<li>continuing BF for a full 3 months</li>
+</ol>
+<p>in different (targeted) population strata in the current or improved program?</p>
+</div>
+<div id="the-problem-of-observational-data" class="section level4">
+<h4>The problem of observational data</h4>
+<p>Confounding: Different levels of observed exposure A are likely seen in population strata with different prognosis of outcome ‘under the reference exposure level (0)’</p>
+<p>For instance:</p>
+<ul>
+<li><p>The group of women who is observed to breastfeed may differ from the group who is observed not to wrt. SES, education, health…</p></li>
+<li><p>Hence: comparing baby weight at 3 months between both groups compares results following a package of different circumstances, including breastfeeding exposure upto 3mo.</p></li>
+</ul>
+</div>
+</div>
+<div id="possible-exposures-and-potential-outcomes" class="section level3">
+<h3>Possible exposures and potential outcomes</h3>
+<p>What potential outcome (distribution) is expected following (two) different possible exposure levels</p>
+</div>
+<div id="assumptions-for-causal-inference" class="section level3">
+<h3>Assumptions for causal inference</h3>
+</div>
+<div id="situating-different-exposure-types" class="section level3">
+<h3>Situating different exposure types</h3>
+</div>
+<div id="simulating-the-parallel-worlds---a-resource" class="section level3">
+<h3>Simulating the parallel worlds - a resource</h3>
+</div>
+<div id="causal-estimands" class="section level3">
+<h3>Causal Estimands</h3>
+</div>
+<div id="case-studies-from-the-literature" class="section level3">
+<h3>Case studies from the literature</h3>
 <ol style="list-style-type: decimal">
 <li>Liệt kê được bốn giai đoạn trong quá trình phát triển của một bệnh.</li>
 <li>Liệt kê được ba thành phần của dây chuyền lây.</li>
@@ -914,9 +976,9 @@ loaded via a namespace (and not attached):
  [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
  [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
  [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.7     fs_1.4.1       
-[13] promises_1.1.1  whisker_0.4     rmarkdown_2.3   tools_4.0.1    
-[17] stringr_1.4.0   glue_1.4.1      httpuv_1.5.4    xfun_0.19      
-[21] yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0 knitr_1.30     </code></pre>
+[13] promises_1.1.1  rmarkdown_2.3   tools_4.0.1     stringr_1.4.0  
+[17] glue_1.4.1      httpuv_1.5.4    xfun_0.19       yaml_2.2.1     
+[21] compiler_4.0.1  htmltools_0.5.0 knitr_1.30     </code></pre>
 </div>
 </div>
 

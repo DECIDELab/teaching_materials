@@ -1,0 +1,27 @@
+---
+title: "Số đo kết hợp"
+author: "Phùng Khánh Lâm"
+date: " 2020-11-01 (cập nhật: `r Sys.Date()`)"
+output:
+    html_document:
+      theme: cerulean
+      toc: yes
+      toc_float: yes
+bibliography: reference.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mục tiêu bài học
+
+## Các số đo kết hợp
+
+## Cách lựa chọn số đo kết hợp
+
+Các số đo kết hợp dạng tuyệt đối (khác biệt nguy cơ tuyệt đối) phù hợp với các câu hỏi về y tế công cộng, do y tế công cộng 
+
+## Tài liệu tham khảo
+
+

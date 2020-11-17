@@ -1,7 +1,7 @@
 ---
-title: "Bệnh và sự xuất hiện Dịch"
+title: "Causal Inference"
 author: "Phùng Khánh Lâm"
-date: " 2020-09-14 (cập nhật: `r Sys.Date()`)"
+date: " 2020-11-17 (cập nhật: `r Sys.Date()`)"
 output:
     html_document:
       theme: cerulean
@@ -16,9 +16,122 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Giới thiệu
 
-Tài liệu học tập này được xây dựng dựa trên Chương 2 của sách Dịch tễ học cơ bản do bộ môn Dịch tễ học (Khoa Y tế công cộng, Đại học Y Dược TP Hồ Chí Minh) mà chủ biên là PGS. TS. Nguyễn Đỗ Nguyên biên soạn.
+From the course Causal questions and principled answers: a guide through the landscape for practising statisticians.
 
-### Mục tiêu bài giảng
+## A causal effect question for a purpose: the steps
+
+1. Define the treatment and its relevant levels/values corresponding to the scientific question of the study.
+2. Define the outcome that corresponds to the scientific questions under study.
+3. Define the population (s) of interest.
+4. Formalise potential outcomes, one for each level of the treatment that the subject could have possibly experienced
+5. Chose the causal target parameter or estimand , as a (summary) contrast between the potential outcome distributions.
+6. State the assumptions validating that the causal effect can be estimated with the data at hand.
+7. Estimation of ‘the’ causal effect
+8. Evaluate assumptions, sensitivity analysis .
+
+## Potential outcomes and causal estimands
+
+### Introduction
+
+### Causal questions for a purpose
+
+Two general questions as a running thread throughout:
+
+1. Does some form of breastfeeding (BF) action increase the babies weight at three months?
+2. Is the use of a pulmonary artery catheter prolonging survival time for patients admitted to an intensive care unit (ICU) in critical condition?
+
+Questions posed
+
+* by the ‘patient’, care giver, health insurance, ... 
+* for decisions
+
+### Randomised exposure
+
+#### Promotion of Breastfeeding Intervention Trial - PROBIT
+
+* (Kramer et al, 2001) our inspiration
+* Women living in a low income area of Belarus who gave birth to a full-term singleton baby between June ’96- Dec ’97 
+* were (cluster) randomised to BF encouraging educational program or not, during their last term of pregnancy.
+* All babies were weighed at age 3 months.
+* A simulated version of individually randomised women Probitsim included: 17,044 women with singleton births (8,667 in the active arm and 8,377 in the control arm).
+* Simulated on www.ofcaus.org (cfr. practical 2)
+
+#### General notation for the observed data
+
+* A for observed Action or Active exposure level
+* Y for the observed outcome
+* L for observed Lifestyle factors or baseline covariates
+
+#### What can we learn? ITT
+
+If A is randomised
+
+* L−distribution common to all A−levels
+* learn causal effect of training offer on weight@3m
+
+Comparing (mean) outcomes between randomized arms 
+
+$$E(Y|A = 1) − E(Y|A = 0)$$
+
+measures a comparative causal effect...
+
+A Randomised --> causal effect of training offer on weight@3m compares (mean) outcomes between randomized arms
+
+* ACE: Average Causal Effect also called
+* ATE: Average Treatment Effect
+
+averaging over
+
+* the entire study population
+* or subpopulations of given measured baseline covariates L education level, health of the parents, job of the mother, ...
+
+Estimate in PROBITsim: 94.2 grams (SE 9.1 grams) 
+We may wish to know more.
+
+### Observed exposures
+
+#### Further questions on related exposure measures
+
+Pregnant woman may ask about impact on weight@3m of:
+
+1. following a BF program that is offered
+2. starting BF
+3. continuing BF for the full 3 months
+
+in ‘her’ population stratum
+
+Health insurer may ask about impact on weight@3m of:
+
+1. offering a BF encouragement program
+2. following the BF program
+3. starting BF
+4. continuing BF for a full 3 months
+
+in different (targeted) population strata in the current or improved program?
+
+#### The problem of observational data
+
+Confounding: Different levels of observed exposure A are likely seen in population strata with different prognosis of outcome ‘under the reference exposure level (0)’
+
+For instance:
+
+* The group of women who is observed to breastfeed may differ from the group who is observed not to wrt. SES, education, health...
+
+* Hence: comparing baby weight at 3 months between both groups compares results following a package of different circumstances, including breastfeeding exposure upto 3mo.
+
+### Possible exposures and potential outcomes
+
+What potential outcome (distribution) is expected following (two) different possible exposure levels
+
+### Assumptions for causal inference
+
+### Situating different exposure types
+
+### Simulating the parallel worlds - a resource
+
+### Causal Estimands
+
+### Case studies from the literature
 
 1.	Liệt kê được bốn giai đoạn trong quá trình phát triển của một bệnh.
 2.	Liệt kê được ba thành phần của dây chuyền lây.

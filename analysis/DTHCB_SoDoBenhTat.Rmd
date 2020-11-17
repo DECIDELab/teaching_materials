@@ -1,0 +1,62 @@
+---
+title: "Số đo bệnh tật"
+author: "Phùng Khánh Lâm"
+date: " 2020-11-01 (cập nhật: `r Sys.Date()`)"
+output:
+    html_document:
+      theme: cerulean
+      toc: yes
+      toc_float: yes
+bibliography: reference.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mục tiêu bài học
+
+## Một số khái niệm cơ bản
+
+* Đoàn hệ (cohort): một nhóm người được theo dõi theo thời gian. Đoàn hệ có thể mở (open cohort) hoặc đóng (closed cohort)
+    + Đoàn hệ đóng: là đoàn hệ mà (1) mọi người được theo dõi từ cùng một thời điểm (tuyệt đối hoặc tương đối), (2) không thêm thành viên mới sau khi kết thúc giai đoạn tuyển bệnh. Do đó kích thước của đoàn hệ đóng sẽ được giữ nguyên hoặc giảm dần theo thời gian.
+    + Đoàn hệ mở: có thể thêm thành viên mới nên kích thước có thể tăng lên hoặc giảm đi theo thời gian.
+
+## Số đo hiện mắc
+
+### Số đo hiện mắc là gì?
+
+Số hiện mắc (prevalence) là sự mô tả mức độ hiện diện của một số yếu tố (phơi nhiễm hoặc kết cuộc) trong dân số. 
+
+Số hiện mắc có thể là số hiện mắc thời điểm (point prevalence) hoặc số hiện mắc thời khoảng (period prevalence). Số hiện mắc thời điểm là số hiện mắc của một bệnh tại một thời điểm đo lường duy nhất, trong khi đó số hiện mắc thời khoảng là số hiện mắc của một bệnh trong một khoảng thời gian. 
+
+* Khi khoảng thời gian đánh giá hẹp lại, số đo hiện mắc thời khoảng sẽ tiệm cận số đo hiện mắc thời điểm.
+
+* Số đo hiện mắc thời điểm thường được đo trên thực tế như một số đo hiện mắc thời khoảng trong một khoảng thời gian tương đối ngắn. 
+    + Ví dụ: muốn đo số hiện mắc của nhiễm HIV trong một quần thể có 1,000 người, không thể cùng một lúc lấy máu xét nghiệm đánh giá cả 1,000 người cùng một lúclúc. Trong thực tế, chúng ta cần lấy máu trong một khoảng thời gian ngắn rồi sau đó xét nghiệm từng mẫu máu. Chúng ta cũng có thể xem số hiện mắc đó là số hiện mắc thời điểm tại thời điểm làm xét nghiệm (nhưng chấp nhận rằng, việc xét nghiệm diễn ra ở những ngày khác nhau) 
+
+* Tình huống điển hình mà số hiện mắc thời điểm có thể và nên được xác định là:
+    + Thời điểm người tham gia mới được vào nghiên cứu.
+    + Dữ liệu từ hệ thống bệnh án điện tử
+    
+Có 3 loại chỉ số hiện mắc là tỉ lệ (proportion), odd, tần số/số đếm (count).
+
+* Tỉ lệ hiện mắc (prevalence proportion) đo lường phần trăm dân số hiện có bệnh hoặc hiện có tiền sử mắc bệnh trong một khoảng thời gian nhất định trong quá khứ. Tỉ lệ hiện mắc có giá trị từ 0 đến 1 (giống xác suất).
+
+* Odd hiện mắc (prevalence odd) là một biến thể của tỉ lệ hiện mắc, thường được sử dụng do tính thuận tiện và một số đặc tính về thống kê. Odd hiện mắc xấp xỉ tỉ lệ hiện mắc khi tỉ lệ hiện mắc thấp, nhưng thường lớn hơn so với tỉ lệ hiện mắc trong những trường hợp khác. Odd hiện mắc có giá trị từ 0 đến dương vô cùng.
+
+* Tần số hiện mắc (prevalence count) là số ca mắc bệnh trong dân số tại một thời điểm hoặc trong một khoảng thời gian ngắn. 
+
+### Đo số hiện mắc như thế nào?
+
+## Số đo mới mắc (incidence)
+
+
+
+## Sai số hệ thống và ngẫu nhiên
+
+
+
+## Tài liệu tham khảo
+
+

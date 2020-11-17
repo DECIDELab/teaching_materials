@@ -1,0 +1,179 @@
+---
+title: "Bệnh và sự xuất hiện Dịch"
+author: "Phùng Khánh Lâm"
+date: " 2020-09-21 (cập nhật: `r Sys.Date()`)"
+output:
+    html_document:
+      theme: cerulean
+      toc: yes
+      toc_float: yes
+bibliography: reference.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Giới thiệu
+
+Tài liệu học tập này được xây dựng dựa trên Chương 10 của sách Dịch tễ học cơ bản do bộ môn Dịch tễ học (Khoa Y tế công cộng, Đại học Y Dược TP Hồ Chí Minh) mà chủ biên là PGS. TS. Nguyễn Đỗ Nguyên biên soạn.
+
+### Mục tiêu bài giảng
+
+1.	Mô tả bản chất của các loại nghiên cứu can thiệp.
+2.	Liệt kê được những bước cơ bản để tiến hành một nghiên cứu can thiệp.
+
+## Ba loại nghiên cứu can thiệp
+
+Một nghiên cứu can thiệp có thể nhằm đánh giá hiệu lực của một biện pháp điều trị hoặc một biện pháp dự phòng. 
+
+* Nếu đánh giá biện pháp điều trị, thí dụ một phác đồ thuốc, nghiên cứu can thiệp là **thử nghiệm lâm sàng** với đối tượng nghiên cứu là những người mắc một bệnh cụ thể, và phác đồ điều trị có hiệu lực làm giảm triệu chứng, ngăn ngừa tái phát, hoặc giảm nguy cơ tử vong. 
+
+* Nếu đánh giá một biện pháp dự phòng thì đối tượng nghiên cứu là những người không có bệnh, và biện pháp dự phòng được xem là có khả năng ngăn không cho bệnh xảy ra. Biện pháp dự phòng có thể áp dụng trên từng cá nhân (**thử nghiệm thực địa**), hoặc có thể trên toàn cộng đồng (**can thiệp cộng đồng**).
+
+### Thử nghiệm lâm sàng
+
+Thử nghiệm lâm sàng là một nghiên cứu thử nghiệm với đối tượng nghiên cứu là bệnh nhân, với hai mục đích: 
+
+* Xác định hiệu quả của một phác đồ điều trị bệnh, *hoặc* 
+* Tìm một biện pháp ngăn ngừa những dư chứng hoặc biến chứng của bệnh, thí dụ, tàn phế hoặc tử vong. 
+
+Bệnh nhân được phân bổ ngẫu nhiên thành hai nhóm, một nhóm có phơi nhiễm (được áp dụng phác đồ thử nghiệm), và một nhóm không phơi nhiễm (không áp dụng phác đồ thử nghiệm mà sử dụng phác đồ điều trị hiện hành sẵn có hoặc giả dược). Yếu tố phơi nhiễm trong thử nghiệm lâm sàng không phải là yếu tố phòng ngừa bậc 1, vì thử nghiệm lâm sàng không có mục đích ngăn ngừa sự xuất hiện của bệnh. Nếu chưa có sẵn một phác đồ điều trị thì phác đồ thử nghiệm sẽ được so sánh với một giả dược. Nếu phác đồ điều trị đã có sẵn, việc dùng giả dược cho nhóm chứng sẽ không được cho phép về mặt y đức, và phác đồ thử  nghiệm sẽ được so sánh với một phác đồ có hiệu lực cao nhất vào thời điểm nghiên cứu. Hơn nữa, giả dược là không cần thiết nếu mục đích của thử nghiệm lâm sàng là so sánh hiệu lực của những phác đồ điều trị khác nhau.
+
+### Thử nghiệm thực địa
+
+Khác với thử nghiệm lâm sàng, thử nghiệm thực địa nhắm đến đối tượng nghiên cứu là người khỏe hay cụ thể hơn là nhóm dân số nguy cơ, chứ không phải bệnh nhân. Nghiên cứu thực địa thường đòi hỏi chi phí rất lớn vì hai lý do:
+
+* Khả năng mắc bệnh của người khỏe là nhỏ hơn nhiều so với khả năng có biến chứng, trong một thời gian ngắn, của một người bệnh, do đó, thử nghiệm thực địa thường đòi hỏi một cỡ mẫu lớn;
+
+* Quá trình thu thập dữ kiện với những đối tượng nghiên cứu là người khỏe đòi hỏi phải tiếp xúc tại nhà, cơ quan, trường học, v.v., do đó, càng tăng thêm chi phí. 
+
+Vì những lý do đó, mục đích của những thử nghiệm thực địa được khu trú vào việc tìm những biện pháp phòng những bệnh
+
+* Rất phổ biến (thí dụ, thử nghiệm thực địa xác định hiệu lực của sinh tố C liều cao để phòng ngừa cảm lạnh), 
+
+* Rất trầm trọng (thí dụ, thử nghiệm thực địa xác định hiệu lực của vắc-xin Salk để phòng ngừa bại liệt là một nghiên cứu thí nghiệm trên con người lớn nhất trong lịch sử, bao gồm hàng trăm ngàn học sinh được sử dụng vắc-xin hoặc giả dược)
+
+### Thử nghiệm can thiệp cộng đồng
+
+Nghiên cứu can thiệp cộng đồng có thể được xem là một dạng mở rộng của nghiên cứu thử nghiệm thực địa, nhưng biện pháp can thiệp được áp dụng và đánh giá cho cả một cộng đồng chứ không cho từng cá nhân. Những biện pháp can thiệp sử dụng trong nghiên cứu can thiệp cộng đồng là những biện pháp dễ áp dụng cho cả cộng đồng hơn là cho từng cá nhân, thí dụ, cung cấp fluor trong nước sinh hoạt, giáo dục sức khỏe bằng phương tiện truyền thông đại chúng, v.v.
+
+## Y đức trong nghiên cứu can thiệp
+
+Một phác đồ điều trị mà tác dụng đã quá rõ ràng trong thực tế sẽ không cần tìm thêm bằng chứng với thử nghiệm lâm sàng, thí dụ, khi đưa penicillin vào phác đồ điều trị viêm phổi do phế cầu, tỉ suất tử vong được hạ thấp rất đáng kể, từ 95% xuống 15%, thì việc tiến hành một thử nghiệm lâm sàng để xác định hiệu lực của penicillin trong điều trị viêm phổi do phế cầu là chắc chắn không cần thiết. 
+
+Tuy nhiên, điều quan trọng cần được quan tâm trước tiên khi tiến hành một nghiên cứu can thiệp là **những biện pháp can thiệp được sử dụng có gây tổn hại cho đối tượng nghiên cứu hay không?** Một yếu tố được xem là nguy hiểm đối với sức khỏe của con người thì không nên đưa vào nghiên cứu can thiệp để phân bổ cho đối tượng nghiên cứu, thí dụ, hút thuốc lá. Với những yếu tố nguy hại, nghiên cứu can thiệp sẽ được tiến hành một cách gián tiếp, thí dụ, tác động của việc bỏ hút thuốc lá với sự giảm tỉ suất mắc hoặc chết. Ngược lại, nếu một biện pháp can thiệp được xem là có lợi cho sức khỏe, thí dụ immunoglobulin đối với bệnh Kawasaki, thì không thể không áp dụng nó cho bệnh nhân. Chính vì vậy việc sử dụng giả dược cho nhóm chứng trong thử nghiệm lâm sàng là không được chấp nhận, trừ khi cho đến thời điểm nghiên cứu không có một phác đồ điều trị nào sẵn có, và phác đồ nghiên cứu là phác đồ duy nhất mà hiệu lực còn chưa được khẳng định.
+
+### Quyết định ngưng nghiên cứu
+
+Khi thiết kế một nghiên cứu can thiệp, người nghiên cứu luôn luôn phải xác định trong những tình huống nào cần phải thay đổi kế hoạch, hoặc ngừng nghiên cứu. Ngoài ra, trong nhiều nghiên cứu can thiệp, các đối tượng được thu nhận trong một thời gian kéo dài, và những kết quả ghi nhận đuợc ở những bệnh nhân tham gia trước đó có thể đã đủ để trả lời câu hỏi nghiên cứu. Vì **sự an toàn của đối tượng nghiên cứu**, phân tích dữ kiện trong từng giai đoạn là bắt buộc, và nếu kết quả phân tích ở bất kỳ thời điểm nào cho thấy rõ ràng, hoặc phác đồ là thật sự rất có hiệu lực, hoặc phác đồ là rất nguy hại, bắt buộc phải chấm dứt nghiên cứu. Trong thử nghiệm sử dụng chất ức chế $\beta$ cho nhồi máu cơ tim (Beta-Blocker Heart Attack Trial), 3.837 bệnh nhân được phân bổ ngẫu nhiên để sử dụng propranolol và giả dược. Kết quả phân tích vào tháng thứ 9 cho thấy nhóm can thiệp có tỉ lệ các biến cố chính và tử vong chung giảm 26% so với nhóm giả dược (p=0,005), và nghiên cứu đã được ngưng sớm hơn dự định. 
+
+Tương tự như vậy là quyết định tiếp tục nghiên cứu. Một câu hỏi được đặt ra là sẽ có phạm y đức hay không nếu ngừng nghiên cứu khi chỉ căn cứ vào một vài kết quả có được từ một số ít bệnh nhân, vì những kết quả đó có thể chỉ là tạm thời, và thậm chí có thể thay đổi khi cỡ mẫu là đủ lớn. Thí dụ, vào 3 thời điểm trong 30 tháng đầu của thử nghiệm Dự Án Thuốc Mạch Vành (Coronary Drug Project), tỉ suất tử vong của nhóm sử dụng clofibrate là thấp hơn có ý nghĩa thống kê (p=0,05) so với tỉ lệ tương ứng của nhóm giả dược. Kết quả này chưa đạt được mức rất có ý nghĩa thống kê theo qui định của chấm dứt sớm nghiên cứu. Do đó, nhóm nghiên cứu quyết định tiếp tục nghiên cứu, và kết quả phân tích cuối cùng cho thấy tỉ suất tử vong là như nhau ở nhóm clofibrate và nhóm giả dược (tương ứng là 25,5% và 25,4%).
+
+Việc chấm dứt sớm một nghiên cứu can thiệp phải được quyết định rất cẩn trọng dựa vào nhiều bằng chứng. Cơ sở ban đầu là những kết quả phân tích dữ kiện nếu cho thấy một sự khác biệt rất có ý nghĩa thống kê để khó có thể giải thích kết quả có được là do cơ hội. Tuy nhiên, kết quả phân tích thống kê không phải là cơ sở duy nhất, người nghiên cứu cần dựa vào tất cả những bằng chứng sinh học, những kết quả từ những nghiên cứu đi trước. Mục đích tối hậu là bảo vệ đối tượng nghiên cứu khỏi một phác đồ nguy hại, nhưng cũng không phạm sai lầm vì đã quyết định chấm dứt sớm nghiên cứu.
+
+## Các bước tiến hành một thử nghiệm lâm sàng
+
+Nghiên cứu can thiệp được tiến hành theo cách tiếp cận đoàn hệ, trong đó nguyên nhân (hay yếu tố phơi nhiễm) là biện pháp can thiệp, và kết quả đánh giá là sự cải thiện của tình trạng sức khỏe (trong nghiên cứu điều trị) hoặc bệnh mới mắc (trong nghiên cứu dự phòng). Những đặc điểm riêng của nghiên cứu can thiệp được trình bày dưới đây trong từng bước cụ thể của quá trình tiến hành nghiên cứu, và tập trung vào thử nghiệm lâm sàng.
+
+### Xác định câu hỏi nghiên cứu
+
+Bước đầu tiên là xác định câu hỏi nghiên cứu, trong đó các thành phần sau cần được xác định một cách cụ thể và rõ ràng: 
+
+* Loại can thiệp: thường được xác định dựa trên bối cảnh xã hội và sự tích luỹ bằng chứng hiện có. Biện pháp can thiệp này vừa phải đảm bảo y đức và vừa phải khả thi.
+* Nhóm chứng: có thể là giả dược (placebo) hoặc một can thiệp đang được sử dụng khác (active comparator) hoặc điều trị chuẩn (standard of care). Việc lựa chọn này vừa phụ thuộc vào bối cảnh hiện tại, y đức vừa phụ thuộc vào bản chất của câu hỏi muốn trả lời.
+* Kết cuộc/tiêu chí đánh giá.
+
+### Chọn Nhóm Nghiên Cứu
+
+Việc chọn nhóm nghiên cứu bao gồm việc lựa chọn các dân số quan tâm và việc phân nhóm đối tượng nghiên cứu vào các nhóm điều trị.
+
+#### Các dân số quan tâm trong một nghiên cứu can thiệp
+
+Bao gồm:
+
+* __Dân số tham chiếu__: là tập hợp những người mà kết quả của nghiên cứu sẽ được áp dụng. Đây chính là dân số mục tiêu của câu hỏi nghiên cứu, thí dụ, với câu hỏi nghiên cứu là "Ở những bệnh nhân tăng huyết áp người lớn, phác đồ amlodipin 5mg một viên/ngày có kiểm soát huyết áp tốt hơn so với phác đồ nifedipin 5mg một viên/ngày hay không?", dân số tham chiếu sẽ là tất cả bệnh nhân tăng huyết áp. Nếu người nghiên cứu cho rằng kết quả của nghiên cứu có thể áp dụng cho tất cả mọi người thì dân số tham chiếu có thể là tất cả những bệnh nhân người lớn tăng huyết áp trên thế giới. Tuy nhiên, nếu người nghiên cứu cho rằng amlodipin chỉ tốt hơn nifedipin trên những bệnh nhân tăng huyết áp có một đặc tính riêng, thí dụ, một giới tính, một nhóm tuổi cụ thể, thì dân số tham chiếu sẽ được khu trú vào nhóm những đối tượng đó.
+
+* __Dân số thí nghiệm__: là tập hợp những đối tượng mà trong đó nghiên cứu sẽ được tiến hành, và theo nguyên tắc, dân số này phải có những đặc tính tương tự như dân số tham chiếu để kết quả của nghiên cứu có thể suy diễn vào dân số tham chiếu. Tuy nhiên, để bảo đảm tính giá trị bên trong của kết quả nghiên cứu, những chi tiết sau đây cần được quan tâm:
+
+    + Dân số thí nghiệm phải đủ lớn để bảo đảm cỡ mẫu cần thiết của nghiên cứu. Thí dụ, trong một thử nghiệm lâm sàng về tác dụng của streptokinase tiêm tĩnh mạch trong điều trị nhồi máu cơ tim cấp nhằm giảm tử vong, nếu chỉ chọn mẫu tại một bệnh viện có khả năng sẽ không đủ mẫu nghiên cứu dù trong nhiều năm, do đó, dân số thí nghiệm có thể được chọn từ nhiều trung tâm khác nhau. 
+    + Dân số thí nghiệm phải đủ lớn để có đủ tần số những kết quả đầu ra mong muốn, trong khoảng thời gian cho phép của nghiên cứu, bảo đảm khả năng phân tích thống kê. Một nghiên cứu xác định hiệu lực của phác đồ sử dụng aspirin hàng ngày nhằm giảm tỉ suất tử vong của các bệnh tim mạch tiến hành ở 20.000 phụ nữ dưới 40 tuổi có thể đòi hỏi một khoảng thời gian nhiều thập niên để có đủ tần số kết quả mong đợi, vì tử vong tim mạch ở nhóm này là hiếm. Tuy nhiên, nếu nghiên cứu ở đàn ông từ 40 tuổi trở lên thì chỉ cần thời gian vài năm, vì tử vong tim mạch ở đàn ông là cao hơn nhiều lần so với đàn bà, và tăng đáng kể ở tuổi trung niên. Dân số thí nghiệm bao gồm những người nam từ 40 tuổi trở lên sẽ bảo đảm được tính khả thi của nghiên cứu.
+    + Vì nghiên cứu can thiệp đòi hỏi phải theo dõi đối tượng nghiên cứu trong một khoảng thời gian tương đối dài để đánh giá được những kết cuộc, do đó, dân số thí nghiệm phải bảo đảm khả năng theo dõi đầy đủ của các đối tượng nghiên cứu. Một dân số biến động, hoặc nghiên cứu đòi hỏi tái khám thường xuyên với những đối tượng già yếu có thể sẽ bị mất theo dõi. 
+    + Trong nghiên cứu Sức Khỏe Bác Sĩ (Physicians’ Health Study) của Hoa kỳ, dân số thí nghiệm bao gồm những bác sĩ trong lứa tuổi có khả năng chết vì những bệnh tim mạch cũng như mắc các bệnh ung thư. Đây là một dân số đủ lớn, ổn định, và với trình độ chuyên môn trong y khoa, những thông tin về sức khỏe do các đối tượng nghiên cứu cung cấp có tính chính xác cao. Ngoài ra, sự hợp tác của các bác sĩ này là rất tốt nên việc thu thập dữ kiện được thực hiện bằng thư đã tiết kiệm được chi phí và thời gian.
+
+* __Dân số nghiên cứu__: Sau khi xác định được dân số thí nghiệm, người nghiên cứu sẽ thông báo cho các đối tượng về mục đích nghiên cứu để có sự đồng thuận tham gia. Dân số nghiên cứu bao gồm những người trong dân số thí nghiệm thoả tiêu chuẩn chọn vào và đồng ý tham gia nghiên cứu. Dân số này có thể không đại diện cho dân số thí nghiệm; những người đủ tiêu chí chọn vào mẫu nghiên cứu nhưng từ chối tham gia có thể ảnh hưởng đến giá trị bên ngoài của nghiên cứu. 
+
+Tuy nhiên, điều quan trọng cần nhớ là một mẫu nghiên cứu thiếu tính đại diện chỉ hạn chế khả năng khái quát hoá vào dân số thí nghiệm chứ không ảnh hưởng đến tính giá trị bên trong của kết quả nghiên cứu. Nếu có đủ những dữ kiện giúp cho người nghiên cứu mô tả được những đặc điểm của nhóm từ chối tham gia, và nếu không có sự khác biệt giữa nhóm đồng ý và nhóm từ chối tham gia, người nghiên cứu vẫn có thể áp dụng kết quả nghiên cứu vào dân số thí nghiệm, hoặc dân số tham chiếu.
+
+#### Phân nhóm nghiên cứu - phân bổ ngẫu nhiên
+
+Sau khi có được dân số nghiên cứu, người nghiên cứu sẽ phân bổ các đối tượng vào nhóm can thiệp (là nhóm được áp dụng biện pháp can thiệp, thí dụ, một phác đồ điều trị mới) và nhóm không can thiệp, còn được gọi là nhóm so sánh (là nhóm được áp dụng biện pháp so sánh, thí dụ, một phác đồ điều trị chuẩn đang được sử dụng). Có nhiều cách để phân bổ phác đồ điều trị vào nhóm can thiệp và nhóm so sánh, ví dụ như:
+
+* Phân bổ theo ngày nhập viện chẵn lẻ trong tháng, thí dụ, những bệnh nhân nhập viện vào ngày 2, 4, 6, v.v., sẽ được điều trị với phác đồ A, và những bệnh nhân nhập viện vào các ngày 3, 5, 7, v.v., sẽ nhận phác đồ B. Với cách này, người nghiên cứu có thể đoán biết được phác đồ trên bệnh nhân tiếp theo là phác đồ nào. Trong một nghiên cứu về hiệu lực của điều trị chống đông máu được thực hiện trong Thế Chiến Thứ Nhì, kết quả cho thấy có rất nhiều bệnh nhân nhập viện vào các ngày lẻ. Người nghiên cứu có nhận xét rằng "vì các bác sĩ thấy được những lợi ích của điều trị, do đó, khi có thể được, họ tăng tốc việc nhập viện càng nhiều càng tốt các bệnh nhân,... nếu bình thường sẽ nhập viện vào ngày chẵn, để họ được nhập viện vào các ngày lẻ." 
+
+* Phân bổ luân phiên: kết quả của một nghiên cứu về hiệu lực của BCG phòng lao được thực hiện tại New York, cho thấy tỉ suất tử vong vì bệnh lao trong nhóm so sánh là cao hơn gấp 5 lần tỉ suất tương ứng trong nhóm can thiệp. Tuy nhiên, quá trình phân bổ can thiệp để những trẻ có phụ huynh hiểu biết và hợp tác được chủng ngừa nhiều hơn, và những trẻ con của các phụ huynh kém hợp tác thường được đưa vào nhóm chứng. Do đó, tỉ suất tử vong thấp quan sát thấy trong nhóm tiêm chủng chưa hẳn đã là do hiệu lực của BCG. Vì thế, nhóm nghiên cứu đã thay đổi cách phân bổ can thiệp, các trẻ em sẽ luân phiên được chủng BCG, và số còn lại đi vào nhóm chứng. Đây không phải là phân bổ ngẫu nhiên, nhưng kết quả nghiên cứu có thay đổi so với cách phân bổ ban đầu. Tuy nhiên, phân bổ luân phiên có khả năng phạm vào sai lệch chọn lựa. Khi hai bệnh nhân xuất hiện cùng một lúc nhưng có dự hậu khác nhau, người nghiên cứu, có thể biết hoặc không biết, cho người bệnh nặng nhận phác đồ điều trị mà họ tin rằng tốt hơn (hoặc có thể kém hơn). Hậu quả là một sự mất cân đối của các yếu tố có thể ảnh hưởng đến kết quả giữa hai nhóm nghiên cứu, và một phác đồ thật sự có hiệu lực có thể sẽ được thấy là kém hiệu lực chỉ vì nó được phân bổ vào nhóm bệnh nhân có những đặc tính riêng, và những đặc tính đó đã làm giảm hiệu lực điều trị. 
+
+Để hai nhóm có thể so sánh được với nhau, việc phân bổ các đối tượng vào hai nhóm nghiên cứu phải được thực hiện một cách ngẫu nhiên. Ý nghĩa của phân bổ ngẫu nhiên là mỗi đối tượng nghiên cứu có cơ hội như nhau để nhận mỗi phác đồ khác nhau trong nghiên cứu, có nghĩa là khả năng để một đối tượng được nhận phác đồ A (hoặc B) không tùy thuộc vào khả năng nhận được phác đồ A (hoặc B) của bất kỳ một cá nhân nào khác trong dân số nghiên cứu. Ngoài ra, nếu kết quả nghiên cứu có thể thay đổi do những đặc tính khác nhau của đối tượng nghiên cứu, thí dụ, giới tính, tuổi, mức độ bệnh, thì sự phân bổ ngẫu nhiên sẽ bảo đảm sự phân bố đều của các đặc tính này giữa hai nhóm nghiên cứu. 
+
+Những ưu điểm của sự phân bổ ngẫu nhiên là:
+
+* __Không tiên đoán được phác đồ tiếp theo là gì__, thí dụ, sau khi phân bổ phác đồ A vào một đối tượng, người nghiên cứu sẽ không biết trước đối tượng tiếp theo sẽ được sử dụng phác đồ A hoặc B, mà khả năng A hoặc B trong thực tế sẽ được quyết định một cách ngẫu nhiên. Nói một cách khác, quá trình phân bổ ngẫu nhiên loại bỏ khả năng gán phác đồ điều trị một cách chủ quan cho một đối tượng nghiên cứu.
+
+* __Tạo sự phân bố đều của các biến số gây nhiễu tiềm ẩn__: một sự kết hợp có ý nghĩa thống kê tìm thấy trong một nghiên cứu can thiệp chưa hẳn là một sự kết hợp nhân quả, mà có thể do ảnh hưởng của những biến số bên ngoài có tác động gây nhiễu. Sự phân bổ ngẫu nhiên giúp tạo sự phân bố đều của các biến số gây nhiễu tiềm ẩn giữa các nhóm nghiên cứu, bảo đảm khả năng so sánh được giữa các nhóm, do đó, loại trừ được tác động của các biến số gây nhiễu. 
+
+### Thu Thập Dữ Kiện
+
+Những dữ kiện cần thu thập của một nghiên cứu can thiệp là những kết quả đầu ra trong câu hỏi nghiên cứu, đó là sự cải thiện của tình trạng sức khỏe (kết quả mong đợi), và cả những tác dụng phụ (kết quả không mong đợi). Để có những dữ kiện này, người nghiên cứu bắt buộc phải có những tiêu chí để định nghĩa cụ thể những kết quả đầu ra. Yêu cầu quan trọng của thu thập dữ kiện trong nghiên cứu can thiệp là khả năng so sánh được của những kết quả đầu ra ở hai nhóm nghiên cứu. Những khiá cạnh sau đây cần được quan tâm để bảo đảm khả năng so sánh được giữa hai nhóm:
+
+* Phương pháp đo lường phải được áp dụng giống nhau cho cả hai nhóm, bằng cách áp dụng chặt chẽ những tiêu chí đã được thiết lập để xác định đầu ra. 
+
+* Dữ kiện thu thập phải đầy đủ và có giá trị. Dù đã đồng ý tham gia và đã được phân bổ ngẫu nhiên vào các nhóm điều trị, điều này vẫn chưa bảo đảm được việc đối tượng nghiên cứu sẽ tham gia trọn vẹn. Một đối tượng nghiên cứu có thể bỏ cuộc trong suốt thời gian diễn ra nghiên cứu vì nhiểu lý do khác nhau, do những tác dụng phụ của thuốc, hoặc tự ý đổi phác đồ mà họ cho rằng tốt hơn, hoặc do không chấp nhận được một thời gian nghiên cứu quá dài, hoặc thay đổi chỗ ở, hoặc thậm chí chết vì những nguyên nhân khác, v.v. Trong những tình huống đó, những kết quả đầu ra sẽ không thể xác định được vì tỉ lệ kết quả ở các nhóm là không đầy đủ, hậu quả là khả năng phân tích thống kê sẽ bị hạn chế, hoặc những khác biệt thấy được trên kết quả của hai nhóm là không thật.
+Khả năng tuân thủ của đối tượng nghiên cứu tùy thuộc vào thời gian kéo dài cũng như tính phức tạp của qui trình nghiên cứu. Để bảo đảm sự tuân thủ cao của đối tượng nghiên cứu, người nghiên cứu có thể chọn dân số nghiên cứu gồm những người quan tâm, tin cậy, đồng thời tăng cường khả năng tuân thủ bằng cách tiếp cận thường xuyên, hoặc thậm chí có bồi dưỡng cho đối tượng khi khai thác thông tin. Do ảnh hưởng nghiêm trọng của nó, việc xác định tỉ lệ không tuân thủ là quan trọng, dù rằng không đơn giản. Những biện pháp có thể sử dụng để đo lường mức độ không tuân thủ là tự khai báo của đối tượng (thí dụ, trong những nghiên cứu về vận động thể lực, thay đối hành vi như bỏ hút thuôc lá, giảm uống rượu, v.v.), hoặc đếm số viên thuốc còn sót. Một biện pháp khách quan, nhưng có khả năng đắt tiền và thực tế ít đưọc sử dụng, là đo những chất biến dưỡng của dược phẩm được thải vào máu hoặc qua nước tiểu. Hạn chế của phương pháp này là chỉ xác định rằng đối tượng có uống thuốc trong một vài ngày trước khi xét nghiệm chứ không xác định được sự tuân thủ lâu dài.
+
+* Tính khách quan của thu thập dữ kiện phải được bảo đảm. Trong một số tình huống, vì một số lý do, người nghiên cứu có thể biết được đối tượng nghiên cứu được áp dụng biện pháp điều trị nào, thí dụ, phác đồ điều trị mới mà người nghiên cứu cho rằng có hiệu quả tốt hơn, thì việc đánh giá sự cải thiện của tình trạng sức khỏe (hoặc các tác dụng không mong đợi) trên nhóm này có thể sẽ theo hướng có lợi cho nghiên cứu. Tương tự, nếu đối tượng nghiên cứu biết phác đồ mà mình đang được áp dụng (thí dụ, phác đồ mới mà họ nghĩ rằng có tác dụng tốt) thì những triệu chứng mà họ khai báo sẽ theo hướng thuận lợi cho nghiên cứu. Trừ kết quả đầu ra là tử vong, hầu hết những thông tin về triệu chứng, hoặc ngay cả dấu hiệu lâm sàng, đều có khả năng thiếu chính xác do đánh giá của cả hai phiá, người nghiên cứu và đối tượng nghiên cứu. Để khắc phục tình trạng này, biện pháp mù nên được áp dụng cho cả người nghiên cứu và đối tượng nghiên cứu.
+
+#### Làm mù trong nghiên cứu can thiệp
+
+##### Hiệu ứng Rosenthal
+
+Rosenthal (1976) đã tiến hành một nghiên cứu tập huấn chuột đi qua mê lộ. Ông sử dụng hai nhóm sinh viên để tập hai lô chuột, một lô "thông minh" và một lô "đần độn". Sau một thời gian tập, kết quả xảy ra đúng như mong đợi là lô chuột thông minh đi qua mê lộ tốt hơn lô đần độn. Khi đó, Rosenthal mới thông báo rằng hai lô chuột thí nghiệm là một, nhưng được chia đôi và gán cho thông minh và đần độn. Vì giả thuyết nghiên cứu đã bị lộ (chuột thông minh sẽ làm tốt hơn), nhóm sinh viên nhận lô chuột "thông minh" tin rằng chúng sẽ có kết quả tốt hơn nên đã cố gắng tập, và từ đó, làm cho chúng có khả năng hơn. 
+
+Để tránh sai lệch thông tin trong trường hợp này, nên giữ cho đối tượng nghiên cứu không biết họ đang được áp dụng biện pháp can thiệp nào (phác đồ thử nghiệm hay phác đồ so sánh), và cả người theo dõi thu thập dữ kiện cũng không được biết đối tượng nghiên cứu ở trong nhóm nào (nhóm can thiệp hay nhóm so sánh):
+
+* Nếu đối tượng nghiên cứu không biết phác đồ điều trị của mình, nghiên cứu là **mù đơn**; 
+* Nếu cả người thu thập dữ kiện cũng không biết nhóm nghiên cứu của đối tượng, nghiên cứu là **mù đôi**. 
+* Nếu cả người phân bổ điều trị cũng không biết phác đồ là phác đồ thử nghiệm hoặc so sánh (thí dụ, phác đồ điều trị sử dụng những viên thuốc được mã hoá, và người phân bổ điều trị không biết được mã số), nghiên cứu là **mù ba**. 
+
+Một nghiên cứu hoàn toàn không mù được gọi là **nghiên cứu mở** (open-label).
+ 
+Sử dụng giả dược cũng là một biện pháp để làm mù. Tuy nhiên, nhiều bằng chứng cho thấy rằng nhóm những người được sử dụng giả dược đôi khi cũng báo cáo những kết quả tương tự như nhóm những người thực sự được can thiệp. Hiện tượng này được gọi là hiệu ứng giả dược (còn được gọi là **hiệu ứng Hawthorne**), được giải thích do cơ chế tâm lý hơn là tác động sinh học thật sự.
+ 
+##### Hiệu ứng Hawthorne
+
+Trong thập niên 1920, một nhóm các nhà nghiên cứu tại Nhà máy điện Hawthorne miền Tây (Western Electric Hawthorne Works, ở Chicago) tiến hành một nghiên cứu xem tác động của ánh sáng, nhiệt, và những điều kiện vật lý khác trên khả năng sản xuất của công nhân. Kết quả nghiên cứu cho thấy khả năng sản xuất của công nhân lại cao hơn dù ánh sáng yếu. Những nhà nghiên cứu nhận ra rằng sự hiện diện của họ có tác dụng thuận lợi: công nhân đã tăng cường sản xuất có lẽ vì sợ mất việc. Hiệu ứng Hawthorne cho thấy ngay cả giả dược cũng có thể tạo ra hiệu quả đáng kể.
+
+Hiệu ứng giả dược được ghi nhận trong nhiều thử nghiệm lâm sàng. Năm 1962, Wangensteen và cộng sự giới thiệu một phương pháp mới để điều trị loét tá tràng bằng cách bơm một dung dịch lạnh qua ống thông mũi dạ dày để ức chế bài tiết. Họ đã nghiên cứu trên một nhóm 31 bệnh nhân, và tất cả đều cảm thấy giảm đau đáng kể. Dù rằng kết quả nghiên cứu chỉ là những dữ kiện mô tả, nhưng biện pháp này đã được áp dụng tại một số bệnh viện. Để xác định lại hiệu lực của chất làm lạnh dạ dày, một thử nghiệm lâm sàng ngẫu nhiên hoá đã được tiến hành sau đó, với 69 bệnh nhân được can thiệp và 68 bệnh nhân sử dụng giả dược. Ở nhóm giả dược, chất làm lạnh cũng qua ống thông mũi dạ dày nhưng chỉ được bơm đến phần trên của thực quản. Như vậy, tất cả bệnh nhân ở hai nhóm đều sẽ cảm nhận được sự hiện diện của chất làm lạnh, nhưng ở nhóm giả dược sẽ không có tác dụng bài tiết xảy ra. Kết quả nghiên cứu ghi nhận tỉ lệ như nhau ở hai nhóm về giảm đau, hết đau, ức chế bài tiết, không tái phát; và khẳng định rằng hiệu quả giảm triệu chứng của những bệnh nhân trong nghiên cứu của Wangensteen chỉ là do tác dụng tâm lý.
+
+Tuy nhiên, sử dụng giả dược là quan trọng khi nghiên cứu tỉ suất của những tác dụng phụ hoặc phản ứng. Trong Nghiên cứu Aspirin Nhồi Máu Cơ Tim (Aspirin Myocardial Infarction Study), 23,7% trong nhóm can thiệp (1g aspirin/ngày) và 14,9% trong nhóm giả dược khai báo những triệu chứng viêm loét dạ dày. Nếu không có nhóm giả dược, tỉ lệ tác dụng phụ được gán cho aspirin là đến 23,7%, trong khi thật ra chỉ là 8,8%. Trong một nghiên cứu can thiệp có nhóm giả dược, căn cứ vào tỉ lệ khai báo những kết quả giống nhau giữa hai nhóm, người nghiên cứu có thể xác định được tỉ suất những tác dụng chủ quan liên quan đến phác đồ điều trị.
+
+### Phân Tích Dữ Kiện và Lý Giải Kết Quả
+
+Những dữ kiện của nghiên cứu can thiệp được phân tích theo nguyên tắc của một nghiên cứu đoàn hệ, đó là so sánh tỉ suất kết quả đầu ra ở hai nhóm được can thiệp và nhóm so sánh. Kết quả của nghiên cứu được lý giải dựa vào giá trị của **số đo kết hợp**. Như đối với những nghiên cứu phân tích, việc đánh giá vai trò của cơ hội, sai lệch, và tác dụng của các biến số gây nhiễu cần được quan tâm. Phân bổ ngẫu nhiên là một điểm mạnh của nghiên cứu can thiệp, và nếu được thực hiện tốt, với cỡ mẫu nghiên cứu đủ lớn, hai nhóm nghiên cứu sẽ có khả năng so sánh được với nhau. Tuy nhiên, nếu cỡ mẫu nghiên cứu là không đủ lớn, hoặc quá trình phân bổ ngẫu nhiên là không hiệu quả, thì bước đầu tiên trong quá trình phân tích dữ kiện là xác định khả năng so sánh được giữa hai nhóm nghiên cứu, bằng cách mô tả những đặc tính nền của hai nhóm, và bảng dữ kiện này là bảng dữ kiện đầu tiên khi trình bày kết quả. Nếu có sự mất cân xứng giữa hai nhóm theo những biến số gây nhiễu, thì những kỹ thuật phân tích thống kê để kiểm soát những biến số này cũng giống như trong phân tích dữ kiện của nghiên cứu đoàn hệ.
+
+Một câu hỏi thường được đặt ra trong những thử nghiệm lâm sàng là xử trí như thế nào với những đối tượng nghiên cứu không tuân thủ điều trị. Điều cần nhớ là những đối tượng tuân thủ đầy đủ chỉ là một phần trong toàn bộ dân số nghiên cứu, và những đối tượng không tuân thủ thường mang những đặc tính có liên quan đến kết quả đầu ra của nghiên cứu. Trong thử nghiệm Dự Án Thuốc Mạch Vành (Coronary Drug Project), khi đưa vào phân tích tất cả các đối tượng nghiên cứu đã được chọn, kết quả cho thấy tỉ suất tử vong trong 5 năm ở hai nhóm là tương đương (18% và 19,5%). Để thăm dò ảnh hưởng của sự tuân thủ trên kết quả nghiên cứu, phân tích đã được tiến hành riêng ở nhóm sử dụng clofibrate, và kết quả cho thấy rằng tỉ suất tử vong ở nhóm tuân thủ tốt và không tuân thủ là 15% và 24,6%, tương ứng. Những kết quả tương tự cũng được ghi nhận ở nhóm giả dược, với tỉ suất tử vong ở nhóm tuân thủ và không tuân thủ là 15,1% và 28,2%, tương ứng. Như vậy, rõ ràng nhóm không tuân thủ có những đặc tính riêng mà những đặc tính đó có liên quan đến khả năng tuân thủ cũng như liên quan đến dự hậu của họ. Do đó, phân tích riêng trên nhóm tuân thủ sẽ cho những kết quả không có giá trị.
+
+Khi một đối tượng đã được phân bổ ngẫu nhiên vào một nhóm nghiên cứu, kết quả cuối cùng của họ phải được đánh giá và phân tích cùng với những đối tượng khác, bất kể họ có tuân thủ hay không. Điều này đòi hỏi phải cố gắng duy trì tối đa tính tuân thủ của những đối tượng nghiên cứu, giảm đến tối thiểu mất theo dõi, và những thông tin về kết quả cuối cùng trên những đối tượng không tuân thủ phải được thu thập.
+
+#### Nguyên tắc của phân tích dữ kiện
+
+Nguyên tắc của phân tích dữ kiện trong nghiên cứu can thiệp là **phân tích theo chủ định điều trị** (intention-to-treat analysis), có nghĩa là luôn luôn đưa vào phân tích khi một đối tượng đã được phân bổ ngẫu nhiên. Lý do là để xác định rằng phác đồ thử nghiệm là có hiệu lực, sự phân bổ ngẫu nhiên chỉ dựa trên cơ sở gán phác đồ điều trị, do đó, phân tích dữ kiện phải dựa trên cơ sở này để bảo đảm sức mạnh của sự phân bổ ngẫu nhiên. Sự phân bổ ngẫu nhiên đã phân bố đều các biến số gây nhiễu tiềm ẩn giữa các nhóm nghiên cứu, do đó, phân tích trên những nhóm nhỏ, thí dụ, nhóm tuân thủ, chỉ có khả năng kiểm soát những yếu tố gây nhiễu được biết, nhưng sẽ đánh mất sự kiểm soát những yếu tố gây nhiễu tiềm ẩn mà trước đó sự phân bổ ngẫu nhiên đã đạt được.
+
+## Lượng giá trước buổi học chính thức
+
+Mời các học viên trả lời các câu hỏi trong phiếu lượng giá trước buổi học dưới đây:
+
+[Phiếu lượng giá trước buổi học](https://forms.office.com/Pages/ResponsePage.aspx?id=-Miz6oh0D0aitEEurd6ov5n02b8-tohPqXmBIVH6UQxUMFZDOVAzOFFTS1ZGTEFMMVpUTzNLUVdaMi4u)
+
+## Tài liệu tham khảo
+
+
