@@ -25,7 +25,7 @@ Welcome to my collection of teaching materials.
 * [DTHCB - Số đo bệnh trạng](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDBT.html)
 * [DTHCB - Số đo kết hợp](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDKH.html)
 * [DTHCB - Suy diễn nhân quả](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDNQ.html)
-
 * [DTHBKL - DTH Sức khoẻ tâm thần](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_MentalHealth.html)
-
 * [DTHBTN - Bệnh lây qua đường tiêu hoá](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BTH.html)
+* [DTHBTN - Bệnh lây qua vectơ](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BV.html)
+* [DTHBTN - Bệnh lây qua đường hô hấp](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BHH.html)
