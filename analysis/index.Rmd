@@ -30,3 +30,5 @@ Welcome to my collection of teaching materials.
 * [DTHBTN - Bệnh lây qua đường tiêu hoá](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BTH.html)
 * [DTHBTN - Bệnh lây qua vectơ](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BV.html)
 * [DTHBTN - Bệnh lây qua đường hô hấp](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BHH.html)
+
+* [DDLS - Tìm kiếm và quản lý tài liệu tham khảo](https://decidelab.github.io/teaching_materials/slides/Slide_DDLS_TLTK_20210310)

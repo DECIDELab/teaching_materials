@@ -18,9 +18,39 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Một số khái niệm cơ bản
 
-* Đoàn hệ (cohort): một nhóm người được theo dõi theo thời gian. Đoàn hệ có thể mở (open cohort) hoặc đóng (closed cohort)
+* Đoàn hệ (cohort): một nhóm người có một số đặc điểm chung được theo dõi theo thời gian. Đoàn hệ có thể mở (open cohort) hoặc đóng (closed cohort)
     + Đoàn hệ đóng: là đoàn hệ mà (1) mọi người được theo dõi từ cùng một thời điểm (tuyệt đối hoặc tương đối), (2) không thêm thành viên mới sau khi kết thúc giai đoạn tuyển bệnh. Do đó kích thước của đoàn hệ đóng sẽ được giữ nguyên hoặc giảm dần theo thời gian.
     + Đoàn hệ mở: có thể thêm thành viên mới nên kích thước có thể tăng lên hoặc giảm đi theo thời gian.
+    
+A population is simply a group of people with some common characteristic, such as age, race, gender, or place of residence. A "target population" is a population for which you would like to make some conclusions. Examples:
+
+* residents of Mumbai
+* members of Blue Cross/Blue Shield (a U.S. health insurance organization)
+* postmenopausal women in Massachusetts
+* coal miners in Pennsylvania
+* male physicians in the United States
+* members of the BUSPH intramural softball team
+
+Fixed population: In a fixed population membership is relatively permanent and perhaps defined by some event. Once a person experiences the defining event they remain part of that population as long as they are alive. Examples of relatively fixed populations might include:
+
+* survivors of the atomic blasts in Japan,
+* veterans of the Vietnam war or the Gulf Wars
+* members of the U.S. military who sustained a head wound while stationed in Iraq
+* residents of New Orleans who lost their homes during hurricane Katrina.
+* all babies born in Tanzania in 2012
+
+Enrollment in an epidemiological study can also be the defining event for a person to enter a fixed population:
+
+* Persons who completed and returned a questionnaire in response to an invitation to join the Black Women's Health Study, and who were found to be eligible by study staff
+* Residents of Boston public housing who met eligibility criteria, completed informed consent and a baseline survey, and had one meeting with a community health worker to discuss smoking cessation
+
+Dynamic population: In a dynamic population, membership is defined by current status, so membership is not necessarily permanent. A person is a member of the population as long as they meet the definition of the population, and they cease to be a members of the population when they no longer meet the definition. Note that a person can be a member, leave, and then become a member again. Examples of a dynamic population include:
+
+* residents of any town or, state, or country
+* members of a health insurance plan
+* women who have given birth within the past 12 months
+
+
 
 ## Số đo hiện mắc
 

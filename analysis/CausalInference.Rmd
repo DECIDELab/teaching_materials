@@ -16,6 +16,69 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Giới thiệu
 
+## New
+
+the determination that an association is causal indicates the possibility for intervention
+
+* Practitioners decide on interventions on the basis of consequences produced by a presumed causal relationship
+* Causal inference is embedded in regulatory processes
+* Public health evidence may be prominent in legal proceedings in which judgment about the existence of a causal relationship is pivotal in determining guilt and liability for damages
+* Causal inference is also embedded in many aspects of medical practice through the principles of evidence-based medicine, where decisions about harms or benefits of therapeutic agents are based, in part, on rules for how
+to measure the strength of evidence for causal connections between interventions and health outcomes
+
+frameworks:
+
+* John Snow “chains of inference”
+* Koch’s postulates: germ theory
+* Sir Austin Bradford Hill
+* 1964 US Surgeon General’s report on smoking
+* counterfactual or potential outcomes framework
+
+### Koch’s postulates
+
+The microorganism must be found in abundance in all organisms suffering from the disease, but should not be found in healthy organisms.
+The microorganism must be isolated from a diseased organism and grown in pure culture.
+The cultured microorganism should cause disease when introduced into a healthy organism.
+The microorganism must be reisolated from the inoculated, diseased experimental host and identified as being identical to the original specific causative agent.
+
+### Sir Austin Bradford Hill
+
+classic framework for causal thinking
+
+causal role of smoking in the epidemic of lung cancer
+
+to identify the causes of diseases and particularly to determine the role of smoking in lung cancer but its use has been extended to public health decision making, a domain where questions about causal effects relate to the consequences of interventions that have often been motivated by the identification of causal factors
+
+does not reflect the current, more clearly articulated view of causal processes. and the the causal questions have become more complex, beyond the original intent of this framework. lack of a formal basis for evaluating causal hypotheses
+
+Hill’s criteria (1965):
+
+* Strength
+* Consistency
+* Specificity: little applicability for noncommunicable diseases that have multiple causes
+* Temporality
+* Biological gradient
+* Coherence
+* Experiment
+
+vulnerable to subjectivity in the evaluation of evidence and to manipulation of the evidence and evidence interpretation
+
+assumes a simplistic direct relationship between cause and putative effect without explicit consideration of the structure of the underlying causal processes
+
+limited focus: The inference about cause became the rationale for intervention, but the causal conclusions were not couched in the consequences of specific actions to reduce or eliminate cigarette smoking. And later, public health action was aimed at the individual smoker, rather than at the upstream system of cigarette manufacture, advertising, and distribution
+
+causal determinations were made by epidemiologists and others in public health about various risk factors without considering the effect of a specific way of changing them
+
+### US Surgeon General Report’s criteria
+
+* Consistency of association
+* Strength of association
+* Specificity of association
+* Temporal relationship of association
+* Coherence of association
+
+
+
 From the course Causal questions and principled answers: a guide through the landscape for practising statisticians.
 
 ## A causal effect question for a purpose: the steps

@@ -1,5 +1,5 @@
 ---
-title: "Bệnh và sự xuất hiện Dịch"
+title: "Nghiên cứu can thiệp"
 author: "Phùng Khánh Lâm"
 date: " 2020-09-21 (cập nhật: `r Sys.Date()`)"
 output:
