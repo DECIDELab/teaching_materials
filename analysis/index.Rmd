@@ -26,6 +26,7 @@ Welcome to my collection of teaching materials.
 * [DTHCB - Số đo kết hợp](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDKH.html)
 * [DTHCB - Số đo kết hợp - Bài tập](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_BTSDKH.html)
 * [DTHCB - Suy diễn nhân quả](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDNQ.html)
+* [DTHCB - Suy diễn nhân quả (SĐH)](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDH_SDNQ_20210504.html)
 * [DTHBKL - Tổng quan y văn](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_TQYV_YHDP_20210305.html)
 * [DTHBKL - DTH Sức khoẻ tâm thần](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_MentalHealth.html)
 * [DTHBKL - DTH Sức khoẻ tâm thần (YHDP)](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_MentalHealth_YHDP_20210325.html)
