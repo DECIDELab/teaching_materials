@@ -28,20 +28,21 @@ Welcome to my collection of teaching materials.
 * [DTHCB - Suy diễn nhân quả](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDNQ.html)
 * [DTHCB - Suy diễn nhân quả (SĐH)](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDH_SDNQ_20210504.html)
 * [DTHCB - Phê bình y văn (SĐH)](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDH_PBYV_20210518.html)
+* [DTHCB - Phê bình y văn (SĐH) - Hiệu quả vaccine ](https://decidelab.github.io/teaching_materials/slides/Slide_DTHCB_SDH_PBYV_Vaccine_20210601.html)
 * [DTHBKL - Tổng quan y văn](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_TQYV_YHDP_20210305.html)
 * [DTHBKL - DTH Sức khoẻ tâm thần](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_MentalHealth.html)
 * [DTHBKL - DTH Sức khoẻ tâm thần (YHDP)](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBKL_MentalHealth_YHDP_20210325.html)
 * [DTHBTN - Bệnh lây qua đường tiêu hoá](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BTH.html)
 * [DTHBTN - Bệnh lây qua vectơ](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BV.html)
 * [DTHBTN - Bệnh lây qua đường hô hấp](https://decidelab.github.io/teaching_materials/slides/Slide_DTHBTN_BHH.html)
-
 * [DDLS - Tìm kiếm và quản lý tài liệu tham khảo](https://decidelab.github.io/teaching_materials/slides/Slide_DDLS_TLTK_20210310)
-
 * [DTHLS - Tìm kiếm và phê bình y văn](https://decidelab.github.io/teaching_materials/slides/Slide_DTHLS_YVan_20210416.html)
 * [DTHLS - Các số đo trong nghiên cứu lâm sàng](https://decidelab.github.io/teaching_materials/slides/Slide_DTHLS_SoDo_202104092.html)
 * [DTHLS - Nghiên cứu tiên lượng](https://decidelab.github.io/teaching_materials/slides/Slide_DTHLS_NCTL2_20210423.html)
 * [DTHLS - Mô hình tiên lượng trong sốt dengue](https://decidelab.github.io/teaching_materials/slides/Slide_DTHLS_MHTLDengue_20210423.html)
 * [DTHLS - Ra quyết định lâm sàng](https://decidelab.github.io/teaching_materials/slides/Slide_DTHLS_QDLS_20210507.html)
+* [NCKH-CK1DD - Tìm và quản lý tài liệu tham khảo](https://decidelab.github.io/teaching_materials/slides/Slide_NCKH_CK1DD_TLTK_20210514.html)
+* [NCKH-CK1DD - Thống kê mô tả](https://decidelab.github.io/teaching_materials/slides/Slide_NCKH_CK1DD_TKMT_20210521.html)
 
 
 

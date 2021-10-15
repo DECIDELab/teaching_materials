@@ -14,12 +14,22 @@
 
 <title>Causal Inference</title>
 
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -37,12 +47,18 @@ div.section {
 }
 </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -55,30 +71,27 @@ if (window.hljs) {
 
 
 
+
 <style type="text/css">
-h1 {
-  font-size: 34px;
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-h1.title {
-  font-size: 38px;
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-h2 {
-  font-size: 30px;
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-h3 {
-  font-size: 24px;
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
 }
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -90,10 +103,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -110,40 +119,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -171,7 +153,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -183,7 +165,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -194,10 +176,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -209,7 +204,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -335,13 +329,13 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -371,7 +365,7 @@ div.tocify {
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/decidelab/teaching_materials">
-    <span class="fa fa-github"></span>
+    <span class="fas fa-github"></span>
      
     Source code
   </a>
@@ -381,20 +375,20 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
 <h1 class="title toc-ignore">Causal Inference</h1>
 <h4 class="author">Phùng Khánh Lâm</h4>
-<h4 class="date">2020-11-17 (cập nhật: 2020-11-18)</h4>
+<h4 class="date">2020-11-17 (cập nhật: 2021-05-07)</h4>
 
 </div>
 
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -403,7 +397,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -412,10 +406,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-11-18
+<strong>Last updated:</strong> 2021-05-07
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>teaching_materials/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -431,12 +425,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -503,16 +497,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreefb5a83ac276d2ffa8c546b69a334c9debe0bbbbetargetblankfb5a83aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/fb5a83ac276d2ffa8c546b69a334c9debe0bbbbe" target="_blank">fb5a83a</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreee948ab7bdb59dd13990ef8e18eb5281044287158targetblanke948ab7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/decidelab/teaching_materials/tree/e948ab7bdb59dd13990ef8e18eb5281044287158" target="_blank">e948ab7</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreefb5a83ac276d2ffa8c546b69a334c9debe0bbbbetargetblankfb5a83aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdecidelabteachingmaterialstreee948ab7bdb59dd13990ef8e18eb5281044287158targetblanke948ab7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/fb5a83ac276d2ffa8c546b69a334c9debe0bbbbe" target="_blank">fb5a83a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/decidelab/teaching_materials/tree/e948ab7bdb59dd13990ef8e18eb5281044287158" target="_blank">e948ab7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -522,20 +516,17 @@ Ignored files:
     Ignored:    .DS_Store
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
+    Ignored:    analysis/ga.html
 
 Untracked files:
-    Untracked:  analysis/CausalInference.Rmd
-    Untracked:  analysis/DTHCB_NCCanThiep.Rmd
-    Untracked:  analysis/DTHCB_SoDoBenhTat.Rmd
-    Untracked:  analysis/DTHCB_SoDoKetHop.Rmd
-    Untracked:  assests/
-    Untracked:  code/00_setup.R
-    Untracked:  code/create_gif.R
-    Untracked:  figures/
-    Untracked:  slides/
+    Untracked:  analysis/Biostat_KhoangTinCay.Rmd
+    Untracked:  analysis/DTHBKL_SucKhoaTinhThan.Rmd
+    Untracked:  misc/
 
 Unstaged changes:
-    Modified:   analysis/DTHCB_BenhDich.Rmd
+    Modified:   .Rprofile
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/reference.bib
 
 </code></pre>
 <p>
@@ -548,16 +539,163 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with <code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/CausalInference.Rmd</code>) and HTML (<code>docs/CausalInference.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/75f31cc5a89795b398a4ad3da779f9faaba1c2e7/analysis/CausalInference.Rmd" target="_blank">75f31cc</a>
+</td>
+<td>
+Lam Phung
+</td>
+<td>
+2021-03-10
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/decidelab/teaching_materials/75f31cc5a89795b398a4ad3da779f9faaba1c2e7/docs/CausalInference.html" target="_blank">75f31cc</a>
+</td>
+<td>
+Lam Phung
+</td>
+<td>
+2021-03-10
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/decidelab/teaching_materials/blob/b1fef69c4832533f2dc6766f6ffc5c23f2c4ec3d/analysis/CausalInference.Rmd" target="_blank">b1fef69</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-11-18
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/decidelab/teaching_materials/b1fef69c4832533f2dc6766f6ffc5c23f2c4ec3d/docs/CausalInference.html" target="_blank">b1fef69</a>
+</td>
+<td>
+lampk
+</td>
+<td>
+2020-11-18
+</td>
+<td>
+update
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
 </div>
 <div id="giới-thiệu" class="section level2">
 <h2>Giới thiệu</h2>
+</div>
+<div id="new" class="section level2">
+<h2>New</h2>
+<p>the determination that an association is causal indicates the possibility for intervention</p>
+<ul>
+<li>Practitioners decide on interventions on the basis of consequences produced by a presumed causal relationship</li>
+<li>Causal inference is embedded in regulatory processes</li>
+<li>Public health evidence may be prominent in legal proceedings in which judgment about the existence of a causal relationship is pivotal in determining guilt and liability for damages</li>
+<li>Causal inference is also embedded in many aspects of medical practice through the principles of evidence-based medicine, where decisions about harms or benefits of therapeutic agents are based, in part, on rules for how to measure the strength of evidence for causal connections between interventions and health outcomes</li>
+</ul>
+<p>frameworks:</p>
+<ul>
+<li>John Snow “chains of inference”</li>
+<li>Koch’s postulates: germ theory</li>
+<li>Sir Austin Bradford Hill</li>
+<li>1964 US Surgeon General’s report on smoking</li>
+<li>counterfactual or potential outcomes framework</li>
+</ul>
+<div id="kochs-postulates" class="section level3">
+<h3>Koch’s postulates</h3>
+<p>The microorganism must be found in abundance in all organisms suffering from the disease, but should not be found in healthy organisms. The microorganism must be isolated from a diseased organism and grown in pure culture. The cultured microorganism should cause disease when introduced into a healthy organism. The microorganism must be reisolated from the inoculated, diseased experimental host and identified as being identical to the original specific causative agent.</p>
+</div>
+<div id="sir-austin-bradford-hill" class="section level3">
+<h3>Sir Austin Bradford Hill</h3>
+<p>classic framework for causal thinking</p>
+<p>causal role of smoking in the epidemic of lung cancer</p>
+<p>to identify the causes of diseases and particularly to determine the role of smoking in lung cancer but its use has been extended to public health decision making, a domain where questions about causal effects relate to the consequences of interventions that have often been motivated by the identification of causal factors</p>
+<p>does not reflect the current, more clearly articulated view of causal processes. and the the causal questions have become more complex, beyond the original intent of this framework. lack of a formal basis for evaluating causal hypotheses</p>
+<p>Hill’s criteria (1965):</p>
+<ul>
+<li>Strength</li>
+<li>Consistency</li>
+<li>Specificity: little applicability for noncommunicable diseases that have multiple causes</li>
+<li>Temporality</li>
+<li>Biological gradient</li>
+<li>Coherence</li>
+<li>Experiment</li>
+</ul>
+<p>vulnerable to subjectivity in the evaluation of evidence and to manipulation of the evidence and evidence interpretation</p>
+<p>assumes a simplistic direct relationship between cause and putative effect without explicit consideration of the structure of the underlying causal processes</p>
+<p>limited focus: The inference about cause became the rationale for intervention, but the causal conclusions were not couched in the consequences of specific actions to reduce or eliminate cigarette smoking. And later, public health action was aimed at the individual smoker, rather than at the upstream system of cigarette manufacture, advertising, and distribution</p>
+<p>causal determinations were made by epidemiologists and others in public health about various risk factors without considering the effect of a specific way of changing them</p>
+</div>
+<div id="us-surgeon-general-reports-criteria" class="section level3">
+<h3>US Surgeon General Report’s criteria</h3>
+<ul>
+<li>Consistency of association</li>
+<li>Strength of association</li>
+<li>Specificity of association</li>
+<li>Temporal relationship of association</li>
+<li>Coherence of association</li>
+</ul>
 <p>From the course Causal questions and principled answers: a guide through the landscape for practising statisticians.</p>
+</div>
 </div>
 <div id="a-causal-effect-question-for-a-purpose-the-steps" class="section level2">
 <h2>A causal effect question for a purpose: the steps</h2>
@@ -586,7 +724,7 @@ There are no past versions. Publish this analysis with <code>wflow_publish()</co
 </ol>
 <p>Questions posed</p>
 <ul>
-<li>by the ‘patient’, care giver, health insurance, …</li>
+<li>by the ‘patient,’ care giver, health insurance, …</li>
 <li>for decisions</li>
 </ul>
 </div>
@@ -763,7 +901,7 @@ There are no past versions. Publish this analysis with <code>wflow_publish()</co
 </div>
 <div id="hiện-tượng-tảng-băng-trong-chẩn-đoán-lâm-sàng" class="section level4">
 <h4>Hiện tượng tảng băng trong chẩn đoán lâm sàng</h4>
-<p>Do phổ lâm sàng thay đổi rộng, những trường hợp được chẩn đoán bởi bác sĩ lâm sàng trong cộng đồng thường chỉ đại diện cho “chóp của tảng băng”. Có nhiều trường hợp còn quá sớm để chẩn đoán hoặc có thể vẫn không có triệu chứng.</p>
+<p>Do phổ lâm sàng thay đổi rộng, những trường hợp được chẩn đoán bởi bác sĩ lâm sàng trong cộng đồng thường chỉ đại diện cho “chóp của tảng băng.” Có nhiều trường hợp còn quá sớm để chẩn đoán hoặc có thể vẫn không có triệu chứng.</p>
 <ul>
 <li>Ví dụ, theo Tổ Chức Y Tế Thế Giới, đối với sốt xuất huyết dengue, khi có một trường hợp sốc được chẩn đoán trong bệnh viện thì tại khu vực sinh sống của trường hợp đó có khoảng 150 đến 200 người đang mắc bệnh lặng lẽ chưa được phát hiện.</li>
 </ul>
@@ -874,7 +1012,7 @@ Bệnh được lây truyền khi tác nhân rời bỏ vật chủ, hoặc túc
 </div>
 <div id="ngõ-vào" class="section level4">
 <h4>Ngõ vào</h4>
-<p>Tác nhân gây bệnh xâm nhập vào túc chủ cảm thụ qua một ngõ vào, và ngõ vào để xâm nhập một túc chủ mới thường giống với ngõ ra để rời bỏ túc chủ nguồn. Thí dụ, virus cúm phải rời đường hô hấp của túc chủ nguồn và xâm nhập đường hô hấp của túc chủ mới. Đường lây truyền phổ biến của nhiều tác nhân gây bệnh đường ruột là đường “phân-miệng”, vì những sinh vật được thải ra trong phân, được chuyên chở bởi những bàn tay bẩn, và rồi chuyển sang một vật chuyên chở (như thức ăn, nước, hoặc dụng cụ nấu nướng) để vào miệng của một túc chủ mới. Những ngõ vào khác gồm có da (bệnh giun móc), màng nhày (giang mai, mắt hột), và máu (viêm gan B).</p>
+<p>Tác nhân gây bệnh xâm nhập vào túc chủ cảm thụ qua một ngõ vào, và ngõ vào để xâm nhập một túc chủ mới thường giống với ngõ ra để rời bỏ túc chủ nguồn. Thí dụ, virus cúm phải rời đường hô hấp của túc chủ nguồn và xâm nhập đường hô hấp của túc chủ mới. Đường lây truyền phổ biến của nhiều tác nhân gây bệnh đường ruột là đường “phân-miệng,” vì những sinh vật được thải ra trong phân, được chuyên chở bởi những bàn tay bẩn, và rồi chuyển sang một vật chuyên chở (như thức ăn, nước, hoặc dụng cụ nấu nướng) để vào miệng của một túc chủ mới. Những ngõ vào khác gồm có da (bệnh giun móc), màng nhày (giang mai, mắt hột), và máu (viêm gan B).</p>
 </div>
 <div id="túc-chủ-1" class="section level4">
 <h4>Túc chủ</h4>
@@ -891,7 +1029,7 @@ Bệnh được lây truyền khi tác nhân rời bỏ vật chủ, hoặc túc
 <div id="những-ứng-dụng-của-dây-chuyền-lây" class="section level3">
 <h3>Những Ứng Dụng Của Dây Chuyền Lây</h3>
 <p>Nếu biết được một tác nhân đi ra và xâm nhập một túc chủ như thế nào, và những cách lây truyền của nó là gì, chúng ta có thể xác định được những biện pháp kiểm soát thích hợp. Nói chung, những biện pháp kiểm soát nên nhắm vào mắt xích nào trong dây chuyền lây là nhạy cảm nhất với sự can thiệp.</p>
-<p>Đối với một số bệnh, sự can thiệp thích hợp nhất có thể hướng vào việc kiểm soát hoặc loại bỏ tác nhân ngay từ nguồn. Trong bệnh viện, những bệnh nhân có thể được điều trị hoặc/và cách ly, với những cảnh giác “cẩn thận lây đường ruột”, “cẩn thận lây hô hấp”, “cẩn thận chung”, và những thứ tương tự cho những lối ra khác nhau. Trong cộng đồng, đất có thể được giải nhiễm hoặc phủ lại để ngăn sự thoát ra của tác nhân.</p>
+<p>Đối với một số bệnh, sự can thiệp thích hợp nhất có thể hướng vào việc kiểm soát hoặc loại bỏ tác nhân ngay từ nguồn. Trong bệnh viện, những bệnh nhân có thể được điều trị hoặc/và cách ly, với những cảnh giác “cẩn thận lây đường ruột,” “cẩn thận lây hô hấp,” “cẩn thận chung,” và những thứ tương tự cho những lối ra khác nhau. Trong cộng đồng, đất có thể được giải nhiễm hoặc phủ lại để ngăn sự thoát ra của tác nhân.</p>
 <p>Đôi khi chúng ta hướng những can thiệp vào cách thức lây. Đối với sự lây truyền trực tiếp, chúng ta có thể cho điều trị những túc chủ nguồn, hoặc giáo dục túc chủ nguồn tránh loại tiếp xúc đặc thù có liên quan đến sự lây truyền. Trong bệnh viện, vì hầu hết những sự nhiễm trùng được truyền đi qua tiếp xúc trực tiếp, rửa tay là cách quan trọng nhất để ngăn bệnh lan tràn. Đối với kiểu lây truyền qua vật chuyên chở, có thể giải nhiễm hoặc loại bỏ vật chuyên chở. Đối với kiểu lây phân-miệng, có thể giảm nguy cơ nhiễm trong tương lai bằng cách thanh khiết lại môi trường, và giáo dục người dân làm tốt vệ sinh cá nhân. Đối với kiểu lây qua không khí, có thể thay đổi sự thông khí hoặc áp suất không khí, và lọc hoặc xử lý không khí. Đối với kiểu lây qua sinh vật trung gian, chúng ta thường kiểm soát bằng cách giảm thiểu hoặc thanh toán quần thể côn trùng trung gian.</p>
 <p>Cuối cùng, chúng ta có thể áp dụng những biện pháp bảo vệ ngõ vào của một túc chủ có khả năng cảm thụ, hoặc giảm tính cảm thụ của một túc chủ có khả năng. Thí dụ, bao tay và khẩu trang của một nha sĩ là nhằm bảo vệ nha sĩ đối với nước bọt, những chất tiết, và máu của bệnh nhân, cũng như bảo vệ bệnh nhân đối với nha sĩ. Kháng sinh phòng ngừa và tiêm chủng là những chiến lược để cải thiện sự bảo vệ của một túc chủ cảm thụ.</p>
 </div>
@@ -932,7 +1070,7 @@ Bệnh được lây truyền khi tác nhân rời bỏ vật chủ, hoặc túc
 <h3>Định Nghĩa Trường Hợp</h3>
 <p>Một định nghiã trường hợp là một bộ những tiêu chí để xác định rằng một người là có một bệnh nào đó, hoặc một tình trạng có liên quan đến sức khoẻ. Với một định nghiã trường hợp chuẩn chúng ta bảo đảm rằng các trường hợp đều được chẩn đoán theo một cách giống nhau, bất kể nó xảy ra ở đâu, khi nào, hoặc được ai xác định. Từ đó, chúng ta có thể so sánh số những trường hợp bệnh xảy ra vào một thời gian hoặc nơi chốn này với số xảy ra vào một thời gian và ở một nơi khác. Với một định nghiã trường hợp chuẩn, khi tìm thấy sự khác biệt trong sự xuất hiện bệnh, chúng ta biết rằng có khả năng đó là sự khác biệt thật sự hơn là do các trường hợp đã được chẩn đoán khác nhau.</p>
 <p>Một định nghiã trường hợp gồm có những tiêu chí lâm sàng và, đôi khi, những giới hạn về thời gian, nơi chốn, và người. Những tiêu chí lâm sàng thường bao gồm những thử nghiệm xác định trong phòng xét nghiệm, nếu có, hoặc nhóm những triệu chứng (những điều phàn nàn chủ quan), dấu hiệu (những phát hiện lâm sàng khách quan), và những phát hiện khác.</p>
-<p>Một định nghiã trường hợp không có nghĩa giúp chúng ta xác định một cách đơn giản là có hoặc không bệnh. Tùy theo trường hợp mà chúng ta quan tâm thoả được bao nhiêu trong số những tiêu chí đặt ra mà chúng ta có thể xếp trường hợp đó vào những nhóm chẩn đoán khác nhau. Thí dụ, trong một trận dịch sởi, chúng ta có thể xếp một người có sốt và phát ban là một trường hợp nghi ngờ, có thể, hoặc xác định là sởi, tuỳ theo sự hiện diện của những bằng chứng nào có được về sởi. Trong những tình huống khác, chúng ta tạm thời xếp một trường hợp là ‘nghi ngờ’, hoặc ‘có khả năng’ cho đến khi có kết quả của phòng xét nghiệm; và tùy theo kết quả đó, chúng ta sẽ xếp lại một trường hợp hoặc là xác định hoặc là ‘không phải là một trường hợp’. Giữa một trận dịch lớn của một bệnh biết rõ nguyên nhân, chúng ta có thể xếp luôn một số trường hợp là nghi ngờ hoặc có thể, vì với mỗi bệnh nhân có hình ảnh lâm sàng hoặc tiền sử tiếp xúc phù hợp (thí dụ như đậu mùa) thì tiến hành xét nghiệm là thừa hoặc không cần thiết. Những định nghiã trường hợp không chỉ nên dựa vào kết quả nuôi cấy phòng xét nghiệm, vì đôi khi sinh vật có hiện diện nhưng không gây bệnh.</p>
+<p>Một định nghiã trường hợp không có nghĩa giúp chúng ta xác định một cách đơn giản là có hoặc không bệnh. Tùy theo trường hợp mà chúng ta quan tâm thoả được bao nhiêu trong số những tiêu chí đặt ra mà chúng ta có thể xếp trường hợp đó vào những nhóm chẩn đoán khác nhau. Thí dụ, trong một trận dịch sởi, chúng ta có thể xếp một người có sốt và phát ban là một trường hợp nghi ngờ, có thể, hoặc xác định là sởi, tuỳ theo sự hiện diện của những bằng chứng nào có được về sởi. Trong những tình huống khác, chúng ta tạm thời xếp một trường hợp là ‘nghi ngờ,’ hoặc ‘có khả năng’ cho đến khi có kết quả của phòng xét nghiệm; và tùy theo kết quả đó, chúng ta sẽ xếp lại một trường hợp hoặc là xác định hoặc là ‘không phải là một trường hợp.’ Giữa một trận dịch lớn của một bệnh biết rõ nguyên nhân, chúng ta có thể xếp luôn một số trường hợp là nghi ngờ hoặc có thể, vì với mỗi bệnh nhân có hình ảnh lâm sàng hoặc tiền sử tiếp xúc phù hợp (thí dụ như đậu mùa) thì tiến hành xét nghiệm là thừa hoặc không cần thiết. Những định nghiã trường hợp không chỉ nên dựa vào kết quả nuôi cấy phòng xét nghiệm, vì đôi khi sinh vật có hiện diện nhưng không gây bệnh.</p>
 <p>Những định nghiã trường hợp có thể được thay đổi theo mục đích. Thí dụ, những nhân viên y tế cần biết càng sớm càng tốt nếu có ai đó có những triệu chứng của dịch hạch, hoặc bệnh nhiễm độc tố do thức ăn để có thể lập kế hoạch cho những hành động cần làm. Đối với những bệnh lây hiếm nhưng nghiêm trọng, khi cần phải xác định mọi trường hợp có thể, những nhân viên y tế dùng một định nghiã trường hợp lỏng lẻo, hoặc có độ nhạy cao. Ngược lại, những nhà giám sát nguyên nhân của một trận dịch lại muốn chắc chắn rằng bất cứ ai được bao gồm trong sự giám sát là thật sự có bệnh, do đó, một định nghiã trường hợp chặt chẽ, hoặc có độ đặc hiệu cao sẽ được chuộng hơn. Thí dụ, trong một trận dịch của <em>Salmonella agona</em>, những nhà giám sát sẽ có nhiều khả năng để xác định nguồn lây nếu họ chỉ bao gồm những người được xác nhận đã bị nhiễm khuẩn. Điều này sẽ cung cấp những thông tin giá trị hơn là bao gồm bất cứ ai có tiêu chảy cấp, vì một số người có thể đã bị tiêu chảy vì nguyên nhân khác. Điều bất lợi duy nhất của một định nghiã trường hợp chặt chẽ là đưa đến một ước lượng non.</p>
 </div>
 </div>
@@ -955,9 +1093,9 @@ Bệnh được lây truyền khi tác nhân rời bỏ vật chủ, hoặc túc
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.1 (2020-06-06)
+<pre><code>R version 4.0.4 (2021-02-15)
 Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Catalina 10.15.4
+Running under: macOS Big Sur 10.16
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
@@ -973,12 +1111,15 @@ other attached packages:
 [1] workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5      rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
- [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
- [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.7     fs_1.4.1       
-[13] promises_1.1.1  rmarkdown_2.3   tools_4.0.1     stringr_1.4.0  
-[17] glue_1.4.1      httpuv_1.5.4    xfun_0.19       yaml_2.2.1     
-[21] compiler_4.0.1  htmltools_0.5.0 knitr_1.30     </code></pre>
+ [1] Rcpp_1.0.6        whisker_0.4       knitr_1.32        magrittr_2.0.1   
+ [5] R6_2.5.0          rlang_0.4.10      fansi_0.4.2       stringr_1.4.0    
+ [9] tools_4.0.4       xfun_0.22         utf8_1.2.1        git2r_0.28.0     
+[13] jquerylib_0.1.3   htmltools_0.5.1.1 ellipsis_0.3.1    rprojroot_2.0.2  
+[17] yaml_2.2.1        digest_0.6.27     tibble_3.1.1      lifecycle_1.0.0  
+[21] crayon_1.4.1      later_1.1.0.1     sass_0.3.1        vctrs_0.3.7      
+[25] promises_1.2.0.1  fs_1.5.0          glue_1.4.2        evaluate_0.14    
+[29] rmarkdown_2.7     stringi_1.5.3     bslib_0.2.4       compiler_4.0.4   
+[33] pillar_1.6.0      jsonlite_1.7.2    httpuv_1.6.0      pkgconfig_2.0.3  </code></pre>
 </div>
 </div>
 
@@ -996,6 +1137,8 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
+
+
 </div>
 </div>
 
@@ -1005,7 +1148,7 @@ footer is added to webpages before the MathJax javascript. -->
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1023,7 +1166,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

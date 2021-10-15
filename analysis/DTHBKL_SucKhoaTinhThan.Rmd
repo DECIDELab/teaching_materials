@@ -1,0 +1,95 @@
+---
+title: "Dịch tễ học bệnh lý tâm thần"
+date: " 2021-03-19 (cập nhật: `r Sys.Date()`)"
+output:
+    html_document:
+      theme: cerulean
+      toc: yes
+      toc_float: yes
+bibliography: reference.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mục tiêu bài học
+
+* Mô tả được quá trình lây nhiễm của các bệnh lây theo đường tiêu hóa
+
+* Trình bày được các biện pháp phòng chống đối với các bệnh lây theo đường tiêu hóa
+
+* Mô tả được quá trình lây nhiễm và các biện pháp kiểm soát/dự phòng của một số bệnh l6y qua đường tiêu hoá:
+    + Bệnh bại liệt
+    + Bệnh thương hàn
+
+## From references
+
+@prince_global_2007:
+
+No health without mental health:
+
+* Contributions of mental disorders to disability and mortality
+* Mental disorders interact with other health conditions
+
+Resources for mental health
+
+Mental health systems in countries
+
+Treatment and prevention of mental disorders
+
+Barriers to improvement of mental health services
+
+Scale up services for mental disorders
+
+Poverty and mental disorders
+
+Child and adolescent mental health worldwide
+
+Mental health and psychosocial support in humanitarian settings
+
+Human rights violations of people with mental and psychosocial disabilities
+
+
+## History
+
+the three phases of methodological development proposed by Dohrenwend and Dohrenwend
+
+* a first age where unstructured clinician diagnoses were used to begin to understand the prevalence and incidence of common and severe mental disorders
+
+* a second age applying semi-structured instruments and the beginnings of symptom scales for similarly descriptive applications, attempting some level of standardization
+
+* a third age, characterized by larger-scale surveys using fully structured schedules and accompanying algorithms, with an increasing focus on analytic rather than descriptive research
+
+* a ‘fourth age’; however, we did highlight the growth of more complex analytic designs such as historic cohort and twin studies for causal modelling, paralleled by expansion of research from high-income Western settings towards a more global coverage, and by the incorporation of biological measures and the early appreciation of gene–environment interactions
+
+Although considerable research interest and activity is now focused on novel risk factors and causal pathway modelling, the need for high-quality descriptive data has not gone away. There is no reason to suppose that the prevalence and incidence of a given mental disorder will remain constant over time, let alone its individual and societal impact
+
+The challenge of defining mental disorders is as pertinent now as it was for Kraepelin, Bleuler, and the rest of our forebears in the early twentieth century. The increasing standardization of diagnostic schedules imposes consistency in an increasingly international research field; however, the ‘validity’ question remains and the practice remains out of step with biological evidence challenging traditional diagnostic distinctions
+
+The interface between what used to be called biological and epidemiological research continues to become increasingly blurred and is likely to disappear when whole genome sequencing becomes as quick and easy as asking about occupation, social support, and life events
+
+The distinctions between psychiatric and generic epidemiology could be said to be blurring in some respects and becoming sharper in others.
+
+At the interventional end of epidemiology, while the randomized controlled trial remains a mainstay, increasingly complex interventions in health service delivery are requiring new study designs and approaches, coupled with a growing awareness that research does not stop at the demonstration of effect, but needs also to consider the potentially long and tortuous pathways to implementation if new findings are to have a discernible effect on the health of populations
+
+
+### Measurement in mental health
+
+### Culture and psychiatric epidemiology
+
+### Ethics and research in psychiatry
+
+Contributions of mental illness to global disease burden
+Major population-based studies of mental illness
+Measurement of psychopathology
+Culture and mental illness
+Role of neurodevelopment
+Genetics, social and physical environment in etiology of mental disorders
+Mental health services research
+
+# References
+
+
+
+
