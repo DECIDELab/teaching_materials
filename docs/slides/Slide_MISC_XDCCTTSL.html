@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Module Dự Án Học Thuật</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Phùng Khánh Lâm, BS, TS" />
+    <meta name="date" content="2021-10-26" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"ea34d519fa6e4fa3b2a802da48f41049","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/mark.js/mark.min.js"></script>
+    <link href="libs/xaringanExtra-search/search.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-search/search.js"></script>
+    <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":false,"autoSearch":true}) })</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="lampk2.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Module Dự Án Học Thuật
+## XÂY DỰNG CÔNG CỤ THU THẬP DỮ LIỆU
+### Phùng Khánh Lâm, BS, TS
+### </br> Bộ môn Dịch tễ học, Khoa Y tế công cộng, Đại học Y Dược TP Hồ Chí Minh
+### </br> 2021-10-26
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+## Giới thiệu
+
+* 2003-2009: BS đa khoa, ĐHYD TPHCM
+* 2010-2015: Nghiên cứu sinh, Oxford University Clinical Research Unit
+* 2016-2019: Postdoc, Sinh thống kê
+* 2020-nay: Giảng viên bộ môn Dịch tễ học, Khoa YTCC, ĐHYD TPHCM
+
+---
+
+## Mục tiêu
+
+* Phân loại được các dạng dữ liệu 
+
+* Phân tích được ưu, khuyết điểm của các phương pháp thu thập dữ liệu 
+
+* Phân tích được các bước cần thiết trong xây dựng công cụ thu thập dữ liệu
+
+---
+
+class: inverse, center, middle
+
+.f2.b[CÁC DẠNG DỮ LIỆU]
+
+---
+
+## Dữ liệu nghiên cứu: những giá trị thô ban đầu
+
+* Số, chữ
+
+* Hình ảnh
+
+* Bảng ghi 
+
+* …
+
+---
+
+## Phân loại dữ liệu
+
+Theo tính chất dữ liệu:
+
+* Loại định tính 
+* Loại định lượng 
+
+--
+
+Theo nguồn thu thập:
+
+--
+
+* Dạng sơ cấp:
+    + Nghiên cứu viên thu thập trực tiếp để phục vụ mục tiêu nghiên cứu 
+
+--
+
+* Dạng thứ cấp: 
+    + Người khác thu thập 
+    + Mục đích thu thập có thể khác với mục đích nghiên cứu
+    + Nguồn đa dạng: báo cáo thường niên, nghiên cứu khác, số thống kê điều tra ban đầu ...
+    
+---
+
+## Thứ bậc đo lường (Stanley Smith Stevens)
+
+![:imgabs 70%, 15%, 20%](figures/MISC_XDCCTTSL_ScaleMeasurement.png)
+.footnote[
+https://byjus.com/maths/scales-of-measurement/
+]    
+---
+
+class: inverse, center, middle
+
+.f2.b[PHƯƠNG PHÁP THU THẬP DỮ LIỆU]
+
+---
+
+## Phương pháp thu thập dữ liệu
+
+Dữ liệu thứ cấp:
+
+* Thu thập từ các nguồn có sẵn
+    + Sách và các ấn phẩm thống kê định kỳ
+    + Báo cáo tổng hợp
+    + Bệnh án/hệ thống quản lý điện tử
+
+--
+
+Dữ liệu sơ cấp:
+
+* Trực tiếp quan sát, đo lường, phỏng vấn, thảo luận, cho tự điền
+* Thực hiện thử nghiệm 
+
+---
+
+## Một số nguồn dữ liệu thứ cấp
+
+.footnote[
+Handbook of health research method
+]
+
+* Điều tra dân số 
+
+* Thống kê số liệu tử vong 
+
+* Dữ liệu bệnh viện 
+
+* Thống kê bệnh nhiễm 
+
+* Thống kê dịch vụ y tế 
+
+* Các khảo sát điều tra y tế, lối sống ...
+
+---
+
+## Dữ liệu định tính 
+
+Hình thức dữ liệu:
+
+* Hình ảnh
+* Lời nói, ghi chú
+
+--
+
+Phương pháp thu thập:
+
+* Quan sát 
+* Phỏng vấn 
+* Thảo luận nhóm
+* Ghi chép
+
+--
+
+Công cụ thu thập
+
+* Hướng dẫn quan sát/phỏng vấn/thảo luận nhóm
+* Máy ghi âm, Máy chụp hình, Phiếu thu thập thông tin
+
+---
+
+## Dữ liệu định lượng
+
+
+Hình thức dữ liệu:
+* Số/Chữ 
+
+--
+
+Phương pháp thu thập:
+* Tự điền
+* Ghi chép 
+* Truyền dữ liệu 
+* Online 
+
+--
+
+Công cụ thu thập:
+* Bảng/ bộ câu hỏi (đã được chuẩn hóa hoặc tự xây dựng)
+* Bảng ghi chú
+* Case report form (CRF), Patient Data Entry Form (PDEF)
+
+---
+
+## CRF vs. eCRF
+
+* CRF giấy:
+    + Không phụ thuộc vào công nghệ, dễ thực hiện
+    + Thực hiện được trong mọi trường hợp
+    + Khi nghiên cứu nhỏ, thiết kế thay đổi
+    + Tốn kém: thời gian, công sức, tiền bạc
+    + Sai sót: khi điền thông tin, khi nhập liệu 
+    
+--
+
+* eCRF:
+    + Cần công nghệ, hệ thống, đào tạo
+    + Khi nghiên cứu lớn, cùng thiết kế
+    + Tiết kiệm: công sức, tiền bạc, thời gian 
+    + Hạn chế sai sót: check ngay khi nhập liệu
+    + Chi phí duy trì hệ thống
+    + REDCAP
+    
+---
+
+## Các bước thu thập và sử dụng dữ liệu (CRF)
+
+![:imgabs 100%, 0%, 50%](figures/MISC_XDCCTTSL_QuyTrinhSL_01.png)
+
+---
+
+## Các bước thu thập và sử dụng dữ liệu (eCRF)
+
+![:imgabs 100%, 0%, 20%](figures/MISC_XDCCTTSL_QuyTrinhSL_02.png)
+---
+
+## Thu thập dữ liệu online
+
+Sử dụng eCRF
+
+Điều tra online (gửi bảng câu hỏi qua internet)
+
+--
+
+Bảo mật của cơ sở dữ liệu
+
+Sai lệch chọn lựa khi điều tra online
+
+---
+
+class: inverse, center, middle
+
+.f2.b[XÂY DỰNG CÔNG CỤ THU THẬP DỮ LIỆU]
+
+---
+
+
+class: middle
+
+.f2.b[Thiết kế CRF]
+
+.f2.b[Xây dựng bộ câu hỏi phỏng vấn]
+
+---
+
+## Thiết kế CRF
+
+Cần có hình dung về toàn bộ các khâu liên quan đến thu thập và sử dụng dữ liệu trong nghiên cứu lâm sàng
+
+* Nhập liệu như thế nào
+* Phân tích như thế nào
+* Trả lời câu hỏi nghiên cứu như thế nào?
+
+---
+
+## Thiết kế CRF: ví dụ 1
+
+![:imgabs 40%, 30%, 20%](figures/MISC_XDCCTTSL_CRF_01.png)
+
+.footnote[
+Bellary S et. al. (2014). Perspectives in Clinical Research, 5(4), 159–166.
+]
+
+---
+
+## Thiết kế CRF: cấu trúc chung
+
+Header:
+
+* Mã số: nghiên cứu, địa điểm, bệnh nhân
+* Các chữ cái đầu của tên bệnh nhân
+
+Footer:
+
+* Chữ ký của người điền
+* Ngày điền
+* Phiên bản CRF
+* Số trang
+
+Giao diện chính:
+
+* Không quá nhiều thông tin trên cùng 1 trang
+
+---
+
+## Thiết kế CRF: nguyên tắc
+
+.footnote[
+Bellary S et. al. (2014). Perspectives in Clinical Research, 5(4), 159–166.
+]
+
+* Thể hiện các nội dung trong đề cương nghiên cứu
+* Hoàn tất khi hoàn tất đề cương nghiên cứu
+* Vừa đầy đủ chi tiết, vừa không thừa thãi, lặp lại
+* Nhất quán (cấu trúc, font chữ, cỡ chữ, màu sắc, định dạng dữ liệu)
+* Có câu hỏi/hướng dẫn rõ ràng, chính xác (nhấn mạnh bằng in đậm, in nghiêng)
+* Sử dụng gợi ý bằng hình ảnh để hướng dẫn vị trí và định dạng dữ liệu cần nhập
+* Hướng dẫn rõ ràng, cụ thể, đúng vị trí các trường hợp nhảy câu
+* Dùng hộp/dòng riêng biệt để ghi câu trả lời cho từng câu hỏi
+* Hạn chế các câu trả lời tự điền
+* Ghi rõ số chữ số thập phân cần điền
+* Đơn vị cho biến số liên tục
+* Hạn chế sử dụng dữ liệu qua tính toán
+* Nên ở dạng mã hoá (thống nhất về cách mã hoá và vị trí thể hiện mã hoá)
+* Có SOP, hướng dẫn điền CRF
+
+---
+
+## Thiết kế CRF: ví dụ 2
+
+![:imgabs 80%, 10%, 20%](figures/MISC_XDCCTTSL_CRF_02.png)
+.footnote[
+Bellary S et. al. (2014). Perspectives in Clinical Research, 5(4), 159–166.
+]
+
+---
+
+## Thiết kế CRF: ví dụ 3
+
+![:imgabs 80%, 10%, 20%](figures/MISC_XDCCTTSL_CRF_03.png)
+
+.footnote[
+Bellary S et. al. (2014). Perspectives in Clinical Research, 5(4), 159–166.
+]
+
+---
+
+## Thiết kế CRF: ví dụ 4
+
+![:imgabs 80%, 10%, 20%](figures/MISC_XDCCTTSL_CRF_04.png)
+.footnote[
+Bellary S et. al. (2014). Perspectives in Clinical Research, 5(4), 159–166.
+]
+
+---
+
+## Thiết kế CRF: hướng dẫn điền CRF
+
+![:imgabs 50%, 25%, 20%](figures/MISC_XDCCTTSL_CRF_05.png)
+.footnote[
+Bellary S et. al. (2014). Perspectives in Clinical Research, 5(4), 159–166.
+]
+
+---
+
+## Bài tập thực hành (15 phút)
+
+* Chia 4 nhóm
+* Thiết kế CRF đơn giản cho 1 câu hỏi nghiên cứu đơn giản: mối liên quan giữa tuổi và tử vong trên BN COVID-19 điều trị tại bệnh viện tầng 2 tại TPHCM năm 2021
+
+---
+
+## Xây dựng bộ câu hỏi phỏng vấn
+
+Xác định mục tiêu nghiên cứu
+
+--
+
+Định nghĩa các biến số liên quan
+
+--
+
+Lựa chọn câu hỏi giúp thu thập thông tin về các biến số liên quan
+
+--
+
+Hoàn thiện bộ câu hỏi
+
+* Ý kiến chuyên gia
+* Dịch xuôi và dịch ngược
+* Nghiên cứu thử
+* Cognitive interview
+
+---
+
+## Cognitive interview
+
+&gt; Sử dụng bộ câu hỏi đồng thời thu thập thêm dữ liệu giúp đánh giá chất lượng câu trả lời và xác định xem câu hỏi có giúp lấy được câu trả lời như mong muốn hay không
+
+Giúp nghiên cứu viên đánh giá cách người được phỏng vấn
+
+* Đọc, hiểu câu hỏi
+* Xử lý thông tin
+* Đưa ra câu trả lời
+
+.footnote[
+Scott, K., Ummer, O., &amp; LeFevre, A. E. (2021). Health Policy and Planning, 36(6), 982–995.
+]
+
+---
+
+## Cognitive interview
+
+.footnote[
+Scott, K., Ummer, O., &amp; LeFevre, A. E. (2021). Health Policy and Planning, 36(6), 982–995.
+]
+
+![:imgabs 90%, 5%, 20%](figures/MISC_XDCCTTSL_CogInterview_01.png)
+
+---
+
+## Cognitive interview
+
+Đánh giá các khía cạnh sau của bộ câu hỏi
+
+* Lựa chọn từ ngữ
+* Cấu trúc ngữ pháp
+* Thứ tự câu hỏi
+* Sự nhạy cảm của câu hỏi
+* Các lựa chọn trả lời
+* Sự phù hợp với văn hoá và điều kiện thực tế
+* Không phù hợp về lĩnh vực nhận thức
+* Mức độ đòi hỏi về trí nhớ
+
+.footnote[
+Scott, K., Ummer, O., &amp; LeFevre, A. E. (2021). Health Policy and Planning, 36(6), 982–995.
+]
+
+---
+
+class: inverse, center, middle
+
+.f2.b[TÓM TẮT - KẾT LUẬN]
+
+---
+
+## Tóm tắt
+
+Các dạng dữ liệu: 
+
+* Định tính vs. định lượng
+* Sơ cấp vs. thứ cấp
+
+--
+
+Phương pháp thu thập dữ liệu
+
+* Định tính
+* Định lượng
+* CRF vs. eCRF
+    
+--
+    
+Xây dựng công cụ thu thập dữ liệu
+
+* Thiết kế CRF
+* Xây dựng bộ câu hỏi phỏng vấn: cognitive interview
+
+---
+
+class: center, middle
+
+.f2.b[CÁM ƠN CÁC EM ĐÃ THAM GIA BUỔI HỌC !]
+
+Nhận xét về buổi học
+
+https://forms.office.com/r/J4bJMBksMP  
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="addons/macro.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "4:3"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(60000);
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
